@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --fix .",
+    "format": "prettier ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc --write",
+    "formatmd": "prettier --write",
+    "success-message": "echo \n\n\n🚀 You're ready to go  🚀\n\n🖥️ ️  Run: git push ☁️"
   },
   "dependencies": {
     "next": "12.1.0",
@@ -28,5 +31,38 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "npm run success-message",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html,css}": [
+      "npm run lint",
+      "npm run format",
+      "git add ."
+    ],
+    "*.{md}": [
+      "npm run formatmd",
+      "git add"
+    ]
+  },
+  "commitlint": {
+    "rules": {
+      "references-empty": [
+        2,
+        "always"
+      ]
+    },
+    "parserPreset": {
+      "parserOpts": {
+        "issuePrefixes": [
+          "ISSUE-"
+        ]
+      }
+    }
   }
 }
