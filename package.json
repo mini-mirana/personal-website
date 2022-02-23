@@ -9,7 +9,11 @@
     "lint": "eslint --fix .",
     "format": "prettier ./**/*.{js,jsx,ts,tsx,css,scss,md,json} --config ./.prettierrc --write",
     "formatmd": "prettier --write",
-    "success-message": "echo \n\n\n🚀 You're ready to go  🚀\n\n🖥️ ️  Run: git push ☁️"
+    "success-message": "echo '🚀 You are ready to go  🚀️'",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged",
+    "post-commit": "yarn run success-message",
+    "commit-msg": "npx --no-install commitlint --edit '$1'"
   },
   "dependencies": {
     "next": "12.1.0",
@@ -19,7 +23,7 @@
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
     "babel-eslint": "^10.1.0",
-    "eslint": "^8.9.0",
+    "eslint": "^7.24.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.4.0",
@@ -28,24 +32,17 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "husky": "^7.0.4",
+    "husky": "^7.0.0",
     "lint-staged": "^12.3.4",
     "prettier": "^2.5.1"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "post-commit": "npm run success-message",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,html,css}": [
+    "*.{js,jsx,ts,tsx,html}": [
       "npm run lint",
       "npm run format",
       "git add ."
     ],
-    "*.{md}": [
+    "*.md": [
       "npm run formatmd",
       "git add"
     ]
@@ -64,5 +61,6 @@
         ]
       }
     }
-  }
+  },
+  "type": "module"
 }
