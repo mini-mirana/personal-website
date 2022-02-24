@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
+    "autoprefixer": "^10.4.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.24.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -42,6 +43,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "husky": "^7.0.0",
     "lint-staged": "^12.3.4",
+    "postcss": "^8.4.6",
     "prettier": "^2.5.1",
     "tailwindcss": "^3.0.23"
   },
