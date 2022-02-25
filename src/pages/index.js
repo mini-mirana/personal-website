@@ -2,28 +2,34 @@ import Head from 'next/head'
 import * as THREE from 'three'
 import React, { Suspense, useRef, useState, useCallback } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
-import { useAspect, Html, TorusKnot } from '@react-three/drei'
+import { useAspect, Html } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Flex, Box } from '@react-three/flex'
 import { Text } from '../components/Text'
 import { BackGrid } from '../components/BackGrid'
 import { Title } from '../components/Title'
+import { RotatingObj } from '../components/RotatingObj'
 // import { Reflower } from '../components/Reflower'
 
 const state = {
   top: 0
 }
 
-function RotatingObj() {
-  const ref = useRef()
-  useFrame(({ clock }) => {
-    ref.current.rotation.y = clock.getElapsedTime()
-    ref.current.rotation.x = ref.current.rotation.y
+export function Cube() {
+  const mesh = useRef()
+  const quat = new THREE.Quaternion().setFromEuler(new THREE.Euler(1, 1, 0))
+  const quat2 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0))
+  const euler = new THREE.Euler(0, 0, 0)
+  useFrame(() => {
+    euler.set(state.top / 1000, state.top / 1000, 0)
+    quat.slerp(quat2.setFromEuler(euler), 0.1)
+    mesh.current.rotation.setFromQuaternion(quat)
   })
   return (
-    <TorusKnot ref={ref} position={[0, 0, 0]} scale={[0.3, 0.3, 0.3]} args={[1, 0.4, 128, 32]}>
-      <meshStandardMaterial />
-    </TorusKnot>
+    <mesh ref={mesh} position={[0, 0, -1.5]}>
+      <boxBufferGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color='#272730' />
+    </mesh>
   )
 }
 
@@ -48,8 +54,7 @@ function Page({ onChangePages }) {
         flexDirection='column'
         size={[vpWidth, vpHeight, 0]}
         onReflow={handleReflow}
-        position={[-vpWidth / 2, vpHeight / 2, 0]}
-      >
+        position={[-vpWidth / 2, vpHeight / 2, 0]}>
         {/* <Reflower /> */}
 
         <Title />
@@ -62,8 +67,7 @@ function Page({ onChangePages }) {
             flexWrap='wrap'
             width='100%'
             marginTop={0.3}
-            marginBottom={0.1}
-          >
+            marginBottom={0.1}>
             <Box centerAnchor>
               <RotatingObj />
             </Box>
@@ -81,8 +85,7 @@ function Page({ onChangePages }) {
             flexWrap='wrap'
             width='100%'
             marginTop={0.1}
-            marginBottom={0.5}
-          >
+            marginBottom={0.5}>
             <Box marginLeft={0.3}>
               <Text fontSize={0.4} maxWidth={vpWidth} textAlign='center'>
                 with REACT THREE FLEX
@@ -151,8 +154,7 @@ function Page({ onChangePages }) {
             justifyContent='center'
             width='100%'
             marginTop={0.8}
-            marginBottom={1}
-          >
+            marginBottom={1}>
             <Box margin={0.1}>
               <Text fontSize={0.2} letterSpacing={0.1} maxWidth={vpWidth * 0.8} textAlign='center'>
                 ORDER WITH CONFIDENCE
@@ -190,28 +192,9 @@ function Page({ onChangePages }) {
   )
 }
 
-// function Cube() {
-//   const mesh = useRef();
-//   const quat = new THREE.Quaternion().setFromEuler(new THREE.Euler(1, 1, 0));
-//   const quat2 = new THREE.Quaternion().setFromEuler(new THREE.Euler(0, 0, 0));
-//   const euler = new THREE.Euler(0, 0, 0);
-//   useFrame(() => {
-//     euler.set(state.top / 1000, state.top / 1000, 0);
-//     quat.slerp(quat2.setFromEuler(euler), 0.1);
-//     mesh.current.rotation.setFromQuaternion(quat);
-//   });
-//   return (
-//     <mesh ref={mesh} position={[0, 0, -1.5]}>
-//       <boxBufferGeometry args={[1, 1, 1]} />
-//       <meshStandardMaterial color="#272730" />
-//     </mesh>
-//   );
-// }
-
 export default function Home() {
   const scrollArea = useRef()
   const onScroll = (e) => {
-    console.log(e.target)
     state.top = e.target.scrollTop
   }
   // useEffect(() => void onScroll({ target: scrollArea.current }), [])
@@ -243,7 +226,7 @@ export default function Home() {
 
         <Suspense fallback={<Html center>loading..</Html>}>
           <Page onChangePages={setPages} />
-          {/* <Cube /> */}
+          <Cube depth={state.top} />
         </Suspense>
 
         <EffectComposer>
