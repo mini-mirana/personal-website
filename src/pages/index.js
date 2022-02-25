@@ -73,7 +73,7 @@ function Page({ onChangePages }) {
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
   const vec = new THREE.Vector3()
-  useFrame(() => group.current.position.lerp(vec.set(0, state.top / 100, 0), 0.1))
+  useFrame(() => group.current.position.lerp(vec.set(0, 0, state.top / 100), 0.1))
   const handleReflow = useCallback(
     (w, h) => {
       onChangePages(h / vpHeight)
@@ -252,6 +252,7 @@ function Page({ onChangePages }) {
 export default function Home() {
   const scrollArea = useRef()
   const onScroll = (e) => {
+    console.log(e.target)
     state.top = e.target.scrollTop
   }
   // useEffect(() => void onScroll({ target: scrollArea.current }), [])
@@ -289,6 +290,7 @@ export default function Home() {
         <EffectComposer>
           <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={1024} />
         </EffectComposer>
+        {/* <ArcballControls /> */}
       </Canvas>
 
       <div className='absolute top-0 left-0 w-screen h-screen overflow-auto' ref={scrollArea} onScroll={onScroll}>
