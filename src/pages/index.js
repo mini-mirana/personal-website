@@ -226,13 +226,12 @@ export default function Home() {
 
         <Suspense fallback={<Html center>loading..</Html>}>
           <Page onChangePages={setPages} />
-          <Cube depth={state.top} />
+          {/* <Cube /> */}
         </Suspense>
 
         <EffectComposer>
           <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={1024} />
         </EffectComposer>
-        {/* <ArcballControls /> */}
       </Canvas>
 
       <div className='absolute top-0 left-0 w-screen h-screen overflow-auto' ref={scrollArea} onScroll={onScroll}>
