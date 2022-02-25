@@ -59,8 +59,7 @@ export const Text = forwardRef(
         textAlign={textAlign}
         maxWidth={maxWidth}
         font={defaultFont}
-        {...props}
-      >
+        {...props}>
         {nodes}
       </textMeshImpl>
     )
