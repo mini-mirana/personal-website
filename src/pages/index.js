@@ -1,58 +1,17 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useEffect, useRef, useState, useCallback } from 'react'
+import React, { Suspense, useRef, useState, useCallback } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
-import { useAspect, Html, TorusKnot, Plane } from '@react-three/drei'
+import { useAspect, Html, TorusKnot } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Flex, Box /* useReflow */ } from '@react-three/flex'
+import { Flex, Box } from '@react-three/flex'
 import { Text } from '../components/Text'
+import { BackGrid } from '../components/BackGrid'
+import { Title } from '../components/Title'
+// import { Reflower } from '../components/Reflower'
 
 const state = {
   top: 0
-}
-
-// function Reflower() {
-//   const reflow = useReflow();
-//   useFrame(reflow);
-//   return null;
-// }
-
-function Title() {
-  return (
-    <Box flexDirection='column' alignItems='center' justifyContent='center' width='100%' height='100%'>
-      <Box margin={0.05}>
-        <Text fontSize={0.5} letterSpacing={0.1} textAlign='center'>
-          REACT
-          <meshStandardMaterial />
-        </Text>
-      </Box>
-      <Box margin={0.05}>
-        <Text fontSize={0.5} letterSpacing={0.1} textAlign='center'>
-          THREE
-          <meshStandardMaterial />
-        </Text>
-      </Box>
-      <Box margin={0.05}>
-        <Text fontSize={0.5} letterSpacing={0.1} textAlign='center'>
-          FIBER
-          <meshStandardMaterial />
-        </Text>
-      </Box>
-    </Box>
-  )
-}
-
-function BackGrid() {
-  const { scene } = useThree()
-  useEffect(() => {
-    scene.fog = new THREE.FogExp2(0, 0.05)
-  }, [scene])
-
-  return (
-    <Plane position={[0, -1, -8]} rotation={[Math.PI / 2, 0, 0]} args={[80, 80, 128, 128]}>
-      <meshStandardMaterial color='#ea5455' wireframe side={THREE.DoubleSide} />
-    </Plane>
-  )
 }
 
 function RotatingObj() {
