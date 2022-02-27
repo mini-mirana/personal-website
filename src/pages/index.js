@@ -4,10 +4,10 @@ import React, { Suspense, useRef /* useState, useCallback */ } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { useAspect, Html } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Flex, Box } from '@react-three/flex'
-import { Text } from '../components/Text'
+import { Flex } from '@react-three/flex'
 import { BackGrid } from '../components/BackGrid'
 import { Title } from '../components/Title'
+import { Grid } from '../components/Grid'
 // import { Reflower } from '../components/Reflower'
 
 const state = {
@@ -55,36 +55,60 @@ function Page(/* { onChangePages } */) {
         position={[-vpWidth / 2, vpHeight / 2, 0]}>
         <Title />
       </Flex>
-      <Flex
-        size={[vpWidth, vpHeight, 0]}
-        position={[-vpWidth / 2, vpHeight / 2, -8]}
-        alignItems='center'
-        justifyContent='center'>
-        <Box>
-          <Box flexDirection='row' flexWrap='wrap' width={1.8} flexGrow={1}>
-            {[...Array(9).keys()].map((k) => (
-              <Box width={0.5} margin={0.05} key={k}>
-                <mesh position={[0.5 / 2, -0.5 / 2, 0]}>
-                  <planeBufferGeometry args={[0.5, 0.5]} />
-                  <meshStandardMaterial args={[{ transparent: true, opacity: 0.2 }]} />
-                </mesh>
-                <Text
-                  font='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff'
-                  fontSize={0.1}
-                  letterSpacing={0.1}
-                  textAlign='center'
-                  anchorX='center'
-                  position-x={0.5 / 2}
-                  anchorY='middle'
-                  position-y={-0.5 / 2}>
-                  {'\uf3b8'}
-                  <meshStandardMaterial color='#403d39' />
-                </Text>
-              </Box>
-            ))}
-          </Box>
-        </Box>
-      </Flex>
+      <Grid
+        text={[
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          },
+          {
+            content: '\uf3b8',
+            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+            fontSize: '0.14'
+          }
+        ]}
+        columnNumber={3}
+        rowNumber={3}
+        boxWidth={0.5}
+        boxHeight={0.5}
+        boxMargin={0.05}
+      />
     </group>
   )
 }
