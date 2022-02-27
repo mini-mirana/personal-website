@@ -5,12 +5,15 @@ import { Title } from '../../src/components/Title'
 // eslint-disable-next-line global-require
 jest.mock('scheduler', () => require('scheduler/unstable_mock'))
 
-// const findByType = (renderer, type) => {
-//   return renderer.toTree()[0].children.find((mesh) => mesh.type === type)
+// const findByType = async (renderer, type) => {
+//   return renderer.toTree()[0].children.find(async (mesh) => (await mesh.type) === type)
 // }
 
-// const findByText = (renderer, text) => {
-//   return renderer.toTree()[0].children.find((mesh) => mesh.text === text)
+// const findByText = async (renderer, text) => {
+//   return renderer.toTree()[0].children.find(async (mesh) => {
+//     console.log(mesh)
+//     return (await mesh?.props.text) === text
+//   })
 // }
 
 describe('Title', () => {
@@ -18,7 +21,6 @@ describe('Title', () => {
     const renderer = await ReactThreeTestRenderer.create(<Title />)
 
     // assertions using the TestInstance & Scene Graph
-    console.log(renderer.toTree()[0].children)
-    expect(renderer.toTree()[0].children.length).toBe(3)
+    expect(renderer.toTree()).toMatchSnapshot()
   })
 })

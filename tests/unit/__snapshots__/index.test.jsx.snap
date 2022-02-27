@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Title renders Title component 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [],
+                "props": Object {
+                  "attach": "material",
+                },
+                "type": "meshStandardMaterial",
+              },
+            ],
+            "props": Object {
+              "anchorX": "left",
+              "anchorY": "top",
+              "font": "https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff",
+              "fontSize": 0.5,
+              "letterSpacing": 0.1,
+              "maxWidth": undefined,
+              "text": "REACT",
+              "textAlign": "center",
+            },
+            "type": "mesh",
+          },
+        ],
+        "props": Object {},
+        "type": "group",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [],
+                "props": Object {
+                  "attach": "material",
+                },
+                "type": "meshStandardMaterial",
+              },
+            ],
+            "props": Object {
+              "anchorX": "left",
+              "anchorY": "top",
+              "font": "https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff",
+              "fontSize": 0.5,
+              "letterSpacing": 0.1,
+              "maxWidth": undefined,
+              "text": "THREE",
+              "textAlign": "center",
+            },
+            "type": "mesh",
+          },
+        ],
+        "props": Object {},
+        "type": "group",
+      },
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [],
+                "props": Object {
+                  "attach": "material",
+                },
+                "type": "meshStandardMaterial",
+              },
+            ],
+            "props": Object {
+              "anchorX": "left",
+              "anchorY": "top",
+              "font": "https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff",
+              "fontSize": 0.5,
+              "letterSpacing": 0.1,
+              "maxWidth": undefined,
+              "text": "FIBER",
+              "textAlign": "center",
+            },
+            "type": "mesh",
+          },
+        ],
+        "props": Object {},
+        "type": "group",
+      },
+    ],
+    "props": Object {},
+    "type": "group",
+  },
+]
+`;
