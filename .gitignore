@@ -293,3 +293,7 @@ modules.xml
 .idea/sonarlint
 
 # End of https://www.toptal.com/developers/gitignore/api/git,pycharm+all,nextjs,node
+test-results/
+playwright-report/
+test-results/
+playwright-report/
