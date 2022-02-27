@@ -16,6 +16,7 @@
     "post-commit": "yarn run success-message",
     "commit-msg": "npx --no-install commitlint --edit '$1'",
     "test": "jest --selectProjects unit",
+    "test:u": "jest --selectProjects unit --updateSnapshot",
     "test:e2e": "yarn playwright test",
     "test:ue2e": "yarn playwright test --update-snapshots"
   },
