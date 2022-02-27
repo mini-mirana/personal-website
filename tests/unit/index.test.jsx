@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactThreeTestRenderer from '@react-three/test-renderer'
-import { Title } from '../src/components/Title'
+import { Title } from '../../src/components/Title'
 
 // eslint-disable-next-line global-require
 jest.mock('scheduler', () => require('scheduler/unstable_mock'))
