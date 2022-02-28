@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useRef, useState, useEffect /* useState, useCallback */ } from 'react'
+import React, { Suspense, useRef /* , useState, useCallback */ } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { useAspect, Html, TrackballControls } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Flex, Box } from '@react-three/flex'
+import { Flex } from '@react-three/flex'
 import { BackGrid } from '../components/BackGrid'
 import { Title } from '../components/Title'
 import { Grid } from '../components/Grid'
-import { Text } from '../components/Text'
+import { VideoPlayer } from '../components/VideoPlayer'
 // import { Reflower } from '../components/Reflower'
 
 const state = {
@@ -46,22 +46,6 @@ function Page(/* { onChangePages } */) {
   //   },
   //   [onChangePages, vpHeight]
   // )
-
-  const [clicked, setClicked] = useState(false)
-  const [video] = useState(() => {
-    const vid = document.createElement('video')
-    vid.src = '/a.mp4'
-    vid.crossOrigin = 'Anonymous'
-    vid.loop = true
-    return vid
-  })
-  useEffect(() => {
-    if (clicked) {
-      video.play()
-    } else {
-      video.pause()
-    }
-  }, [video, clicked])
 
   return (
     <group ref={group}>
@@ -126,51 +110,17 @@ function Page(/* { onChangePages } */) {
         boxHeight={0.5}
         boxMargin={0.05}
       />
-      <Flex
-        size={[vpWidth, vpHeight, 0]}
-        position={[-vpWidth / 2, vpHeight / 2, 144]}
-        alignItems='center'
-        justifyContent='center'>
-        <Box
-          width={6}
-          onClick={(e) => {
-            if (e.distance < 8) {
-              setClicked(!clicked)
-            }
-          }}>
-          <mesh position={[6 / 2, -4 / 2, 0]}>
-            <planeBufferGeometry args={[6, 4]} />
-            <meshBasicMaterial>
-              <videoTexture attach='map' args={[video]} />
-            </meshBasicMaterial>
-          </mesh>
-          {!clicked && (
-            <Text
-              font='https://fonts.gstatic.com/s/materialicons/v125/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.woff'
-              fontSize={1}
-              letterSpacing={0.01}
-              textAlign='center'
-              anchorX='center'
-              position-x={6 / 2}
-              anchorY='middle'
-              position-y={-4 / 2}>
-              {'\ue038'}
-              <meshStandardMaterial color='white' />
-            </Text>
-          )}
-          <Text
-            fontSize={0.1}
-            letterSpacing={0.1}
-            textAlign='center'
-            anchorX='center'
-            position-x={6 / 2}
-            anchorY='middle'
-            position-y={-4 / 20}>
-            MEDICAL STRUCTURED REPORTING SYSTEM
-            <meshStandardMaterial color='white' />
-          </Text>
-        </Box>
-      </Flex>
+      <VideoPlayer
+        width={6}
+        height={4}
+        distance={8}
+        videoSource='/a.mp4'
+        title={{
+          content: 'MEDICAL STRUCTURED REPORTING SYSTEM',
+          font: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+          fontSize: '0.1'
+        }}
+      />
     </group>
   )
 }
@@ -193,10 +143,10 @@ export default function Home() {
         // orthographic
         // pixelRatio={window.devicePixelRatio}
       >
-        <pointLight position={[0, 1, 4]} intensity={0.1} />
+        <pointLight position={[0, 1, 164]} intensity={0.1} />
         <ambientLight intensity={0.2} />
         <spotLight
-          position={[1, 1, 1]}
+          position={[0, 0, 161]}
           penumbra={1}
           castShadow
           shadow-mapSize-width={1024}
