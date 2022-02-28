@@ -1,13 +1,14 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useRef /* useState, useCallback */ } from 'react'
+import React, { Suspense, useRef, useState, useEffect /* useState, useCallback */ } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
-import { useAspect, Html } from '@react-three/drei'
+import { useAspect, Html, TrackballControls } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Flex } from '@react-three/flex'
+import { Flex, Box } from '@react-three/flex'
 import { BackGrid } from '../components/BackGrid'
 import { Title } from '../components/Title'
 import { Grid } from '../components/Grid'
+import { Text } from '../components/Text'
 // import { Reflower } from '../components/Reflower'
 
 const state = {
@@ -46,13 +47,29 @@ function Page(/* { onChangePages } */) {
   //   [onChangePages, vpHeight]
   // )
 
+  const [clicked, setClicked] = useState(false)
+  const [video] = useState(() => {
+    const vid = document.createElement('video')
+    vid.src = '/a.mp4'
+    vid.crossOrigin = 'Anonymous'
+    vid.loop = true
+    return vid
+  })
+  useEffect(() => {
+    if (clicked) {
+      video.play()
+    } else {
+      video.pause()
+    }
+  }, [video, clicked])
+
   return (
     <group ref={group}>
       <BackGrid />
       <Flex
         size={[vpWidth, vpHeight, 0]}
         // onReflow={handleReflow}
-        position={[-vpWidth / 2, vpHeight / 2, 0]}>
+        position={[-vpWidth / 2, vpHeight / 2, 160]}>
         <Title />
       </Flex>
       <Grid
@@ -109,16 +126,56 @@ function Page(/* { onChangePages } */) {
         boxHeight={0.5}
         boxMargin={0.05}
       />
+      <Flex
+        size={[vpWidth, vpHeight, 0]}
+        position={[-vpWidth / 2, vpHeight / 2, 144]}
+        alignItems='center'
+        justifyContent='center'>
+        <Box
+          width={6}
+          onClick={(e) => {
+            if (e.distance < 8) {
+              setClicked(!clicked)
+            }
+          }}>
+          <mesh position={[6 / 2, -4 / 2, 0]}>
+            <planeBufferGeometry args={[6, 4]} />
+            <meshBasicMaterial>
+              <videoTexture attach='map' args={[video]} />
+            </meshBasicMaterial>
+          </mesh>
+          {!clicked && (
+            <Text
+              font='https://fonts.gstatic.com/s/materialicons/v125/flUhRq6tzZclQEJ-Vdg-IuiaDsNa.woff'
+              fontSize={1}
+              letterSpacing={0.01}
+              textAlign='center'
+              anchorX='center'
+              position-x={6 / 2}
+              anchorY='middle'
+              position-y={-4 / 2}>
+              {'\ue038'}
+              <meshStandardMaterial color='white' />
+            </Text>
+          )}
+          <Text
+            fontSize={0.1}
+            letterSpacing={0.1}
+            textAlign='center'
+            anchorX='center'
+            position-x={6 / 2}
+            anchorY='middle'
+            position-y={-4 / 20}>
+            MEDICAL STRUCTURED REPORTING SYSTEM
+            <meshStandardMaterial color='white' />
+          </Text>
+        </Box>
+      </Flex>
     </group>
   )
 }
 
 export default function Home() {
-  const scrollArea = useRef()
-  const onScroll = (e) => {
-    state.top = e.target.scrollTop
-  }
-  // useEffect(() => void onScroll({ target: scrollArea.current }), [])
   // const [pages, setPages] = useState(0)
 
   return (
@@ -132,7 +189,7 @@ export default function Home() {
 
       <Canvas
         gl={{ alpha: false }}
-        camera={{ position: [0, 0, 2], zoom: 1 }}
+        camera={{ position: [0, 0, 162], zoom: 1 }}
         // orthographic
         // pixelRatio={window.devicePixelRatio}
       >
@@ -154,12 +211,9 @@ export default function Home() {
         <EffectComposer>
           <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={1024} />
         </EffectComposer>
-      </Canvas>
 
-      <div className='absolute top-0 left-0 w-screen h-screen overflow-auto' ref={scrollArea} onScroll={onScroll}>
-        {/* <div style={{ height: `${pages * 100}vh` }} /> */}
-        <div className='h-[3000px]' />
-      </div>
+        <TrackballControls noRotate zoomSpeed={0.2} />
+      </Canvas>
     </>
   )
 }

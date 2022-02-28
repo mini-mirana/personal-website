@@ -10,7 +10,7 @@ export function BackGrid() {
   }, [scene])
 
   return (
-    <Plane position={[0, -1, -8]} rotation={[Math.PI / 2, 0, 0]} args={[80, 80, 128, 128]}>
+    <Plane position={[0, -1, 152]} rotation={[Math.PI / 2, 0, 0]} args={[80, 80, 128, 128]}>
       <meshStandardMaterial color='#ea5455' wireframe side={THREE.DoubleSide} />
     </Plane>
   )
