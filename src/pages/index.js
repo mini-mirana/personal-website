@@ -8,7 +8,7 @@ import { Flex } from '@react-three/flex'
 import { BackGrid } from '../components/BackGrid'
 import { Title } from '../components/Title'
 import { Grid } from '../components/Grid'
-import { VideoPlayer } from '../components/VideoPlayer'
+import { Stack } from '../components/Stack'
 // import { Reflower } from '../components/Reflower'
 
 const state = {
@@ -110,16 +110,33 @@ function Page(/* { onChangePages } */) {
         boxHeight={0.5}
         boxMargin={0.05}
       />
-      <VideoPlayer
+      <Stack
         width={6}
         height={4}
         distance={8}
-        videoSource='/a.mp4'
-        title={{
-          content: 'MEDICAL STRUCTURED REPORTING SYSTEM',
-          font: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
-          fontSize: '0.1'
-        }}
+        content={[
+          {
+            source: './a.mp4',
+            type: 'video',
+            title: 'MEDICAL',
+            titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+            titleFontSize: '0.1'
+          },
+          {
+            source: './a.mp4',
+            type: 'video',
+            title: 'MEDICAL STRUCTURED',
+            titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+            titleFontSize: '0.1'
+          },
+          {
+            source: './a.mp4',
+            type: 'video',
+            title: 'MEDICAL STRUCTURED REPORTING',
+            titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+            titleFontSize: '0.1'
+          }
+        ]}
       />
     </group>
   )
