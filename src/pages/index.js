@@ -230,7 +230,7 @@ export default function Home() {
           <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={1024} />
         </EffectComposer>
 
-        <TrackballControls noRotate zoomSpeed={0.2} />
+        <TrackballControls noPan noRotate zoomSpeed={0.2} />
       </Canvas>
       {/* This is the tunnels "Out", contents will appear here (we're in react-dom, not r3f) */}
       <dom.Out />
