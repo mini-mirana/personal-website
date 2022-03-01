@@ -31,7 +31,8 @@
     "react-merge-refs": "^1.1.0",
     "scheduler": "^0.20.2",
     "three": "^0.138.0",
-    "troika-three-text": "^0.45.0"
+    "troika-three-text": "^0.45.0",
+    "tunnel-rat": "^0.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
