@@ -10,6 +10,8 @@ import { BackGrid } from '../components/BackGrid'
 import { Title } from '../components/Title'
 import { Grid } from '../components/Grid'
 import { Stack } from '../components/Stack'
+// import UseAnimations from 'react-useanimations';
+// import github from 'react-useanimations/lib/github'
 // import { Reflower } from '../components/Reflower'
 
 // Dig a tunnel
@@ -23,14 +25,14 @@ function Cursor({ children, speed = 0.1, eps = 0.001, /* col = new THREE.Color()
   const outer = useRef()
   // const [hovered, hover] = useState()
   const [pos] = useState(() => new THREE.Vector2())
-  const color = /* hovered ? '#' + col.copy(hovered.material.color).convertLinearToSRGB().getHexString() : */ '#777'
+  const color = /* hovered ? '#' + col.copy(hovered.material.color).convertLinearToSRGB().getHexString() : */ '#fff'
 
   // useCursor(hovered)
   useFrame((s) => {
     vec.set(s.size.width / 2 + (s.mouse.x * s.size.width) / 2, s.size.height / 2 - (s.mouse.y * s.size.height) / 2)
     if (Math.abs(pos.x - vec.x) > eps || Math.abs(pos.y - vec.y) > eps) {
       pos.lerp(vec, speed)
-      outer.current.style.transform = `translate3d(${pos.x - 40}px,${pos.y - 40}px,0)`
+      outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
     }
   })
 
@@ -44,11 +46,11 @@ function Cursor({ children, speed = 0.1, eps = 0.001, /* col = new THREE.Color()
       <dom.In>
         <div ref={outer} className='pointer-events-none absolute left-0 top-0'>
           <div
-            className='w-[80px] h-[80px] border-2 border-solid border-[orange] rounded-[50%]'
+            className='w-[120px] h-[120px] border-2 border-solid border-[orange] rounded-[50%]'
             style={{
               transition: `all 350ms cubic-bezier(0, 0.28, 0, 0.77)`,
               transform: `scale(${/* hovered ? 1 : */ 0.25})`,
-              borderWidth: /* hovered ? '10px' : */ '40px',
+              borderWidth: /* hovered ? '10px' : */ '10px',
               borderColor: color
             }}
           />
@@ -56,6 +58,20 @@ function Cursor({ children, speed = 0.1, eps = 0.001, /* col = new THREE.Color()
             {color}
           </div> */}
         </div>
+        {[{ icon: '', text: '', font: '', fontSize: '' }].map(() => (
+          <div
+            className='text-[red] absolute left-[75%] top-[95%]'
+            onMouseMove={(e) => {
+              // console.log(e)
+              vec.set(e.pageX, e.pageY)
+              if (Math.abs(pos.x - vec.x) > eps || Math.abs(pos.y - vec.y) > eps) {
+                pos.lerp(vec, speed)
+                outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
+              }
+            }}>
+            HHHHHHHHHHHHHHHHH
+          </div>
+        ))}
       </dom.In>
     </group>
   )
@@ -216,7 +232,7 @@ export default function Home() {
           shadow-mapSize-height={1024}
         />
 
-        <Cursor speed={0.05}>
+        <Cursor speed={0.2}>
           {/* <Sphere color="orange" position={[-1, 0, 0]} scale={0.25} />
           <Sphere color="aquamarine" position={[0, 0, 0]} scale={0.25} />
           <Sphere color="tomato" position={[1, 0, 0]} scale={0.25} /> */}
