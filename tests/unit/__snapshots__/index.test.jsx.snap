@@ -1,5 +1,867 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Grid renders Grid component 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+              Object {
+                "children": Array [
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            0.5,
+                            0.5,
+                          ],
+                          "attach": "geometry",
+                        },
+                        "type": "planeGeometry",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "args": Array [
+                            Object {
+                              "opacity": 0.2,
+                              "transparent": true,
+                            },
+                          ],
+                          "attach": "material",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "position": Array [
+                        0.25,
+                        -0.25,
+                        0,
+                      ],
+                    },
+                    "type": "mesh",
+                  },
+                  Object {
+                    "children": Array [
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                      Object {
+                        "children": Array [],
+                        "props": Object {
+                          "attach": "material",
+                          "color": "#403d39",
+                        },
+                        "type": "meshStandardMaterial",
+                      },
+                    ],
+                    "props": Object {
+                      "anchorX": "center",
+                      "anchorY": "middle",
+                      "font": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff",
+                      "fontSize": "0.14",
+                      "letterSpacing": 0.1,
+                      "maxWidth": undefined,
+                      "position-x": 0.25,
+                      "position-y": -0.25,
+                      "text": "",
+                      "textAlign": "center",
+                    },
+                    "type": "mesh",
+                  },
+                ],
+                "props": Object {},
+                "type": "group",
+              },
+            ],
+            "props": Object {},
+            "type": "group",
+          },
+        ],
+        "props": Object {},
+        "type": "group",
+      },
+    ],
+    "props": Object {
+      "position": Array [
+        NaN,
+        NaN,
+        152,
+      ],
+    },
+    "type": "group",
+  },
+]
+`;
+
+exports[`Stack renders Stack component 1`] = `
+Array [
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+        ],
+        "name": "",
+        "type": "Group",
+      },
+    ],
+    "name": "",
+    "type": "Group",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+        ],
+        "name": "",
+        "type": "Group",
+      },
+    ],
+    "name": "",
+    "type": "Group",
+  },
+  Object {
+    "children": Array [
+      Object {
+        "children": Array [
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+          Object {
+            "children": Array [],
+            "name": "",
+            "type": "Mesh",
+          },
+        ],
+        "name": "",
+        "type": "Group",
+      },
+    ],
+    "name": "",
+    "type": "Group",
+  },
+]
+`;
+
 exports[`Title renders Title component 1`] = `
 Array [
   Object {
