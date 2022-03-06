@@ -29,7 +29,8 @@ export function Stack({ width = 6, height = 4, distance = 8, content = [] }) {
           size={[vpWidth, vpHeight, 0]}
           position={[-vpWidth / 2, vpHeight / 2, 144 - i * distance]}
           alignItems='center'
-          justifyContent='center'>
+          justifyContent='center'
+          name={i === 0 ? '.Stack' : ''}>
           <Box
             key={`${c.title}${c.titleFont}`}
             width={width}
