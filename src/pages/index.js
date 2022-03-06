@@ -1,15 +1,19 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useRef, useState /* , useState, useCallback */ } from 'react'
+import React, { Suspense, useRef /* , useState, useCallback */ } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import { useAspect, Html, TrackballControls /* useCursor */ } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Flex } from '@react-three/flex'
 import tunnel from 'tunnel-rat'
+import mail from 'react-useanimations/lib/mail'
+import github from 'react-useanimations/lib/github'
+import download from 'react-useanimations/lib/download'
 import { BackGrid } from '../components/BackGrid'
 import { Title } from '../components/Title'
 import { Grid } from '../components/Grid'
 import { Stack } from '../components/Stack'
+import { Cursor } from '../components/Cursor'
 // import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github'
 // import { Reflower } from '../components/Reflower'
@@ -19,62 +23,6 @@ const dom = tunnel()
 
 const state = {
   top: 0
-}
-
-function Cursor({ children, speed = 0.1, eps = 0.001, /* col = new THREE.Color(), */ vec = new THREE.Vector2() }) {
-  const outer = useRef()
-  // const [hovered, hover] = useState()
-  const [pos] = useState(() => new THREE.Vector2())
-  const color = /* hovered ? '#' + col.copy(hovered.material.color).convertLinearToSRGB().getHexString() : */ '#fff'
-
-  // useCursor(hovered)
-  useFrame((s) => {
-    vec.set(s.size.width / 2 + (s.mouse.x * s.size.width) / 2, s.size.height / 2 - (s.mouse.y * s.size.height) / 2)
-    if (Math.abs(pos.x - vec.x) > eps || Math.abs(pos.y - vec.y) > eps) {
-      pos.lerp(vec, speed)
-      outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
-    }
-  })
-
-  return (
-    // onPointerOver={(e) => (e.stopPropagation(), hover(e.object))} onPointerOut={(e) => hover(null)}
-    <group>
-      {children}
-      {/* Everything we'll put into the tunnels "In" will be projected
-          outwards to the tunnels "Out". That means we can write dom nodes
-          from within r3f, with full access to canvas state! */}
-      <dom.In>
-        <div ref={outer} className='pointer-events-none absolute left-0 top-0'>
-          <div
-            className='w-[120px] h-[120px] border-2 border-solid border-[orange] rounded-[50%]'
-            style={{
-              transition: `all 350ms cubic-bezier(0, 0.28, 0, 0.77)`,
-              transform: `scale(${/* hovered ? 1 : */ 0.25})`,
-              borderWidth: /* hovered ? '10px' : */ '10px',
-              borderColor: color
-            }}
-          />
-          {/* <div class="cursor-text" style={{ background: color, opacity: hovered ? 1 : 0 }}>
-            {color}
-          </div> */}
-        </div>
-        {[{ icon: '', text: '', font: '', fontSize: '' }].map(() => (
-          <div
-            className='text-[red] absolute left-[75%] top-[95%]'
-            onMouseMove={(e) => {
-              // console.log(e)
-              vec.set(e.pageX, e.pageY)
-              if (Math.abs(pos.x - vec.x) > eps || Math.abs(pos.y - vec.y) > eps) {
-                pos.lerp(vec, speed)
-                outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
-              }
-            }}>
-            HHHHHHHHHHHHHHHHH
-          </div>
-        ))}
-      </dom.In>
-    </group>
-  )
 }
 
 export function Cube() {
@@ -115,7 +63,8 @@ function Page(/* { onChangePages } */) {
       <Flex
         size={[vpWidth, vpHeight, 0]}
         // onReflow={handleReflow}
-        position={[-vpWidth / 2, vpHeight / 2, 160]}>
+        position={[-vpWidth / 2, vpHeight / 2, 160]}
+        name='.Title'>
         <Title />
       </Flex>
       <Grid
@@ -232,7 +181,26 @@ export default function Home() {
           shadow-mapSize-height={1024}
         />
 
-        <Cursor speed={0.2}>
+        <Cursor
+          speed={0.2}
+          icons={[
+            { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/' },
+            { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:info@example.com' },
+            {
+              icon: download,
+              description: 'Resume pdf',
+              fontSize: 40,
+              link: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+            }
+          ]}
+          sections={[
+            { section: 'Intro', objName: '.Title' },
+            { section: 'skills', objName: '.Grid' },
+            { section: 'Experience', objName: '.Stack' },
+            { section: 'Papers', objName: '' },
+            { section: 'Hobbys', objName: '' }
+          ]}
+          dom={dom}>
           {/* <Sphere color="orange" position={[-1, 0, 0]} scale={0.25} />
           <Sphere color="aquamarine" position={[0, 0, 0]} scale={0.25} />
           <Sphere color="tomato" position={[1, 0, 0]} scale={0.25} /> */}
