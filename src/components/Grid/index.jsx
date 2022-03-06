@@ -19,7 +19,8 @@ export function Grid({
       size={[vpWidth, vpHeight, 0]}
       position={[-vpWidth / 2, vpHeight / 2, 152]}
       alignItems='center'
-      justifyContent='center'>
+      justifyContent='center'
+      name='.Grid'>
       <Box>
         <Box
           flexDirection='row'
