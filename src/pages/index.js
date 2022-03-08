@@ -14,6 +14,8 @@ import { Title } from '../components/Title'
 import { Grid } from '../components/Grid'
 import { Stack } from '../components/Stack'
 import { Cursor } from '../components/Cursor'
+import { TextMesh } from '../components/TextMesh'
+import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 // import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github'
 // import { Reflower } from '../components/Reflower'
@@ -45,6 +47,7 @@ export function Cube() {
 
 function Page(/* { onChangePages } */) {
   const group = useRef()
+  const textMesh = useRef()
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
   const vec = new THREE.Vector3()
@@ -56,15 +59,37 @@ function Page(/* { onChangePages } */) {
   //   },
   //   [onChangePages, vpHeight]
   // )
+  useFrame(({ clock }) => {
+    const r = Math.sin(clock.getElapsedTime())
+    textMesh.current.rotation.x = r * 0.1
+    textMesh.current.rotation.y = r * 0.1
+    textMesh.current.rotation.z = r * 0.1
+  })
 
   return (
     <group ref={group}>
       <BackGrid />
+      <group ref={textMesh} position={[0, -0.6, 165]} name='.Title'>
+        <TextMesh
+          fontUrl={fontUrl}
+          fontConfig={{
+            size: 100,
+            height: 0.1,
+            curveSegments: 32,
+            bevelEnabled: true,
+            bevelThickness: 1,
+            bevelSize: 1,
+            bevelOffset: 0,
+            bevelSegments: 2
+          }}
+          hAlign='right'>
+          THREE
+        </TextMesh>
+      </group>
       <Flex
         size={[vpWidth, vpHeight, 0]}
         // onReflow={handleReflow}
-        position={[-vpWidth / 2, vpHeight / 2, 160]}
-        name='.Title'>
+        position={[-vpWidth / 2, vpHeight / 2, 160]}>
         <Title />
       </Flex>
       <Grid
@@ -149,6 +174,7 @@ function Page(/* { onChangePages } */) {
           }
         ]}
       />
+      ;
     </group>
   )
 }
@@ -167,7 +193,7 @@ export default function Home() {
 
       <Canvas
         gl={{ alpha: false }}
-        camera={{ position: [0, 0, 162], zoom: 1 }}
+        camera={{ position: [0, 0, 170], zoom: 1 }}
         // orthographic
         // pixelRatio={window.devicePixelRatio}
       >
