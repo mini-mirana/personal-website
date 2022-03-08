@@ -15,7 +15,8 @@ import { Grid } from '../components/Grid'
 import { Stack } from '../components/Stack'
 import { Cursor } from '../components/Cursor'
 import { TextMesh } from '../components/TextMesh'
-import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+import fontUrl from '../assets/font.json'
+import { Overlay } from '../components/overlay' /* three/examples/fonts/helvetiker_bold.typeface.json */
 // import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github'
 // import { Reflower } from '../components/Reflower'
@@ -59,123 +60,142 @@ function Page(/* { onChangePages } */) {
   //   },
   //   [onChangePages, vpHeight]
   // )
-  useFrame(({ clock }) => {
-    const r = Math.sin(clock.getElapsedTime())
-    textMesh.current.rotation.x = r * 0.1
-    textMesh.current.rotation.y = r * 0.1
-    textMesh.current.rotation.z = r * 0.1
-  })
+  // useFrame(({ clock }) => {
+  //   const r = Math.sin(clock.getElapsedTime())
+  //   textMesh.current.rotation.x = r * 0.1
+  //   textMesh.current.rotation.y = r * 0.1
+  //   textMesh.current.rotation.z = r * 0.1
+  // })
 
   return (
-    <group ref={group}>
-      <BackGrid />
-      <group ref={textMesh} position={[0, -0.6, 165]} name='.Title'>
+    <>
+      <group ref={group}>
+        <BackGrid />
+        <group ref={textMesh} position={[0, -0.6, 165]} name='.Title'>
+          <TextMesh
+            fontUrl={fontUrl}
+            fontConfig={{
+              size: 100,
+              height: 0.1,
+              curveSegments: 32,
+              bevelEnabled: true,
+              bevelThickness: 1,
+              bevelSize: 1,
+              bevelOffset: 0,
+              bevelSegments: 2
+            }}
+            hAlign='right'>
+            THREE
+          </TextMesh>
+        </group>
+        <Flex
+          size={[vpWidth, vpHeight, 0]}
+          // onReflow={handleReflow}
+          position={[-vpWidth / 2, vpHeight / 2, 160]}>
+          <Title />
+        </Flex>
+        <Grid
+          text={[
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            },
+            {
+              content: '\uf3b8',
+              font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
+              fontSize: '0.14'
+            }
+          ]}
+          columnNumber={3}
+          rowNumber={3}
+          boxWidth={0.5}
+          boxHeight={0.5}
+          boxMargin={0.05}
+        />
+        <Stack
+          width={6}
+          height={4}
+          distance={8}
+          content={[
+            {
+              source: './a.mp4',
+              type: 'video',
+              title: 'MEDICAL',
+              titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+              titleFontSize: '0.1'
+            },
+            {
+              source: './a.mp4',
+              type: 'video',
+              title: 'MEDICAL STRUCTURED',
+              titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+              titleFontSize: '0.1'
+            },
+            {
+              source: './a.mp4',
+              type: 'video',
+              title: 'MEDICAL STRUCTURED REPORTING',
+              titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+              titleFontSize: '0.1'
+            }
+          ]}
+        />
+      </group>
+      <Overlay position={[-size.width / 2 + 90, size.height / 2 - 40, 0]}>
         <TextMesh
+          size={30}
           fontUrl={fontUrl}
           fontConfig={{
-            size: 100,
+            size: 70,
             height: 0.1,
             curveSegments: 32,
             bevelEnabled: true,
-            bevelThickness: 1,
-            bevelSize: 1,
+            bevelThickness: 150,
+            bevelSize: 10,
             bevelOffset: 0,
-            bevelSegments: 2
+            bevelSegments: 10
           }}
           hAlign='right'>
           THREE
         </TextMesh>
-      </group>
-      <Flex
-        size={[vpWidth, vpHeight, 0]}
-        // onReflow={handleReflow}
-        position={[-vpWidth / 2, vpHeight / 2, 160]}>
-        <Title />
-      </Flex>
-      <Grid
-        text={[
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          },
-          {
-            content: '\uf3b8',
-            font: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/webfonts/fa-brands-400.woff',
-            fontSize: '0.14'
-          }
-        ]}
-        columnNumber={3}
-        rowNumber={3}
-        boxWidth={0.5}
-        boxHeight={0.5}
-        boxMargin={0.05}
-      />
-      <Stack
-        width={6}
-        height={4}
-        distance={8}
-        content={[
-          {
-            source: './a.mp4',
-            type: 'video',
-            title: 'MEDICAL',
-            titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
-            titleFontSize: '0.1'
-          },
-          {
-            source: './a.mp4',
-            type: 'video',
-            title: 'MEDICAL STRUCTURED',
-            titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
-            titleFontSize: '0.1'
-          },
-          {
-            source: './a.mp4',
-            type: 'video',
-            title: 'MEDICAL STRUCTURED REPORTING',
-            titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
-            titleFontSize: '0.1'
-          }
-        ]}
-      />
-      ;
-    </group>
+      </Overlay>
+    </>
   )
 }
 
