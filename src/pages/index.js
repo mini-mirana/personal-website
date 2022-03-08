@@ -2,6 +2,7 @@ import Head from 'next/head'
 import * as THREE from 'three'
 import React, { Suspense, useRef /* , useState, useCallback */ } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
+import dynamic from 'next/dynamic'
 import { useAspect, Html, TrackballControls /* useCursor */ } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Flex } from '@react-three/flex'
@@ -9,17 +10,18 @@ import tunnel from 'tunnel-rat'
 import mail from 'react-useanimations/lib/mail'
 import github from 'react-useanimations/lib/github'
 import download from 'react-useanimations/lib/download'
-import { BackGrid } from '../components/BackGrid'
-import { Title } from '../components/Title'
-import { Grid } from '../components/Grid'
-import { Stack } from '../components/Stack'
-import { Cursor } from '../components/Cursor'
-import { TextMesh } from '../components/TextMesh'
-import fontUrl from '../assets/font.json'
-import { Overlay } from '../components/overlay' /* three/examples/fonts/helvetiker_bold.typeface.json */
+import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+
+const BackGrid = dynamic(() => import('../components/BackGrid'))
+const Title = dynamic(() => import('../components/Title'))
+const Grid = dynamic(() => import('../components/Grid'))
+const Stack = dynamic(() => import('../components/Stack'))
+const Cursor = dynamic(() => import('../components/Cursor'))
+const TextMesh = dynamic(() => import('../components/TextMesh'))
+const Overlay = dynamic(() => import('../components/overlay'))
 // import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github'
-// import { Reflower } from '../components/Reflower'
+// const Reflower = dynamic(() => import('../components/Reflower'),{suspense: true,})
 
 // Dig a tunnel
 const dom = tunnel()
