@@ -215,7 +215,10 @@ export default function Home() {
 
       <Canvas
         gl={{ alpha: false }}
-        camera={{ position: [0, 0, 170], zoom: 1 }}
+        mode='concurrent'
+        performance={{ max: 0.2, min: 0 }}
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, 170], zoom: 1, far: 8, fov: 150 }}
         // orthographic
         // pixelRatio={window.devicePixelRatio}
       >
