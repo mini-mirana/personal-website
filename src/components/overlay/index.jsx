@@ -4,12 +4,12 @@ import React, { useMemo, useRef } from 'react'
 import { Scene } from 'three'
 
 export function Overlay({ children, position }) {
-  const { scene, camera } = useThree()
+  const { scene } = useThree()
   const virtualScene = useMemo(() => new Scene())
   const virtualCam = useRef()
   const ref = useRef()
 
-  useFrame(({ gl }) => {
+  useFrame(({ gl, camera }) => {
     // ref.current.quaternion.setFromEuler(new THREE.Euler(1, 1, 1))
     // eslint-disable-next-line no-param-reassign
     gl.autoClear = true
