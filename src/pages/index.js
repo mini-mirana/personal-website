@@ -49,12 +49,10 @@ export function Cube() {
 }
 
 function Page(/* { onChangePages } */) {
-  const group = useRef()
   const textMesh = useRef()
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
-  const vec = new THREE.Vector3()
-  useFrame(() => group.current.position.lerp(vec.set(0, 0, state.top / 100), 0.1))
+  // useFrame(() => group.current.position.lerp(vec.set(0, 0, state.top / 100), 0.1))
   // const handleReflow = useCallback(
   //   (w, h) => {
   //     onChangePages(h / vpHeight)
@@ -71,8 +69,8 @@ function Page(/* { onChangePages } */) {
 
   return (
     <>
-      <group ref={group}>
-        <BackGrid />
+      <BackGrid />
+      <group>
         <group ref={textMesh} position={[0, -0.6, 165]} name='.Title'>
           <TextMesh
             fontUrl={fontUrl}
