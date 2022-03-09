@@ -2,11 +2,20 @@ import { useState, useEffect } from 'react'
 import { useThree } from '@react-three/fiber'
 import { useAspect /* Html */ } from '@react-three/drei'
 import { Flex, Box } from '@react-three/flex'
+import Arwes from 'arwes/lib/Arwes'
+import Project from 'arwes/lib/Project'
+import ThemeProvider from 'arwes/lib/ThemeProvider'
+import createTheme from 'arwes/lib/tools/createTheme'
+import SoundsProvider from 'arwes/lib/SoundsProvider'
+import createSounds from 'arwes/lib/tools/createSounds'
+import Words from 'arwes/lib/Words'
 import { Text } from '../Text'
 
-export function Stack({ width = 6, height = 4, distance = 8, content = [] }) {
+export function Stack({ dom = null, width = 6, height = 4, distance = 8, content = [] }) {
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
+
+  const [hovered, setHovered] = useState(false)
 
   const [clicked, setClicked] = useState(Array(content.length).fill(false))
   const [videos] = useState(() => {
@@ -67,6 +76,8 @@ export function Stack({ width = 6, height = 4, distance = 8, content = [] }) {
                   </Text>
                 )}
                 <Text
+                  onPointerEnter={() => setHovered(true)}
+                  onPointerLeave={() => setHovered(false)}
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
                   letterSpacing={0.1}
@@ -78,6 +89,43 @@ export function Stack({ width = 6, height = 4, distance = 8, content = [] }) {
                   {c.title}
                   <meshStandardMaterial color='white' />
                 </Text>
+                <dom.In>
+                  <ThemeProvider theme={createTheme()}>
+                    <SoundsProvider
+                      sounds={createSounds({
+                        shared: { volume: 1, disabled: false }, // Shared sound settings
+                        players: {
+                          // The player settings
+                          click: {
+                            // With the name the player is created
+                            sound: { src: ['/sound/click.mp3'] } // The settings to pass to Howler
+                          },
+                          typing: {
+                            sound: { src: ['/sound/type.mp3'] },
+                            settings: { oneAtATime: true } // The custom app settings
+                          },
+                          deploy: {
+                            sound: { src: ['/sound/assemble.mp3'] },
+                            settings: { oneAtATime: true }
+                          }
+                        }
+                      })}>
+                      {hovered && (
+                        <Arwes className='h-fit w-[20%] !left-[60%] !top-[25%]'>
+                          <Project animate header={c.cardTitle} headerSize='h6' className='p-[10px]'>
+                            {(anim) => (
+                              <p>
+                                <Words animate show={anim.entered} className='text-xs'>
+                                  {c.description}
+                                </Words>
+                              </p>
+                            )}
+                          </Project>
+                        </Arwes>
+                      )}
+                    </SoundsProvider>
+                  </ThemeProvider>
+                </dom.In>
               </Box>
             </Flex>
           )}
