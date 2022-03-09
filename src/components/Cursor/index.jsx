@@ -51,7 +51,7 @@ export function Cursor({
   useFrame((stateFrame) => {
     if (clicked.current) {
       stateFrame.camera.position.lerp(
-        p.set(stateFrame.camera.position.x, stateFrame.camera.position.y, clicked.current.position.z + 4),
+        p.set(stateFrame.camera.position.x, stateFrame.camera.position.y, clicked.current.position.z + 0.5),
         0.025
       )
     }
