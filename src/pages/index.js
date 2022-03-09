@@ -25,6 +25,7 @@ const Overlay = dynamic(() => import('../components/overlay'))
 
 // Dig a tunnel
 const dom = tunnel()
+const tooltip = tunnel()
 
 const state = {
   top: 0
@@ -149,6 +150,7 @@ function Page(/* { onChangePages } */) {
           boxMargin={0.05}
         />
         <Stack
+          dom={tooltip}
           width={6}
           height={4}
           distance={8}
@@ -158,21 +160,30 @@ function Page(/* { onChangePages } */) {
               type: 'video',
               title: 'MEDICAL',
               titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
-              titleFontSize: '0.1'
+              titleFontSize: '0.1',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+              cardTitle: 'MEDICAL'
             },
             {
               source: './a.mp4',
               type: 'video',
               title: 'MEDICAL STRUCTURED',
               titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
-              titleFontSize: '0.1'
+              titleFontSize: '0.1',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+              cardTitle: 'MEDICAL'
             },
             {
               source: './a.mp4',
               type: 'video',
               title: 'MEDICAL STRUCTURED REPORTING',
               titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
-              titleFontSize: '0.1'
+              titleFontSize: '0.1',
+              description:
+                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
+              cardTitle: 'MEDICAL'
             }
           ]}
         />
@@ -250,9 +261,6 @@ export default function Home() {
             { section: 'Hobbys', objName: '' }
           ]}
           dom={dom}>
-          {/* <Sphere color="orange" position={[-1, 0, 0]} scale={0.25} />
-          <Sphere color="aquamarine" position={[0, 0, 0]} scale={0.25} />
-          <Sphere color="tomato" position={[1, 0, 0]} scale={0.25} /> */}
           <Suspense fallback={<Html center>loading..</Html>}>
             <Page /* onChangePages={setPages} */ />
             {/* <Cube /> */}
@@ -267,6 +275,7 @@ export default function Home() {
       </Canvas>
       {/* This is the tunnels "Out", contents will appear here (we're in react-dom, not r3f) */}
       <dom.Out />
+      <tooltip.Out />
     </>
   )
 }

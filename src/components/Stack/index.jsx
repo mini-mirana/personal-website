@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useThree } from '@react-three/fiber'
-import { useAspect /* Html */ } from '@react-three/drei'
+import { useAspect } from '@react-three/drei'
 import { Flex, Box } from '@react-three/flex'
 import Arwes from 'arwes/lib/Arwes'
 import Project from 'arwes/lib/Project'
@@ -34,12 +34,7 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
   return (
     <>
       {content.map((c, i) => (
-        <>
-          {/* {c.type === 'iframe' &&
-            <Html center transform position={[0, 0, 144 - i * distance]}>
-              <iframe width={`500vw`} height={`80`} src={'http://www.weather.gov/'} />
-            </Html>
-          } */}
+        <group>
           {c.type === 'video' && (
             <Flex
               size={[vpWidth, vpHeight, 0]}
@@ -129,7 +124,7 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
               </Box>
             </Flex>
           )}
-        </>
+        </group>
       ))}
     </>
   )
