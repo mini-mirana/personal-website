@@ -12,13 +12,18 @@ export function Cursor({
   icons,
   sections,
   p = new THREE.Vector3(),
-  dom
+  dom,
+  frustum = new THREE.Frustum(),
+  cameraViewProjectionMatrix = new THREE.Matrix4(),
+  bbox = new THREE.Box3()
 }) {
   const outer = useRef()
   const [hovered, hover] = useState()
   const [pos] = useState(() => new THREE.Vector2())
   const ref = useRef()
   const clicked = useRef()
+  const [currentSection, setCurrentSection] = useState(sections[0]?.section)
+  const clickSound = new Audio('/sound/type.mp3')
   const color = hovered ? 'rgb(100 116 139)' : '#fff'
 
   useEffect(() => {
@@ -70,8 +75,21 @@ export function Cursor({
     // onPointerOver={(e) => (e.stopPropagation(), hover(e.object))} onPointerOut={(e) => hover(null)}
     <group
       ref={ref}
-      onWheel={() => {
+      onWheel={(e) => {
         clicked.current = null
+        sections.map(({ section, objName }) => {
+          if (objName) {
+            e.camera.updateMatrixWorld() // make sure the camera matrix is updated
+            e.camera.matrixWorldInverse.copy(e.camera.matrixWorld).invert()
+            cameraViewProjectionMatrix.multiplyMatrices(e.camera.projectionMatrix, e.camera.matrixWorldInverse)
+            frustum.setFromProjectionMatrix(cameraViewProjectionMatrix)
+            bbox.setFromObject(ref.current.getObjectByName(objName))
+            if (frustum.intersectsBox(bbox)) {
+              setCurrentSection(section)
+            }
+          }
+          return false
+        })
       }}>
       {children}
       {/* Everything we'll put into the tunnels "In" will be projected
@@ -127,10 +145,15 @@ export function Cursor({
               onMouseEnter={() => hover(true)}
               onMouseLeave={() => hover(false)}
               onClick={() => {
+                clickSound.play()
                 clicked.current = ref.current.getObjectByName(objName)
+                setCurrentSection(section)
                 // api.refresh(clicked.current).fit()
               }}>
-              <div className='font-mono text-base hover:text-white text-zinc-500 hover:underline underline-offset-4 decoration-3'>
+              <div
+                className={`font-mono text-base hover:text-white ${
+                  currentSection === section ? 'text-red-500' : 'text-zinc-500'
+                } hover:underline underline-offset-4 decoration-3`}>
                 {section}
               </div>
             </div>
