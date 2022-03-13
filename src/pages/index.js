@@ -156,29 +156,33 @@ function Page(/* { onChangePages } */) {
           distance={8}
           content={[
             {
-              source: './a.mp4',
-              type: 'video',
+              type: 'text',
               title: 'MEDICAL',
               titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
               titleFontSize: '0.1',
               description:
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
-              cardTitle: 'MEDICAL'
+                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit,\n\n*sed do eiusmod tempor incididunt ut labore.'
             },
             {
-              source: './a.mp4',
-              type: 'video',
-              title: 'MEDICAL STRUCTURED',
+              type: 'photo',
+              source: '/1.png',
+              title: 'MEDICAL',
+              titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+              titleFontSize: '0.1'
+            },
+            {
+              type: 'photo-text',
+              source: 'ze2lblmbbo981.jpg',
+              title: 'MEDICAL',
               titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
               titleFontSize: '0.1',
               description:
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
-              cardTitle: 'MEDICAL'
+                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit,\n\n*sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
             },
             {
-              source: './a.mp4',
               type: 'video',
-              title: 'MEDICAL STRUCTURED REPORTING',
+              source: './a.mp4',
+              title: 'MEDICAL',
               titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
               titleFontSize: '0.1',
               description:
@@ -271,7 +275,7 @@ export default function Home() {
           <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={1024} />
         </EffectComposer>
 
-        <TrackballControls noPan noRotate zoomSpeed={0.2} />
+        <TrackballControls noPan noRotate zoomSpeed={0.05} />
       </Canvas>
       {/* This is the tunnels "Out", contents will appear here (we're in react-dom, not r3f) */}
       <dom.Out />
