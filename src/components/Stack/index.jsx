@@ -10,7 +10,10 @@ import createTheme from 'arwes/lib/tools/createTheme'
 import SoundsProvider from 'arwes/lib/SoundsProvider'
 import createSounds from 'arwes/lib/tools/createSounds'
 import Words from 'arwes/lib/Words'
+import { animated, useSprings } from '@react-spring/three'
 import { Text } from '../Text'
+
+const AnimatedText = animated(Text)
 
 export function Stack({ dom = null, width = 6, height = 4, distance = 8, content = [] }) {
   const { size } = useThree()
@@ -25,6 +28,11 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
     return c
   })
 
+  const [springs, api] = useSprings(newContent.length, () => ({
+    opacity: 0,
+    config: { mass: 5, tension: 350, friction: 40 }
+  }))
+
   const [clicked, setClicked] = useState(Array(content.length).fill(false))
   const [videos] = useState(() => {
     return content.reduce((p, c) => {
@@ -38,6 +46,15 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
   useEffect(() => {
     clicked.map((c, i) => (c && videos[i].play()) || videos[i].pause())
   }, [videos, clicked])
+
+  const addGlow = (index) => {
+    api.start((i) => {
+      if (index === i) {
+        return { opacity: 0.15 }
+      }
+      return { opacity: 0 }
+    })
+  }
 
   return (
     <>
@@ -56,7 +73,7 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                   <planeBufferGeometry args={[width, height]} />
                   <meshBasicMaterial color='#161a1d' />
                 </mesh>
-                <Text
+                <AnimatedText
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
                   letterSpacing={0.1}
@@ -64,10 +81,16 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                   anchorX='center'
                   position-x={0.5 * width}
                   anchorY='top'
+                  outlineColor='gold'
+                  outlineWidth={0.05}
+                  outlineBlur={0.4}
+                  outlineOpacity={springs[i].opacity}
+                  onPointerOver={() => addGlow(i)}
+                  onPointerLeave={() => api.start(() => ({ opacity: 0 }))}
                   position-y={-0.2}>
                   {c.title}
                   <meshStandardMaterial color='white' />
-                </Text>
+                </AnimatedText>
                 <Text
                   font='https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff'
                   fontSize={0.12}
@@ -90,7 +113,7 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                     <planeBufferGeometry args={[width, height]} />
                     <meshBasicMaterial color='#161a1d' />
                   </mesh>
-                  <Text
+                  <AnimatedText
                     font={c.titleFont}
                     fontSize={c.titleFontSize}
                     letterSpacing={0.1}
@@ -98,10 +121,16 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                     anchorX='center'
                     position-x={0.5 * width}
                     anchorY='top'
+                    outlineColor='gold'
+                    outlineWidth={0.05}
+                    outlineBlur={0.4}
+                    outlineOpacity={springs[i].opacity}
+                    onPointerOver={() => addGlow(i)}
+                    onPointerLeave={() => api.start(() => ({ opacity: 0 }))}
                     position-y={-0.1}>
                     {c.title}
                     <meshStandardMaterial color='white' />
-                  </Text>
+                  </AnimatedText>
                   <mesh
                     position={[0.5 * width, -0.5 * height - 0.15, 0]}
                     onUpdate={(mesh) => {
@@ -166,7 +195,7 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                   <planeBufferGeometry args={[width, height]} />
                   <meshBasicMaterial color='#161a1d' />
                 </mesh>
-                <Text
+                <AnimatedText
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
                   letterSpacing={0.1}
@@ -174,10 +203,16 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                   anchorX='center'
                   position-x={0.75 * width}
                   anchorY='top'
+                  outlineColor='gold'
+                  outlineWidth={0.05}
+                  outlineBlur={0.4}
+                  outlineOpacity={springs[i].opacity}
+                  onPointerOver={() => addGlow(i)}
+                  onPointerLeave={() => api.start(() => ({ opacity: 0 }))}
                   position-y={-0.2}>
                   {c.title}
                   <meshStandardMaterial color='white' />
-                </Text>
+                </AnimatedText>
                 <mesh
                   position={[0.25 * width, -0.5 * height, 0]}
                   onUpdate={(mesh) => {
@@ -241,9 +276,15 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                     <meshStandardMaterial color='white' />
                   </Text>
                 )}
-                <Text
-                  onPointerEnter={() => setHovered(true)}
-                  onPointerLeave={() => setHovered(false)}
+                <AnimatedText
+                  onPointerOver={() => {
+                    setHovered(true)
+                    addGlow(i)
+                  }}
+                  onPointerLeave={() => {
+                    setHovered(false)
+                    api.start(() => ({ opacity: 0 }))
+                  }}
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
                   letterSpacing={0.1}
@@ -251,10 +292,14 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                   anchorX='center'
                   position-x={0.5 * width}
                   anchorY='middle'
+                  outlineColor='gold'
+                  outlineWidth={0.05}
+                  outlineBlur={0.4}
+                  outlineOpacity={springs[i].opacity}
                   position-y={-0.2}>
                   {c.title}
                   <meshStandardMaterial color='white' />
-                </Text>
+                </AnimatedText>
                 <dom.In>
                   <ThemeProvider theme={createTheme()}>
                     <SoundsProvider
