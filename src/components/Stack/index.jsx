@@ -223,9 +223,7 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
                   {!clicked[i] && <meshBasicMaterial color='#161a1d' />}
                   {clicked[i] && (
                     <meshBasicMaterial>
-                      {/* eslint-disable  */}
-                      <video attach='map' args={[videos[i]]} />
-                      {/* eslint-enable  */}
+                      <videoTexture attach='map' args={[videos[i]]} />
                     </meshBasicMaterial>
                   )}
                 </mesh>
