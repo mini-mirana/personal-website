@@ -27,18 +27,19 @@ export function Cursor({
   const color = hovered ? 'rgb(100 116 139)' : '#fff'
 
   useEffect(() => {
-    // Your code here
-    window.addEventListener(
-      'mousemove',
-      (e) => {
-        vec.set(e.pageX, e.pageY)
-        if (Math.abs(pos.x - vec.x) > eps || Math.abs(pos.y - vec.y) > eps) {
-          pos.lerp(vec, speed)
-          outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
-        }
-      },
-      false
-    )
+    if (!('ontouchstart' in window)) {
+      window.addEventListener(
+        'mousemove',
+        (e) => {
+          vec.set(e.pageX, e.pageY)
+          if (Math.abs(pos.x - vec.x) > eps || Math.abs(pos.y - vec.y) > eps) {
+            pos.lerp(vec, speed)
+            outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
+          }
+        },
+        false
+      )
+    }
   }, [])
 
   // useEffect(() => {
@@ -96,21 +97,23 @@ export function Cursor({
           outwards to the tunnels "Out". That means we can write dom nodes
           from within r3f, with full access to canvas state! */}
       <dom.In>
-        <div ref={outer} className='pointer-events-none absolute left-0 top-0'>
-          <div
-            className='w-[120px] h-[120px] border-2 border-solid border-[orange] rounded-[50%]'
-            style={{
-              transition: `all 350ms cubic-bezier(0, 0.28, 0, 0.77)`,
-              transform: `scale(${hovered ? 0.55 : 0.29})`,
-              borderWidth: hovered ? '5px' : '10px',
-              borderColor: color,
-              backgroundColor: hovered ? 'rgb(51 65 85)' : 'transparent'
-            }}
-          />
-          {/* <div class="cursor-text" style={{ background: color, opacity: hovered ? 1 : 0 }}>
+        {!('ontouchstart' in window) && (
+          <div ref={outer} className='pointer-events-none absolute left-0 top-0'>
+            <div
+              className='w-[120px] h-[120px] border-2 border-solid border-[orange] rounded-[50%]'
+              style={{
+                transition: `all 350ms cubic-bezier(0, 0.28, 0, 0.77)`,
+                transform: `scale(${hovered ? 0.55 : 0.29})`,
+                borderWidth: hovered ? '5px' : '10px',
+                borderColor: color,
+                backgroundColor: hovered ? 'rgb(51 65 85)' : 'transparent'
+              }}
+            />
+            {/* <div class="cursor-text" style={{ background: color, opacity: hovered ? 1 : 0 }}>
             {color}
           </div> */}
-        </div>
+          </div>
+        )}
         <div className='text-[red] absolute right-[1%] bottom-[1%] flex'>
           {icons.map(({ icon, description, fontSize, link }) => (
             <div
