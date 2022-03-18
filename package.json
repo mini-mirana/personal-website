@@ -26,16 +26,18 @@
     "@react-three/fiber": "^7.0.26",
     "@react-three/flex": "^0.7.0",
     "@react-three/postprocessing": "^2.1.5",
+    "arwes": "1.0.0-alpha.5",
+    "lodash": "^4.17.21",
     "next": "^12.1.0",
     "react": "^18.0.0-rc.2",
     "react-dom": "^18.0.0-rc.2",
     "react-merge-refs": "^1.1.0",
+    "react-use-gesture": "^9.1.3",
     "react-useanimations": "^2.0.8",
     "scheduler": "^0.20.2",
     "three": "^0.138.0",
     "troika-three-text": "^0.45.0",
-    "tunnel-rat": "^0.0.2",
-    "arwes": "1.0.0-alpha.5"
+    "tunnel-rat": "^0.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",

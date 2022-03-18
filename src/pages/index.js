@@ -1,16 +1,19 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useRef /* , useState, useCallback */ } from 'react'
+import React, { Suspense, useRef /* , useState, useCallback */, useEffect } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import dynamic from 'next/dynamic'
-import { useAspect, Html, TrackballControls /* useCursor */ } from '@react-three/drei'
+import { useAspect, Html, PerspectiveCamera /* useCursor */ } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { Flex } from '@react-three/flex'
 import tunnel from 'tunnel-rat'
 import mail from 'react-useanimations/lib/mail'
 import github from 'react-useanimations/lib/github'
 import download from 'react-useanimations/lib/download'
+import { animated, useSpring, config } from '@react-spring/three'
 import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+// import Dots from '../components/Dots'
+// import Effects from '../components/Dots/Effects'
 
 const BackGrid = dynamic(() => import('../components/BackGrid'))
 const Title = dynamic(() => import('../components/Title'))
@@ -18,11 +21,12 @@ const Grid = dynamic(() => import('../components/Grid'))
 const Stack = dynamic(() => import('../components/Stack'))
 const Cursor = dynamic(() => import('../components/Cursor'))
 const TextMesh = dynamic(() => import('../components/TextMesh'))
-const Overlay = dynamic(() => import('../components/overlay'))
+const Overlay = dynamic(() => import('../components/Overlay'))
 // import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github'
 // const Reflower = dynamic(() => import('../components/Reflower'),{suspense: true,})
 
+const AnimatedPerspectiveCamera = animated(PerspectiveCamera)
 // Dig a tunnel
 const dom = tunnel()
 const tooltip = tunnel()
@@ -71,6 +75,10 @@ function Page(/* { onChangePages } */) {
   return (
     <>
       <BackGrid />
+      <group position={[0, -4, 145]} rotation={[Math.PI / 2, 0, 0]}>
+        {/* <Dots /> */}
+        {/* <Effects /> */}
+      </group>
       <group>
         <group ref={textMesh} position={[0, -0.6, 165]} name='.Title'>
           <TextMesh
@@ -182,8 +190,9 @@ function Page(/* { onChangePages } */) {
             {
               type: 'video',
               source: './a.mp4',
-              title: 'MEDICAL',
-              titleFont: 'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff',
+              title: 'ⓘ MEDICAL',
+              titleFont:
+                'https://fonts.gstatic.com/s/notosanssymbols/v30/rP2up3q65FkAtHfwd-eIS2brbDN6gxP34F9jRRCe4W3gowggaQ.woff',
               titleFontSize: '0.1',
               description:
                 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
@@ -216,6 +225,34 @@ function Page(/* { onChangePages } */) {
 
 export default function Home() {
   // const [pages, setPages] = useState(0)
+  const cam = useRef()
+  const [{ pos, rotation }, set] = useSpring(() => ({
+    pos: [0, 0, 170],
+    rotation: [0, 0, 0],
+    config: config.slow
+  }))
+  useEffect(() => {
+    // Your code here
+    window.addEventListener('wheel', (e) => {
+      let r = ((pos.animation.to[2] - 170) * Math.PI) / 8
+      if (1 - Math.cos(r) < 0.2) {
+        r = Math.round(r / (2 * Math.PI)) * 2 * Math.PI
+      } else if (1 + Math.cos(r) < 0.2) {
+        r = Math.round(r / Math.PI) * Math.PI
+      }
+      if (e.deltaY < 0) {
+        set.start(() => ({
+          pos: [0, 0, cam.current.position.z - 2],
+          rotation: [0, 0, r]
+        }))
+      } else {
+        set.start(() => ({
+          pos: [0, 0, cam.current.position.z + 2],
+          rotation: [0, 0, r]
+        }))
+      }
+    })
+  }, [])
 
   return (
     <>
@@ -231,10 +268,17 @@ export default function Home() {
         mode='concurrent'
         performance={{ max: 0.2, min: 0 }}
         dpr={[1, 2]}
-        camera={{ position: [0, 0, 170], zoom: 1, far: 8, fov: 150 }}
-        // orthographic
-        // pixelRatio={window.devicePixelRatio}
+        colorManagement={false} // Disabling colorManagement gives us raw colors (pure whites)
       >
+        <AnimatedPerspectiveCamera
+          ref={cam}
+          makeDefault
+          position={pos}
+          rotation={rotation}
+          zoom={1}
+          far={8}
+          fov={120}
+        />
         <pointLight position={[0, 1, 164]} intensity={0.1} />
         <ambientLight intensity={0.2} />
         <spotLight
@@ -275,7 +319,21 @@ export default function Home() {
           <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={1024} />
         </EffectComposer>
 
-        <TrackballControls noPan noRotate zoomSpeed={0.05} />
+        {/* <TrackballControls onStart={(e)=>{console.log("start"); console.log(e.target)}} onEnd={(e)=>{console.log("END"); console.log(e.target)}} target={[0,0,140]} noPan noRotate ref={controllerRef} zoomSpeed={0.05} onChange={(e) => {
+          console.log("UPDATE")
+          // console.log(cam.current)
+          const r = Math.sin(e.target.object.position.z * Math.PI/4)
+          // e.target.up.set([0, 0, 150])
+          // e.target.rotateSpeed = 0.0
+          e.target.object.rotateZ(r)
+          // e.target.angle += Math.PI/4
+          // e.target.STATE.ROTATE += Math.PI/4
+          // e.target.object.updateProjectionMatrix()
+          // e.target.object.enabled = true
+          
+          // e.target.update()
+          // e.camera.position.z = 
+          }} /> */}
       </Canvas>
       {/* This is the tunnels "Out", contents will appear here (we're in react-dom, not r3f) */}
       <dom.Out />
