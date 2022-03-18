@@ -31,7 +31,7 @@ export function Grid({
   return (
     <Flex
       size={[vpWidth, vpHeight, 0]}
-      position={[-vpWidth / 2, vpHeight / 2 + 0.3, 152]}
+      position={[-vpWidth / 2, vpHeight / 2, 152]}
       alignItems='center'
       justifyContent='center'
       name='.Grid'>
