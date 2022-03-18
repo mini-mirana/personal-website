@@ -254,9 +254,9 @@ export default function Home() {
     if ('ontouchstart' in window) {
       window.addEventListener(
         'touchmove',
-        function (ev) {
+        async function (ev) {
           ev.preventDefault()
-          const Hammer = dynamic(() => import('hammerjs'))
+          const Hammer = (await import('hammerjs')).default
           const hammertime = new Hammer(canvasRef.current)
           hammertime.get('pinch').set({ enable: true })
           hammertime.on('pinch', function (e) {
