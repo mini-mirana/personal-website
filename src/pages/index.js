@@ -15,13 +15,13 @@ import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bol
 // import Dots from '../components/Dots'
 // import Effects from '../components/Dots/Effects'
 
-const BackGrid = dynamic(() => import('../components/BackGrid'))
-const Title = dynamic(() => import('../components/Title'))
-const Grid = dynamic(() => import('../components/Grid'))
-const Stack = dynamic(() => import('../components/Stack'))
-const Cursor = dynamic(() => import('../components/Cursor'))
-const TextMesh = dynamic(() => import('../components/TextMesh'))
-const Overlay = dynamic(() => import('../components/Overlay'))
+const BackGrid = dynamic(() => import('../components/BackGrid'), { suspense: true })
+const Title = dynamic(() => import('../components/Title'), { suspense: true })
+const Grid = dynamic(() => import('../components/Grid'), { suspense: true })
+const Stack = dynamic(() => import('../components/Stack'), { suspense: true })
+const Cursor = dynamic(() => import('../components/Cursor'), { suspense: true })
+const TextMesh = dynamic(() => import('../components/TextMesh'), { suspense: true })
+const Overlay = dynamic(() => import('../components/Overlay'), { suspense: true })
 // import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github'
 // const Reflower = dynamic(() => import('../components/Reflower'),{suspense: true,})
