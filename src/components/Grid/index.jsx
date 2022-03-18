@@ -43,6 +43,16 @@ export function Grid({
                   return { scale: [1, 1, 1], opacity: 0.2 }
                 })
               }
+              onClick={() => {
+                api.start((index) => {
+                  if (index === i) {
+                    if (opacity.animation.to === 0.2) {
+                      return { scale: [1.1, 1.1, 1], opacity: 0.5 }
+                    }
+                  }
+                  return { scale: [1, 1, 1], opacity: 0.2 }
+                })
+              }}
               onPointerLeave={() => api.start(() => ({ scale: [1, 1, 1], opacity: 0.2 }))}>
               <Box width={boxWidth} margin={boxMargin}>
                 <animated.mesh scale={scale} position={[boxWidth / 2, -boxHeight / 2, 0]}>
