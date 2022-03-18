@@ -216,32 +216,56 @@ export default function Home() {
   const distance = 8
 
   const cam = useRef()
+  const canvasRef = useRef()
   const [{ pos, rotation }, set] = useSpring(() => ({
     pos: [0, 0, startZ],
     rotation: [0, 0, 0],
     config: config.slow
   }))
+
+  const handleScroll = (measure, thr, to = pos.animation.to[2], from = cam.current.position.z) => {
+    let r = ((to - startZ) * Math.PI) / 8
+    if (1 - Math.cos(r) < 0.3) {
+      r = Math.round(r / (2 * Math.PI)) * 2 * Math.PI
+    } else if (1 + Math.cos(r) < 0.3) {
+      r = Math.round(r / Math.PI) * Math.PI
+    }
+
+    if (measure < thr) {
+      set.start(() => ({
+        pos: [0, 0, from - 2],
+        rotation: [0, 0, r]
+      }))
+    } else {
+      set.start(() => ({
+        pos: [0, 0, from + 2],
+        rotation: [0, 0, r]
+      }))
+    }
+  }
   useEffect(() => {
     // Your code here
-    window.addEventListener('wheel', (e) => {
-      let r = ((pos.animation.to[2] - startZ) * Math.PI) / 8
-      if (1 - Math.cos(r) < 0.2) {
-        r = Math.round(r / (2 * Math.PI)) * 2 * Math.PI
-      } else if (1 + Math.cos(r) < 0.2) {
-        r = Math.round(r / Math.PI) * Math.PI
-      }
-      if (e.deltaY < 0) {
-        set.start(() => ({
-          pos: [0, 0, cam.current.position.z - 2],
-          rotation: [0, 0, r]
-        }))
-      } else {
-        set.start(() => ({
-          pos: [0, 0, cam.current.position.z + 2],
-          rotation: [0, 0, r]
-        }))
-      }
-    })
+    if (!('ontouchstart' in window)) {
+      window.addEventListener('wheel', (e) => {
+        handleScroll(e.deltaY, 0)
+      })
+    }
+
+    if ('ontouchstart' in window) {
+      window.addEventListener(
+        'touchmove',
+        function (ev) {
+          ev.preventDefault()
+          const Hammer = dynamic(() => import('hammerjs'))
+          const hammertime = new Hammer(canvasRef.current)
+          hammertime.get('pinch').set({ enable: true })
+          hammertime.on('pinch', function (e) {
+            handleScroll(e.scale, 1)
+          })
+        },
+        false
+      )
+    }
   }, [])
 
   return (
@@ -250,6 +274,7 @@ export default function Home() {
         <title>Portfolio</title>
         <meta name='description' content='Portfolio' />
         <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
+        <meta name='viewport' content='width=device-width, height=device-height, initial-scale:1, user-scalable=no' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
@@ -259,7 +284,7 @@ export default function Home() {
         performance={{ max: 0.2, min: 0 }}
         dpr={[1, 2]}
         colorManagement={false} // Disabling colorManagement gives us raw colors (pure whites)
-      >
+        ref={canvasRef}>
         <AnimatedPerspectiveCamera
           ref={cam}
           makeDefault
@@ -298,7 +323,8 @@ export default function Home() {
             { section: 'Papers', objName: '' },
             { section: 'Hobbys', objName: '' }
           ]}
-          dom={dom}>
+          dom={dom}
+          handleScroll={handleScroll}>
           <Suspense fallback={<Html center>loading..</Html>}>
             <Page startZ={startZ} distance={distance} />
             {/* <Cube /> */}
