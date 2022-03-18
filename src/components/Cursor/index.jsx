@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import React, { useEffect, useRef, useState } from 'react'
-import { useFrame } from '@react-three/fiber'
+import { useThree } from '@react-three/fiber'
 import UseAnimations from 'react-useanimations'
 import { openInNewTab } from '../../utils/utils'
 
@@ -11,8 +11,8 @@ export function Cursor({
   /* col = new THREE.Color(), */ vec = new THREE.Vector2(),
   icons,
   sections,
-  p = new THREE.Vector3(),
   dom,
+  handleScroll,
   frustum = new THREE.Frustum(),
   cameraViewProjectionMatrix = new THREE.Matrix4(),
   bbox = new THREE.Box3()
@@ -22,6 +22,7 @@ export function Cursor({
   const [pos] = useState(() => new THREE.Vector2())
   const ref = useRef()
   const clicked = useRef()
+  const camera = useThree((state) => state.camera)
   const [currentSection, setCurrentSection] = useState(sections[0]?.section)
   const clickSound = new Audio('/sound/type.mp3')
   const color = hovered ? 'rgb(100 116 139)' : '#fff'
@@ -54,14 +55,22 @@ export function Cursor({
   //   }
   // })
 
-  useFrame((stateFrame) => {
-    if (clicked.current) {
-      stateFrame.camera.position.lerp(
-        p.set(stateFrame.camera.position.x, stateFrame.camera.position.y, clicked.current.position.z + 0.5),
-        0.025
-      )
-    }
-  })
+  // useFrame(() => {
+  //   if (clicked.current) {
+  //     // let r = ((clicked.current.position.z + 4 - 170) * Math.PI) / 8
+  //     // if (1 - Math.cos(r) < 0.2) {
+  //     //   r = Math.round(r / (2 * Math.PI)) * 2 * Math.PI
+  //     // } else if (1 + Math.cos(r) < 0.2) {
+  //     //   r = Math.round(r / Math.PI) * Math.PI
+  //     // }
+  //     // stateFrame.camera.position.lerp(
+  //     //   p.set(stateFrame.camera.position.x, stateFrame.camera.position.y, clicked.current.position.z + 3),
+  //     //   0.025
+  //     // )
+  //     // angle.setFromAxisAngle(p.set(0, 0, 1), r)
+  //     // stateFrame.camera.quaternion.slerp(angle, 0.025)
+  //   }
+  // })
 
   // useCursor(hovered)
   // useFrame((s) => {
@@ -151,6 +160,11 @@ export function Cursor({
                 clickSound.play()
                 clicked.current = ref.current.getObjectByName(objName)
                 setCurrentSection(section)
+                if (camera.position.z > clicked.current.position.z + 3) {
+                  handleScroll(1, 2, clicked.current.position.z + 4, clicked.current.position.z + 4)
+                } else {
+                  handleScroll(2, 1, clicked.current.position.z + 4, clicked.current.position.z + 4)
+                }
                 // api.refresh(clicked.current).fit()
               }}>
               <div
