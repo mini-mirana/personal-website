@@ -15,7 +15,7 @@ import { Text } from '../Text'
 
 const AnimatedText = animated(Text)
 
-export function Stack({ dom = null, width = 6, height = 4, distance = 8, content = [] }) {
+export function Stack({ dom = null, reverse = true, width = 6, height = 4, distance = 8, content = [] }) {
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
 
@@ -59,7 +59,7 @@ export function Stack({ dom = null, width = 6, height = 4, distance = 8, content
   return (
     <>
       {newContent.map((c, i) => (
-        <group>
+        <group rotation={reverse ? [0, 0, (i + 1) * Math.PI] : [0, 0, 0]}>
           <Flex
             key={`${c.title}${c.titleFont}`}
             size={[vpWidth, vpHeight, 0]}

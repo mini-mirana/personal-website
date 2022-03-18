@@ -1,5 +1,3 @@
-import { useThree } from '@react-three/fiber'
-import { useAspect } from '@react-three/drei'
 import { Flex, Box } from '@react-three/flex'
 import { animated, useSprings } from '@react-spring/three'
 import { useRef } from 'react'
@@ -11,10 +9,9 @@ export function Grid({
   rowNumber = 3,
   boxWidth = 0.5,
   boxHeight = 0.5,
-  boxMargin = 0.05
+  boxMargin = 0.05,
+  ...props
 }) {
-  const { size } = useThree()
-  const [vpWidth, vpHeight] = useAspect(size.width, size.height)
   const matRef = useRef()
   const [springs, api] = useSprings(rowNumber * columnNumber, () => ({
     scale: [1, 1, 1],
@@ -29,12 +26,7 @@ export function Grid({
   // })
 
   return (
-    <Flex
-      size={[vpWidth, vpHeight, 0]}
-      position={[-vpWidth / 2, vpHeight / 2, 152]}
-      alignItems='center'
-      justifyContent='center'
-      name='.Grid'>
+    <Flex alignItems='center' justifyContent='center' {...props}>
       <Box>
         <Box
           flexDirection='row'

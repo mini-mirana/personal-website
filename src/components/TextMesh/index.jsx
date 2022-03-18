@@ -44,7 +44,7 @@ export function TextMesh({
   }, [children])
 
   return (
-    <group {...props} scale={[0.01 * size, 0.01 * size, 0.1]}>
+    <group scale={[0.01 * size, 0.01 * size, 0.1]} {...props}>
       <mesh ref={mesh}>
         <textGeometry
           args={[children, { font, ...fontConfig }]}

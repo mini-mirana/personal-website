@@ -5,16 +5,15 @@ import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import dynamic from 'next/dynamic'
 import { useAspect, Html, PerspectiveCamera /* useCursor */ } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
-import { Flex } from '@react-three/flex'
 import tunnel from 'tunnel-rat'
 import mail from 'react-useanimations/lib/mail'
 import github from 'react-useanimations/lib/github'
 import download from 'react-useanimations/lib/download'
 import { animated, useSpring, config } from '@react-spring/three'
 import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
-// import Dots from '../components/Dots'
-// import Effects from '../components/Dots/Effects'
 
+// const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
+// const Dots = dynamic(() => import('../components/Dots'), { suspense: true })
 const BackGrid = dynamic(() => import('../components/BackGrid'), { suspense: true })
 const Title = dynamic(() => import('../components/Title'), { suspense: true })
 const Grid = dynamic(() => import('../components/Grid'), { suspense: true })
@@ -53,18 +52,10 @@ export function Cube() {
   )
 }
 
-function Page(/* { onChangePages } */) {
-  const textMesh = useRef()
+function Page({ startZ, distance }) {
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
   // useFrame(() => group.current.position.lerp(vec.set(0, 0, state.top / 100), 0.1))
-  // const handleReflow = useCallback(
-  //   (w, h) => {
-  //     onChangePages(h / vpHeight)
-  //     // console.log({ h, vpHeight, pages: h / vpHeight });
-  //   },
-  //   [onChangePages, vpHeight]
-  // )
   // useFrame(({ clock }) => {
   //   const r = Math.sin(clock.getElapsedTime())
   //   textMesh.current.rotation.x = r * 0.1
@@ -74,36 +65,32 @@ function Page(/* { onChangePages } */) {
 
   return (
     <>
-      <BackGrid />
-      <group position={[0, -4, 145]} rotation={[Math.PI / 2, 0, 0]}>
-        {/* <Dots /> */}
-        {/* <Effects /> */}
-      </group>
+      {/* <Effects /> */}
+      {/* <Dots position={[0, -4, startZ]} rotation={[Math.PI / 2, 0, 0]} /> */}
+      <BackGrid position={[0, 0, startZ]} rotation={[Math.PI / 2, 0, 0]} /* position={[0, -1, startZ]} */ />
       <group>
-        <group ref={textMesh} position={[0, -0.6, 165]} name='.Title'>
-          <TextMesh
-            fontUrl={fontUrl}
-            fontConfig={{
-              size: 100,
-              height: 0.1,
-              curveSegments: 32,
-              bevelEnabled: true,
-              bevelThickness: 1,
-              bevelSize: 1,
-              bevelOffset: 0,
-              bevelSegments: 2
-            }}
-            hAlign='right'>
-            THREE
-          </TextMesh>
-        </group>
-        <Flex
-          size={[vpWidth, vpHeight, 0]}
-          // onReflow={handleReflow}
-          position={[-vpWidth / 2, vpHeight / 2, 160]}>
-          <Title />
-        </Flex>
+        <TextMesh
+          name='.Title'
+          position={[0, 0, startZ - distance / 2 - 1]}
+          hAlign='right'
+          fontUrl={fontUrl}
+          fontConfig={{
+            size: 100,
+            height: 0.1,
+            curveSegments: 32,
+            bevelEnabled: true,
+            bevelThickness: 1,
+            bevelSize: 1,
+            bevelOffset: 0,
+            bevelSegments: 2
+          }}>
+          THREE
+        </TextMesh>
+        <Title size={[vpWidth, vpHeight, 0]} position={[-vpWidth / 2, vpHeight / 2, startZ - distance - 2]} />
         <Grid
+          name='.Grid'
+          size={[vpWidth, vpHeight, 0]}
+          position={[-vpWidth / 2, vpHeight / 2, startZ - 2 * distance - 2]}
           text={[
             {
               content: '\uf3b8',
@@ -159,9 +146,10 @@ function Page(/* { onChangePages } */) {
         />
         <Stack
           dom={tooltip}
+          reverse
           width={6}
           height={4}
-          distance={8}
+          distance={distance}
           content={[
             {
               type: 'text',
@@ -224,17 +212,19 @@ function Page(/* { onChangePages } */) {
 }
 
 export default function Home() {
-  // const [pages, setPages] = useState(0)
+  const startZ = 170
+  const distance = 8
+
   const cam = useRef()
   const [{ pos, rotation }, set] = useSpring(() => ({
-    pos: [0, 0, 170],
+    pos: [0, 0, startZ],
     rotation: [0, 0, 0],
     config: config.slow
   }))
   useEffect(() => {
     // Your code here
     window.addEventListener('wheel', (e) => {
-      let r = ((pos.animation.to[2] - 170) * Math.PI) / 8
+      let r = ((pos.animation.to[2] - startZ) * Math.PI) / 8
       if (1 - Math.cos(r) < 0.2) {
         r = Math.round(r / (2 * Math.PI)) * 2 * Math.PI
       } else if (1 + Math.cos(r) < 0.2) {
@@ -279,10 +269,10 @@ export default function Home() {
           far={8}
           fov={120}
         />
-        <pointLight position={[0, 1, 164]} intensity={0.1} />
+        <pointLight position={[0, 1, startZ - 6]} intensity={0.1} />
         <ambientLight intensity={0.2} />
         <spotLight
-          position={[0, 0, 161]}
+          position={[0, 0, startZ - 9]}
           penumbra={1}
           castShadow
           shadow-mapSize-width={1024}
@@ -310,7 +300,7 @@ export default function Home() {
           ]}
           dom={dom}>
           <Suspense fallback={<Html center>loading..</Html>}>
-            <Page /* onChangePages={setPages} */ />
+            <Page startZ={startZ} distance={distance} />
             {/* <Cube /> */}
           </Suspense>
         </Cursor>
