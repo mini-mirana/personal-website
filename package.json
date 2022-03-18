@@ -27,6 +27,7 @@
     "@react-three/flex": "^0.7.0",
     "@react-three/postprocessing": "^2.1.5",
     "arwes": "1.0.0-alpha.5",
+    "hammerjs": "^2.0.8",
     "lodash": "^4.17.21",
     "next": "^12.1.0",
     "react": "^18.0.0-rc.2",
