@@ -1,3 +1,4 @@
+import '@fontsource/titillium-web'
 import '../styles/index.css'
 
 function MyApp({ Component, pageProps }) {

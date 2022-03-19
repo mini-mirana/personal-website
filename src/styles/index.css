@@ -23,15 +23,8 @@
     font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
       segoe ui, arial, sans-serif;
   }
-  header[class*='Arwes'] {
-    padding: 5px;
-    text-align: center;
-  }
-  header[class*='Arwes'] > h1 {
-    font-size: 10px;
-  }
-  div[class*='Arwes-main'] {
-    overflow-y: clip;
-    position: relative;
-  }
+}
+
+.arwes-card__content-bg {
+  background: #052F37BB!important;
 }

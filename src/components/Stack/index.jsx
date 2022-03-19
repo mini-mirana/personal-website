@@ -3,13 +3,9 @@ import * as THREE from 'three'
 import { useThree, useLoader } from '@react-three/fiber'
 import { useAspect } from '@react-three/drei'
 import { Flex, Box } from '@react-three/flex'
-import Arwes from 'arwes/lib/Arwes'
-import Project from 'arwes/lib/Project'
-import ThemeProvider from 'arwes/lib/ThemeProvider'
-import createTheme from 'arwes/lib/tools/createTheme'
-import SoundsProvider from 'arwes/lib/SoundsProvider'
-import createSounds from 'arwes/lib/tools/createSounds'
-import Words from 'arwes/lib/Words'
+import { ArwesThemeProvider, StylesBaseline, Text as ArwesText, Card } from '@arwes/core'
+import { BleepsProvider } from '@arwes/sounds'
+import { AnimatorGeneralProvider } from '@arwes/animation'
 import { animated, useSprings } from '@react-spring/three'
 import { Text } from '../Text'
 
@@ -19,7 +15,7 @@ export function Stack({ dom = null, reverse = true, width = 6, height = 4, dista
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
 
-  const [hovered, setHovered] = useState(false)
+  const [hovered, setHovered] = useState(Array(content.length).fill(false))
 
   const newContent = content.map((c) => {
     if (c.type.includes('photo')) {
@@ -277,13 +273,28 @@ export function Stack({ dom = null, reverse = true, width = 6, height = 4, dista
                   </Text>
                 )}
                 <AnimatedText
+                  onClick={() => {
+                    const newHovered = [...hovered]
+                    newHovered[i] = !newHovered[i]
+                    setHovered(newHovered)
+                    if (springs[i].opacity.animation.to === 0) {
+                      addGlow(i)
+                    } else {
+                      api.start(() => ({ opacity: 0 }))
+                    }
+                  }}
                   onPointerOver={() => {
-                    setHovered(true)
-                    addGlow(i)
+                    if (!('ontouchstart' in window)) {
+                      addGlow(i)
+                      const newHovered = [...hovered]
+                      newHovered[i] = true
+                      setHovered(newHovered)
+                    }
                   }}
                   onPointerLeave={() => {
-                    setHovered(false)
-                    api.start(() => ({ opacity: 0 }))
+                    if (!('ontouchstart' in window)) {
+                      api.start(() => ({ opacity: 0 }))
+                    }
                   }}
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
@@ -301,41 +312,61 @@ export function Stack({ dom = null, reverse = true, width = 6, height = 4, dista
                   <meshStandardMaterial color='white' />
                 </AnimatedText>
                 <dom.In>
-                  <ThemeProvider theme={createTheme()}>
-                    <SoundsProvider
-                      sounds={createSounds({
-                        shared: { volume: 1, disabled: false }, // Shared sound settings
-                        players: {
-                          // The player settings
-                          click: {
-                            // With the name the player is created
-                            sound: { src: ['/sound/click.mp3'] } // The settings to pass to Howler
-                          },
-                          typing: {
-                            sound: { src: ['/sound/type.mp3'] },
-                            settings: { oneAtATime: true } // The custom app settings
-                          },
-                          deploy: {
-                            sound: { src: ['/sound/assemble.mp3'] },
-                            settings: { oneAtATime: true }
-                          }
-                        }
-                      })}>
-                      {hovered && (
-                        <Arwes className='h-fit w-[20%] !left-[60%] !top-[25%]'>
-                          <Project animate header={c.cardTitle} headerSize='h6' className='p-[10px]'>
-                            {(anim) => (
-                              <p>
-                                <Words animate show={anim.entered} className='text-xs'>
-                                  {c.description}
-                                </Words>
-                              </p>
-                            )}
-                          </Project>
-                        </Arwes>
-                      )}
-                    </SoundsProvider>
-                  </ThemeProvider>
+                  <ArwesThemeProvider>
+                    <StylesBaseline />
+                    <BleepsProvider
+                      audioSettings={{
+                        common: { volume: 0.25 }
+                      }}
+                      playersSettings={{
+                        object: { src: ['/sound/object.mp3'] },
+                        assemble: { src: ['/sound/assemble.mp3'], loop: true },
+                        type: { src: ['/sound/type.mp3'], loop: true },
+                        click: { src: ['/sound/click.mp3'] }
+                      }}
+                      bleepsSettings={{
+                        object: { player: 'object' },
+                        assemble: { player: 'assemble' },
+                        type: { player: 'type' },
+                        click: { player: 'click' }
+                      }}>
+                      <AnimatorGeneralProvider animator={{ duration: { enter: 200, exit: 200, stagger: 30 } }}>
+                        {hovered[i] && (
+                          <div
+                            className='w-screen sm:w-[auto] flex sm:block justify-center'
+                            onWheel={(e) => {
+                              e.stopPropagation()
+                            }}>
+                            <Card
+                              animator={{ animate: true }}
+                              title={c.cardTitle}
+                              className='absolute sm:right-[10%] top-[30%] max-w-[300px] sm:max-w-[400px] max-h-[200px] overflow-y-auto font-["Titillium_Web"]'>
+                              <div
+                                className='absolute top-[3%] right-[4%]'
+                                role='presentation'
+                                onClick={() => {
+                                  const newHovered = [...hovered]
+                                  newHovered[i] = false
+                                  setHovered(newHovered)
+                                  api.start(() => ({ opacity: 0 }))
+                                }}>
+                                <svg
+                                  xmlns='http://www.w3.org/2000/svg'
+                                  className='h-5 w-5 stroke-[#3A918D] hover:stroke-[#7efcf6]'
+                                  fill='none'
+                                  viewBox='0 0 24 24'
+                                  stroke='currentColor'
+                                  strokeWidth='2'>
+                                  <path strokeLinecap='round' strokeLinejoin='round' d='M6 18L18 6M6 6l12 12' />
+                                </svg>
+                              </div>
+                              <ArwesText>{c.description}</ArwesText>
+                            </Card>
+                          </div>
+                        )}
+                      </AnimatorGeneralProvider>
+                    </BleepsProvider>
+                  </ArwesThemeProvider>
                 </dom.In>
               </Box>
             )}
