@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useThree } from '@react-three/fiber'
 // import { Plane } from '@react-three/drei'
+import { Float } from '@react-three/drei'
 import * as THREE from 'three'
 
 export function BackGrid({ ...props }) {
@@ -13,10 +14,12 @@ export function BackGrid({ ...props }) {
     // <Plane args={[80, 80, 128, 128]} {...props}>
     //   <meshStandardMaterial color='#ea5455' wireframe side={THREE.DoubleSide} />
     // </Plane>
-    <mesh {...props}>
-      <cylinderGeometry args={[5, 5, 500, 256, 256, true, 0, 6.283185307179586]} />
-      <meshStandardMaterial color='#ea5455' wireframe side={THREE.DoubleSide} />
-    </mesh>
+    <Float scale={0.75} rotationIntensity={0.01} floatIntensity={1} speed={1.5}>
+      <mesh {...props}>
+        <cylinderGeometry args={[5, 5, 500, 256, 256, true, 0, 6.283185307179586]} />
+        <meshStandardMaterial color='#ea5455' wireframe side={THREE.DoubleSide} />
+      </mesh>
+    </Float>
   )
 }
 
