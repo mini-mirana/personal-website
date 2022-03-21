@@ -17,6 +17,7 @@ import { Loader } from '../components/Loader'
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
 // const Dots = dynamic(() => import('../components/Dots'), { suspense: true })
 const BackGrid = dynamic(() => import('../components/BackGrid'), { suspense: true })
+const CameraShake = dynamic(() => import('../components/CameraShake'), { suspense: true })
 const Title = dynamic(() => import('../components/Title'), { suspense: true })
 const Grid = dynamic(() => import('../components/Grid'), { suspense: true })
 const Stack = dynamic(() => import('../components/Stack'), { suspense: true })
@@ -367,6 +368,7 @@ export default function Home() {
                 </audio>
               )}
             </Html>
+            {startApp && <CameraShake />}
             {/* <Cube /> */}
           </Suspense>
         </Cursor>
@@ -374,6 +376,7 @@ export default function Home() {
         <EffectComposer>
           <Bloom luminanceThreshold={0.3} luminanceSmoothing={0.9} height={1024} />
         </EffectComposer>
+        {/**/}
 
         {/* <TrackballControls onStart={(e)=>{console.log("start"); console.log(e.target)}} onEnd={(e)=>{console.log("END"); console.log(e.target)}} target={[0,0,140]} noPan noRotate ref={controllerRef} zoomSpeed={0.05} onChange={(e) => {
           console.log("UPDATE")
