@@ -140,7 +140,7 @@ export function Cursor({
               className='relative flex flex-col items-center group ml-3'
               onMouseEnter={() => hover(true)}
               onMouseLeave={() => hover(false)}>
-              <div className='hover:stroke-white stroke-zinc-600'>
+              <div className='hover:stroke-white z-20 stroke-zinc-600'>
                 <UseAnimations
                   animation={icon}
                   size={fontSize}
