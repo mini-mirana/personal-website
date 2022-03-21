@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useRef, useEffect } from 'react'
+import React, { Suspense, useRef, useEffect, useState } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import dynamic from 'next/dynamic'
 import { useAspect, Html, PerspectiveCamera } from '@react-three/drei'
@@ -12,6 +12,7 @@ import download from 'react-useanimations/lib/download'
 import { animated, useSpring, config } from '@react-spring/three'
 import { useWindowDimensions } from '../utils/useWindowDimensions'
 import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+import { Loader } from '../components/Loader'
 
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
 // const Dots = dynamic(() => import('../components/Dots'), { suspense: true })
@@ -225,6 +226,11 @@ export default function Home() {
     config: config.slow
   }))
 
+  const [startApp, setStartApp] = useState(false)
+
+  const scrollOutSound = useRef()
+  const scrollInSound = useRef()
+
   const handleScroll = (measure, thr, to = pos.animation.to[2], from = cam.current.position.z) => {
     let r = ((to - startZ) * Math.PI) / 8
     if (1 - Math.cos(r) < 0.3) {
@@ -234,11 +240,17 @@ export default function Home() {
     }
 
     if (measure < thr) {
+      scrollInSound.current.play()
       set.start(() => ({
         pos: [0, 0, from - 2],
         rotation: [0, 0, r]
       }))
     } else {
+      if (!('ontouchstart' in window)) {
+        scrollOutSound.current.play()
+      } else {
+        scrollInSound.current.play()
+      }
       set.start(() => ({
         pos: [0, 0, from + 2],
         rotation: [0, 0, r]
@@ -246,6 +258,9 @@ export default function Home() {
     }
   }
   useEffect(() => {
+    scrollInSound.current = new Audio('/sound/spaceship-passing.mp3')
+    scrollOutSound.current = new Audio('/sound/sfx.wav')
+
     // Your code here
     if (!('ontouchstart' in window)) {
       window.addEventListener('wheel', (e) => {
@@ -327,8 +342,31 @@ export default function Home() {
           ]}
           dom={dom}
           handleScroll={handleScroll}>
-          <Suspense fallback={<Html center>loading..</Html>}>
+          <Suspense
+            fallback={
+              <Html center wrapperClass='z-50'>
+                <Loader />
+              </Html>
+            }>
             <Page startZ={startZ} distance={distance} />
+            {!startApp && (
+              <Html center wrapperClass='z-50'>
+                <Loader
+                  startText
+                  onClick={() => {
+                    setStartApp(true)
+                  }}
+                />
+              </Html>
+            )}
+            <Html>
+              {startApp && (
+                /* eslint-disable-next-line jsx-a11y/media-has-caption */
+                <audio autoPlay>
+                  <source src='/sound/sweetchoff.wav' type='audio/wav' />
+                </audio>
+              )}
+            </Html>
             {/* <Cube /> */}
           </Suspense>
         </Cursor>

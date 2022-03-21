@@ -134,7 +134,7 @@ export function Cursor({
           </div> */}
           </div>
         )}
-        <div className='text-[red] absolute right-[1%] bottom-[1%] flex'>
+        <div className='absolute right-[1%] bottom-[1%] flex'>
           {icons.map(({ icon, description, fontSize, link }) => (
             <div
               className='relative flex flex-col items-center group ml-3'
@@ -195,7 +195,7 @@ export function Cursor({
                 </div>
               </div>
 
-              <div className='flex flex-col md:flex-row bg-[#052f37bb] md:bg-transparent rounded-md md:rounded-none text-[red]'>
+              <div className='flex flex-col md:flex-row bg-[#052f37bb] md:bg-transparent rounded-md md:rounded-none text-[#00f8f8]'>
                 {sections.map(({ section, objName }) => (
                   <div
                     role='presentation'
@@ -217,7 +217,7 @@ export function Cursor({
                     }}>
                     <div
                       className={`navbar-text py-2 md:py-0 font-mono text-base hover:text-white ${
-                        currentSection === section ? 'text-red-500' : 'text-zinc-500'
+                        currentSection === section ? 'text-[#00f8f8]' : 'text-zinc-500'
                       }`}>
                       <AnimatorGeneralProvider animator={{ duration: { enter: 250, exit: 100 } }}>
                         <Animator
