@@ -1,15 +1,16 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useRef /* , useState, useCallback */, useEffect } from 'react'
+import React, { Suspense, useRef, useEffect } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import dynamic from 'next/dynamic'
-import { useAspect, Html, PerspectiveCamera /* useCursor */ } from '@react-three/drei'
+import { useAspect, Html, PerspectiveCamera } from '@react-three/drei'
 import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import tunnel from 'tunnel-rat'
 import mail from 'react-useanimations/lib/mail'
 import github from 'react-useanimations/lib/github'
 import download from 'react-useanimations/lib/download'
 import { animated, useSpring, config } from '@react-spring/three'
+import { useWindowDimensions } from '../utils/useWindowDimensions'
 import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
@@ -55,6 +56,7 @@ export function Cube() {
 function Page({ startZ, distance }) {
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
+  const { height, width } = useWindowDimensions()
   // useFrame(() => group.current.position.lerp(vec.set(0, 0, state.top / 100), 0.1))
   // useFrame(({ clock }) => {
   //   const r = Math.sin(clock.getElapsedTime())
@@ -147,8 +149,8 @@ function Page({ startZ, distance }) {
         <Stack
           dom={tooltip}
           reverse
-          width={6}
-          height={4}
+          width={height >= width ? 3 : 6}
+          height={height >= width ? 3 : 4}
           distance={distance}
           content={[
             {
@@ -254,12 +256,12 @@ export default function Home() {
     if ('ontouchstart' in window) {
       window.addEventListener(
         'touchmove',
-        async function (ev) {
+        async (ev) => {
           ev.preventDefault()
           const Hammer = (await import('hammerjs')).default
           const hammertime = new Hammer(canvasRef.current)
           hammertime.get('pinch').set({ enable: true })
-          hammertime.on('pinch', function (e) {
+          hammertime.on('pinch', (e) => {
             handleScroll(e.scale, 1)
           })
         },
