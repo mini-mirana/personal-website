@@ -28,3 +28,10 @@
 .arwes-card__content-bg {
   background: #052f37bb !important;
 }
+
+.navbar-text .arwes-text__content {
+  text-underline-offset: 4px;
+}
+.navbar-text .arwes-text__content:hover {
+  text-decoration-line: underline;
+}

@@ -1,8 +1,15 @@
 import * as THREE from 'three'
 import React, { useEffect, useRef, useState } from 'react'
 import { useThree } from '@react-three/fiber'
+import resolveConfig from 'tailwindcss/resolveConfig'
 import UseAnimations from 'react-useanimations'
+import menu from 'react-useanimations/lib/menu'
+import { ArwesThemeProvider, StylesBaseline, Text as ArwesText } from '@arwes/core'
+import { BleepsProvider } from '@arwes/sounds'
+import { AnimatorGeneralProvider, Animator } from '@arwes/animation'
 import { openInNewTab } from '../../utils/utils'
+import tailwindConfig from '../../../tailwind.config'
+import { useWindowDimensions } from '../../utils/useWindowDimensions'
 
 export function Cursor({
   children,
@@ -17,8 +24,12 @@ export function Cursor({
   cameraViewProjectionMatrix = new THREE.Matrix4(),
   bbox = new THREE.Box3()
 }) {
+  const fullConfig = resolveConfig(tailwindConfig)
+  const dim = useWindowDimensions()
+
   const outer = useRef()
   const [hovered, hover] = useState()
+  const [activate, setActivate] = useState(false)
   const [pos] = useState(() => new THREE.Vector2())
   const ref = useRef()
   const clicked = useRef()
@@ -107,7 +118,7 @@ export function Cursor({
           from within r3f, with full access to canvas state! */}
       <dom.In>
         {!('ontouchstart' in window) && (
-          <div ref={outer} className='pointer-events-none absolute left-0 top-0'>
+          <div ref={outer} className='pointer-events-none absolute left-0 top-0 z-10'>
             <div
               className='w-[120px] h-[120px] border-2 border-solid border-[orange] rounded-[50%]'
               style={{
@@ -149,33 +160,82 @@ export function Cursor({
             </div>
           ))}
         </div>
-        <div className='text-[red] absolute right-[1%] top-[2%] flex '>
-          {sections.map(({ section, objName }) => (
-            <div
-              role='presentation'
-              className='relative flex flex-col items-center mx-3'
-              onMouseEnter={() => hover(true)}
-              onMouseLeave={() => hover(false)}
-              onClick={() => {
-                clickSound.play()
-                clicked.current = ref.current.getObjectByName(objName)
-                setCurrentSection(section)
-                if (camera.position.z > clicked.current.position.z + 3) {
-                  handleScroll(1, 2, clicked.current.position.z + 4, clicked.current.position.z + 4)
-                } else {
-                  handleScroll(2, 1, clicked.current.position.z + 4, clicked.current.position.z + 4)
-                }
-                // api.refresh(clicked.current).fit()
-              }}>
+        <ArwesThemeProvider>
+          <StylesBaseline />
+          <BleepsProvider
+            audioSettings={{
+              common: { volume: 0.25 }
+            }}
+            playersSettings={{
+              object: { src: ['/sound/object.mp3'] },
+              assemble: { src: ['/sound/assemble.mp3'], loop: true },
+              type: { src: ['/sound/type.mp3'], loop: true },
+              click: { src: ['/sound/click.mp3'] }
+            }}
+            bleepsSettings={{
+              object: { player: 'object' },
+              assemble: { player: 'assemble' },
+              type: { player: 'type' },
+              click: { player: 'click' }
+            }}>
+            <div className='absolute right-[1%] top-[2%]'>
               <div
-                className={`font-mono text-base hover:text-white ${
-                  currentSection === section ? 'text-red-500' : 'text-zinc-500'
-                } hover:underline underline-offset-4 decoration-3`}>
-                {section}
+                role='presentation'
+                className='mb-2 md:mb-0 md:hidden'
+                onClick={() => {
+                  setActivate((prev) => !prev)
+                }}>
+                <div className='stroke-zinc-600 hover:stroke-white'>
+                  <UseAnimations
+                    animation={menu}
+                    size={30}
+                    pathCss='stroke: inherit;'
+                    wrapperStyle={{ stroke: 'inherit', marginLeft: 'auto' }}
+                  />
+                </div>
+              </div>
+
+              <div className='flex flex-col md:flex-row bg-[#052f37bb] md:bg-transparent rounded-md md:rounded-none text-[red]'>
+                {sections.map(({ section, objName }) => (
+                  <div
+                    role='presentation'
+                    className={`transition-all ease-out duration-500 ${
+                      activate ? 'h-[40px]' : 'h-0'
+                    } md:h-auto overflow-hidden md:overflow-visible relative z-20 flex flex-col items-center mx-3`}
+                    onMouseEnter={() => hover(true)}
+                    onMouseLeave={() => hover(false)}
+                    onClick={() => {
+                      clickSound.play()
+                      clicked.current = ref.current.getObjectByName(objName)
+                      setCurrentSection(section)
+                      if (camera.position.z > clicked.current.position.z + 3) {
+                        handleScroll(1, 2, clicked.current.position.z + 4, clicked.current.position.z + 4)
+                      } else {
+                        handleScroll(2, 1, clicked.current.position.z + 4, clicked.current.position.z + 4)
+                      }
+                      // api.refresh(clicked.current).fit()
+                    }}>
+                    <div
+                      className={`navbar-text py-2 md:py-0 font-mono text-base hover:text-white ${
+                        currentSection === section ? 'text-red-500' : 'text-zinc-500'
+                      }`}>
+                      <AnimatorGeneralProvider animator={{ duration: { enter: 250, exit: 100 } }}>
+                        <Animator
+                          animator={
+                            dim.width <= parseInt(fullConfig.theme.screens.md, 10)
+                              ? { activate, manager: 'stagger' }
+                              : { animation: true, manager: 'stagger' }
+                          }>
+                          <ArwesText>{section}</ArwesText>
+                        </Animator>
+                      </AnimatorGeneralProvider>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
+          </BleepsProvider>
+        </ArwesThemeProvider>
       </dom.In>
     </group>
   )
