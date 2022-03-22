@@ -86,11 +86,11 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,html}": [
-      "npm run lint",
-      "npm run format"
+      "yarn run lint",
+      "yarn run format"
     ],
     "*.md": [
-      "npm run formatmd",
+      "yarn run formatmd",
       "git add"
     ]
   },
