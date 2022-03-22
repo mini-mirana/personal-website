@@ -1,7 +1,7 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
-const APP_NAME = 'Portfolio'
-const APP_DESCRIPTION = 'This is my portfolio, it includes my recent projects, works, papers, and etc.'
+const { APP_NAME } = process.env
+const { APP_DESCRIPTION } = process.env
 
 export default class MyDocument extends Document {
   render() {
