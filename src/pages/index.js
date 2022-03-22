@@ -291,9 +291,6 @@ export default function Home() {
       <Head>
         <title>Portfolio</title>
         <meta name='description' content='Portfolio' />
-        <meta httpEquiv='Content-Type' content='text/html; charset=utf-8' />
-        <meta name='viewport' content='width=device-width, height=device-height, initial-scale:1, user-scalable=no' />
-        <link rel='icon' href='/favicon.ico' />
       </Head>
 
       <Canvas
