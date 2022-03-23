@@ -1,9 +1,9 @@
 import { Flex, Box } from '@react-three/flex'
 import { Text } from '../Text'
 
-export function Title({ content = [], ...props }) {
+export function Title({ reverse = false, content = [], ...props }) {
   return (
-    <group rotation={[0, 0, Math.PI]}>
+    <group rotation={reverse ? [0, 0, Math.PI] : [0, 0, 0]}>
       <Flex {...props}>
         <Box flexDirection='column' alignItems='center' justifyContent='center' width='100%' height='100%'>
           {content.map((c) => (
