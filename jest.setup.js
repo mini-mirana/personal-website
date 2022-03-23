@@ -3,6 +3,7 @@
 import '@testing-library/jest-dom/extend-expect'
 import { toMatchImageSnapshot } from 'jest-image-snapshot'
 
+globalThis.IS_REACT_ACT_ENVIRONMENT = true
 expect.extend({ toMatchImageSnapshot })
 
 window.HTMLMediaElement.prototype.load = () => {
