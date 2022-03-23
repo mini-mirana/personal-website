@@ -11,7 +11,16 @@ import { Text } from '../Text'
 
 const AnimatedText = animated(Text)
 
-export function Stack({ dom = null, reverse = true, width = 6, height = 4, distance = 8, content = [] }) {
+export function Stack({
+  dom = null,
+  width = 6,
+  height = 4,
+  startZ = undefined,
+  distance = 8,
+  reverse = false,
+  startReverse = false,
+  content = []
+}) {
   const { size } = useThree()
   const [vpWidth, vpHeight] = useAspect(size.width, size.height)
 
@@ -55,14 +64,15 @@ export function Stack({ dom = null, reverse = true, width = 6, height = 4, dista
   return (
     <>
       {newContent.map((c, i) => (
-        <group rotation={reverse ? [0, 0, (i + 1) * Math.PI] : [0, 0, 0]}>
+        <group
+          position={[0, 0, startZ - i * distance]}
+          rotation={(reverse && ((startReverse && [0, 0, (i + 1) * Math.PI]) || [0, 0, i * Math.PI])) || [0, 0, 0]}>
           <Flex
             key={`${c.title}${c.titleFont}`}
             size={[vpWidth, vpHeight, 0]}
-            position={[-vpWidth / 2, vpHeight / 2, 144 - i * distance]}
+            position={[-vpWidth / 2, vpHeight / 2, 0]}
             alignItems='center'
-            justifyContent='center'
-            name={i === 0 ? '.Stack' : ''}>
+            justifyContent='center'>
             {c.type === 'text' && (
               <Box width={width}>
                 <mesh position={[0.5 * width, -0.5 * height, 0]}>
