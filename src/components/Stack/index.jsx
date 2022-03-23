@@ -60,6 +60,7 @@ export function Stack({
       return { opacity: 0 }
     })
   }
+  console.log(hovered)
 
   return (
     <>
@@ -284,7 +285,7 @@ export function Stack({
                 )}
                 <AnimatedText
                   onClick={() => {
-                    const newHovered = [...hovered]
+                    const newHovered = Array(content.length).fill(false)
                     newHovered[i] = !newHovered[i]
                     setHovered(newHovered)
                     if (springs[i].opacity.animation.to === 0) {
@@ -296,7 +297,7 @@ export function Stack({
                   onPointerOver={() => {
                     if (!('ontouchstart' in window)) {
                       addGlow(i)
-                      const newHovered = [...hovered]
+                      const newHovered = Array(content.length).fill(false)
                       newHovered[i] = true
                       setHovered(newHovered)
                     }
@@ -322,26 +323,26 @@ export function Stack({
                   <meshStandardMaterial color='white' />
                 </AnimatedText>
                 <dom.In>
-                  <ArwesThemeProvider>
-                    <StylesBaseline />
-                    <BleepsProvider
-                      audioSettings={{
-                        common: { volume: 0.25 }
-                      }}
-                      playersSettings={{
-                        object: { src: ['/sound/object.mp3'] },
-                        assemble: { src: ['/sound/assemble.mp3'], loop: true },
-                        type: { src: ['/sound/type.mp3'], loop: true },
-                        click: { src: ['/sound/click.mp3'] }
-                      }}
-                      bleepsSettings={{
-                        object: { player: 'object' },
-                        assemble: { player: 'assemble' },
-                        type: { player: 'type' },
-                        click: { player: 'click' }
-                      }}>
-                      <AnimatorGeneralProvider animator={{ duration: { enter: 200, exit: 200, stagger: 30 } }}>
-                        {hovered[i] && (
+                  {hovered[i] && (
+                    <ArwesThemeProvider>
+                      <StylesBaseline />
+                      <BleepsProvider
+                        audioSettings={{
+                          common: { volume: 0.25 }
+                        }}
+                        playersSettings={{
+                          object: { src: ['/sound/object.mp3'] },
+                          assemble: { src: ['/sound/assemble.mp3'], loop: true },
+                          type: { src: ['/sound/type.mp3'], loop: true },
+                          click: { src: ['/sound/click.mp3'] }
+                        }}
+                        bleepsSettings={{
+                          object: { player: 'object' },
+                          assemble: { player: 'assemble' },
+                          type: { player: 'type' },
+                          click: { player: 'click' }
+                        }}>
+                        <AnimatorGeneralProvider animator={{ duration: { enter: 200, exit: 200, stagger: 30 } }}>
                           <div
                             className='w-screen sm:w-[auto] flex sm:block justify-center'
                             onWheel={(e) => {
@@ -355,9 +356,7 @@ export function Stack({
                                 className='absolute top-[3%] right-[4%]'
                                 role='presentation'
                                 onClick={() => {
-                                  const newHovered = [...hovered]
-                                  newHovered[i] = false
-                                  setHovered(newHovered)
+                                  setHovered(Array(content.length).fill(false))
                                   api.start(() => ({ opacity: 0 }))
                                 }}>
                                 <svg
@@ -373,10 +372,10 @@ export function Stack({
                               <ArwesText>{c.description}</ArwesText>
                             </Card>
                           </div>
-                        )}
-                      </AnimatorGeneralProvider>
-                    </BleepsProvider>
-                  </ArwesThemeProvider>
+                        </AnimatorGeneralProvider>
+                      </BleepsProvider>
+                    </ArwesThemeProvider>
+                  )}
                 </dom.In>
               </Box>
             )}
