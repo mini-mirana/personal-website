@@ -46,7 +46,9 @@ export function Cursor({
           vec.set(e.pageX, e.pageY)
           if (Math.abs(pos.x - vec.x) > eps || Math.abs(pos.y - vec.y) > eps) {
             pos.lerp(vec, speed)
-            outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
+            if (outer.current?.style) {
+              outer.current.style.transform = `translate3d(${pos.x - 55}px,${pos.y - 55}px,0)`
+            }
           }
         },
         false
