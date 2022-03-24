@@ -219,18 +219,18 @@ function Page({ startZ, distance }) {
                 </div>
               )
             },
-            {
-              type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
-              title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
-              cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
-              description: (
-                <div>
-                  # AUTOMATIC VPN CONNECTION
-                  <br /># Developed the frontend
-                </div>
-              )
-            },
+            // {
+            //   type: 'video',
+            //   source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
+            //   title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
+            //   cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
+            //   description: (
+            //     <div>
+            //       # AUTOMATIC VPN CONNECTION
+            //       <br /># Developed the frontend
+            //     </div>
+            //   )
+            // },
             {
               type: 'photo-text',
               photoY: 0,
