@@ -4,7 +4,7 @@ import { useThree } from '@react-three/fiber'
 import resolveConfig from 'tailwindcss/resolveConfig'
 import UseAnimations from 'react-useanimations'
 import menu from 'react-useanimations/lib/menu'
-import { ArwesThemeProvider, StylesBaseline, Text as ArwesText } from '@arwes/core'
+import { ArwesThemeProvider, StylesBaseline, Text as ArwesText, Card } from '@arwes/core'
 import { BleepsProvider } from '@arwes/sounds'
 import { AnimatorGeneralProvider, Animator } from '@arwes/animation'
 import { openInNewTab } from '../../utils/utils'
@@ -30,6 +30,7 @@ export function Cursor({
   const outer = useRef()
   const [hovered, hover] = useState()
   const [activate, setActivate] = useState(false)
+  const [copyrightHovered, setCopyRightHovered] = useState(false)
   const [pos] = useState(() => new THREE.Vector2())
   const ref = useRef()
   const clicked = useRef()
@@ -173,8 +174,8 @@ export function Cursor({
 
               <div className='flex flex-col md:flex-row bg-[#052f37bb] md:bg-transparent rounded-md md:rounded-none text-[#00f8f8]'>
                 {sections.map(({ section, objName }) => (
-                  <div
-                    role='presentation'
+                  <button
+                    type='button'
                     className={`transition-all ease-out duration-500 ${
                       activate ? 'h-[40px]' : 'h-0'
                     } md:h-auto overflow-hidden md:overflow-visible relative z-20 flex flex-col items-center mx-3`}
@@ -206,20 +207,80 @@ export function Cursor({
                         </Animator>
                       </AnimatorGeneralProvider>
                     </div>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
             {/* */}
-            <div className='absolute left-[1%] bottom-[1%] hover:text-white text-zinc-500 z-20'>
-              <div className='font-mono text-base' onMouseEnter={() => hover(true)} onMouseLeave={() => hover(false)}>
+            <div className='absolute left-[1%] bottom-[1%]'>
+              <button
+                type='button'
+                className='z-20 font-mono text-base text-zinc-500 hover:text-white'
+                onMouseEnter={() => {
+                  hover(true)
+                  setCopyRightHovered(true)
+                }}
+                onMouseLeave={() => {
+                  hover(false)
+                }}>
                 <AnimatorGeneralProvider animator={{ duration: { enter: 250, exit: 100 } }}>
                   <Animator animator={{ animation: true, manager: 'stagger' }}>
                     <ArwesText>© 2022</ArwesText>
                   </Animator>
                 </AnimatorGeneralProvider>
-              </div>
+              </button>
             </div>
+            {copyrightHovered && (
+              <AnimatorGeneralProvider animator={{ duration: { enter: 200, exit: 200, stagger: 30 } }}>
+                <div
+                  className='absolute top-0 left-0 w-screen h-screen flex justify-center items-center'
+                  onWheel={(e) => {
+                    e.stopPropagation()
+                  }}>
+                  <Card
+                    animator={{ animate: true }}
+                    title='Credits'
+                    className='absolute w-[300px] sm:w-[400px] max-h-[200px] overflow-y-auto font-["Titillium_Web"] text-base'>
+                    <div
+                      className='absolute top-[3%] right-[4%]'
+                      role='presentation'
+                      onClick={() => {
+                        setCopyRightHovered(false)
+                      }}>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        className='h-5 w-5 stroke-[#3A918D] hover:stroke-[#7efcf6]'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
+                        strokeWidth='2'>
+                        <path strokeLinecap='round' strokeLinejoin='round' d='M6 18L18 6M6 6l12 12' />
+                      </svg>
+                    </div>
+                    <ArwesText>
+                      Designed & Developed:
+                      <br />
+                      &nbsp;&nbsp;
+                      <a target='_blank' rel='noopener noreferrer' href='https://github.com/mini-mirana'>
+                        @mini-mirana
+                      </a>
+                      <br />
+                      &nbsp;&nbsp;
+                      <a target='_blank' rel='noopener noreferrer' href='https://github.com/realsarm'>
+                        @realsarm
+                      </a>
+                      <br />
+                      Loading animation:
+                      <br />
+                      &nbsp;&nbsp;
+                      <a target='_blank' rel='noopener noreferrer' href='https://lottiefiles.com/user/112947'>
+                        @Nathan Covert
+                      </a>
+                    </ArwesText>
+                  </Card>
+                </div>
+              </AnimatorGeneralProvider>
+            )}
             <div className='absolute right-[1%] bottom-[1%] flex'>
               {icons.map(({ icon, description, fontSize, link }) => (
                 <div
