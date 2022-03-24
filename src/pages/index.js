@@ -232,11 +232,11 @@ function Page({ startZ, distance }) {
             },
             {
               type: 'photo-text',
-              photoY: 0,
-              source: './images/vi-room.ir__Pixel_5.png',
-              title: 'WEB CONFERENCING SOLUTION',
-              description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`,
-              descriptionY: '-0.8'
+              source:
+                'https://res.cloudinary.com/mirana/image/upload/v1648137447/personal-website/boards-g92417fa21_1920_zaksq6.jpg',
+              title: 'Lorem ipsum',
+              description:
+                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n\n*sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
             },
             {
               type: 'video',
