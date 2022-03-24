@@ -68,7 +68,7 @@ export function Stack({
           position={[0, 0, startZ - i * distance]}
           rotation={(reverse && ((startReverse && [0, 0, (i + 1) * Math.PI]) || [0, 0, i * Math.PI])) || [0, 0, 0]}>
           <Flex
-            key={`${c.title}${c.titleFont}`}
+            key={`${c.title}${c?.titleFont}`}
             size={[vpWidth, vpHeight, 0]}
             position={[-vpWidth / 2, vpHeight / 2, 0]}
             alignItems='center'
@@ -81,8 +81,11 @@ export function Stack({
                 </mesh>
                 <AnimatedText
                   maxWidth={width - 0.6}
-                  font={c.titleFont}
-                  fontSize={c.titleFontSize}
+                  font={
+                    c?.titleFont ||
+                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
+                  }
+                  fontSize={c?.titleFontSize || 0.1}
                   letterSpacing={0.1}
                   textAlign='center'
                   anchorX='center'
@@ -101,9 +104,9 @@ export function Stack({
                 <Text
                   font={
                     c?.descriptionFont ||
-                    'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff'
+                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
                   }
-                  fontSize={c?.descriptionFontSize || 0.12}
+                  fontSize={c?.descriptionFontSize || 0.09}
                   maxWidth={width - 0.6}
                   letterSpacing={0.1}
                   textAlign='left'
@@ -125,8 +128,11 @@ export function Stack({
                   </mesh>
                   <AnimatedText
                     maxWidth={width - 0.6}
-                    font={c.titleFont}
-                    fontSize={c.titleFontSize}
+                    font={
+                      c?.titleFont ||
+                      'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
+                    }
+                    fontSize={c?.titleFontSize || 0.1}
                     letterSpacing={0.1}
                     textAlign='center'
                     anchorX='center'
@@ -208,8 +214,11 @@ export function Stack({
                 </mesh>
                 <AnimatedText
                   maxWidth={width - 0.6}
-                  font={c.titleFont}
-                  fontSize={c.titleFontSize}
+                  font={
+                    c?.titleFont ||
+                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
+                  }
+                  fontSize={c?.titleFontSize || 0.1}
                   letterSpacing={0.1}
                   textAlign='center'
                   anchorX='center'
@@ -245,9 +254,9 @@ export function Stack({
                 <Text
                   font={
                     c?.descriptionFont ||
-                    'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff'
+                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
                   }
-                  fontSize={c?.descriptionFontSize || 0.12}
+                  fontSize={c?.descriptionFontSize || 0.09}
                   maxWidth={0.5 * width - 0.5}
                   letterSpacing={0.1}
                   textAlign='left'
@@ -328,8 +337,11 @@ export function Stack({
                     }
                   }}
                   maxWidth={width - 0.6}
-                  font={c.titleFont}
-                  fontSize={c.titleFontSize}
+                  font={
+                    c?.titleFont ||
+                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
+                  }
+                  fontSize={c?.titleFontSize || 0.1}
                   letterSpacing={0.1}
                   textAlign='center'
                   anchorX='center'
