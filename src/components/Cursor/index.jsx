@@ -126,7 +126,7 @@ export function Cursor({
                 transform: `scale(${hovered ? 0.55 : 0.29})`,
                 borderWidth: hovered ? '5px' : '10px',
                 borderColor: color,
-                backgroundColor: hovered ? 'rgb(51 65 85)' : 'transparent'
+                backgroundColor: hovered ? '#33415588' : 'transparent'
               }}
             />
             {/* <div class="cursor-text" style={{ background: color, opacity: hovered ? 1 : 0 }}>
@@ -134,32 +134,6 @@ export function Cursor({
           </div> */}
           </div>
         )}
-        <div className='absolute right-[1%] bottom-[1%] flex'>
-          {icons.map(({ icon, description, fontSize, link }) => (
-            <div
-              className='relative flex flex-col items-center group ml-3'
-              onMouseEnter={() => hover(true)}
-              onMouseLeave={() => hover(false)}>
-              <div className='hover:stroke-white z-20 stroke-zinc-600'>
-                <UseAnimations
-                  animation={icon}
-                  size={fontSize}
-                  // strokeColor={hovered ? '#FFF' : '#49505799'}
-                  pathCss='stroke: inherit;'
-                  wrapperStyle={{ stroke: 'inherit' }}
-                  onClick={() => openInNewTab(link)}
-                />
-              </div>
-
-              <div className='absolute bottom-1 flex flex-col items-center hidden mb-10 group-hover:flex'>
-                <span className='relative z-10 p-2 text-xs leading-none text-white whitespace-nowrap bg-gray-800 shadow-lg'>
-                  {description}
-                </span>
-                <div className='w-3 h-3 -mt-2 rotate-45 bg-gray-800' />
-              </div>
-            </div>
-          ))}
-        </div>
         <ArwesThemeProvider>
           <StylesBaseline />
           <BleepsProvider
@@ -233,6 +207,42 @@ export function Cursor({
                   </div>
                 ))}
               </div>
+            </div>
+            {/* */}
+            <div className='absolute left-[1%] bottom-[1%] hover:text-white text-zinc-500 z-20'>
+              <div className='font-mono text-base' onMouseEnter={() => hover(true)} onMouseLeave={() => hover(false)}>
+                <AnimatorGeneralProvider animator={{ duration: { enter: 250, exit: 100 } }}>
+                  <Animator animator={{ animation: true, manager: 'stagger' }}>
+                    <ArwesText>© 2022</ArwesText>
+                  </Animator>
+                </AnimatorGeneralProvider>
+              </div>
+            </div>
+            <div className='absolute right-[1%] bottom-[1%] flex'>
+              {icons.map(({ icon, description, fontSize, link }) => (
+                <div
+                  className='relative flex flex-col items-center group ml-3'
+                  onMouseEnter={() => hover(true)}
+                  onMouseLeave={() => hover(false)}>
+                  <div className='hover:stroke-white z-20 stroke-zinc-600'>
+                    <UseAnimations
+                      animation={icon}
+                      size={fontSize}
+                      // strokeColor={hovered ? '#FFF' : '#49505799'}
+                      pathCss='stroke: inherit;'
+                      wrapperStyle={{ stroke: 'inherit' }}
+                      onClick={() => openInNewTab(link)}
+                    />
+                  </div>
+
+                  <div className='absolute bottom-1 flex flex-col items-center hidden mb-10 group-hover:flex'>
+                    <span className='relative z-10 p-2 text-xs leading-none text-white whitespace-nowrap bg-gray-800 shadow-lg'>
+                      {description}
+                    </span>
+                    <div className='w-3 h-3 -mt-2 rotate-45 bg-gray-800' />
+                  </div>
+                </div>
+              ))}
             </div>
           </BleepsProvider>
         </ArwesThemeProvider>
