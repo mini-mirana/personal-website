@@ -178,33 +178,91 @@ function Page({ startZ, distance }) {
           startReverse
           content={[
             {
-              type: 'text',
-              title: 'Lorem ipsum',
-              description:
-                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n\n*sed do eiusmod tempor incididunt ut labore.'
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061381/personal-website/school_lokxlb.mp4',
+              title: 'ⓘ SCHOOL MANAGEMENT APPLICATION',
+              cardTitle: 'SCHOOL MANAGEMENT APPLICATION',
+              description: (
+                <div>
+                  # Designed user experience of the application
+                  <br /># Developed the frontend
+                </div>
+              )
             },
             {
-              type: 'photo',
-              source:
-                'https://res.cloudinary.com/mirana/image/upload/v1648136791/personal-website/photo-manipulation-gfff20f04a_1920_q8suzr.jpg',
-              title: 'Lorem ipsum'
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648062096/personal-website/medical_aalklq.mp4',
+              title: 'ⓘ MEDICAL STRUCTURED REPORTING SYSTEM',
+              cardTitle: 'MEDICAL STRUCTURED REPORTING SYSTEM',
+              description: (
+                <div>
+                  # Designed user experience of the application
+                  <br />
+                  # Developed the frontend
+                  <br /># Participated in voice assistant development team (for reporting procedure)
+                </div>
+              )
+            },
+            {
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
+              title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
+              cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
+              description: (
+                <div>
+                  # AUTOMATIC VPN CONNECTION
+                  <br /># Developed the frontend
+                </div>
+              )
             },
             {
               type: 'photo-text',
+              photoY: 0,
               source:
-                'https://res.cloudinary.com/mirana/image/upload/v1648137447/personal-website/boards-g92417fa21_1920_zaksq6.jpg',
-              title: 'Lorem ipsum',
-              description:
-                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n\n*sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+                'https://res.cloudinary.com/mirana/image/upload/v1648110481/personal-website/vi-room.ir__Pixel_5_vmulhi.png',
+              title: 'WEB CONFERENCING SOLUTION',
+              description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`
+            },
+            {
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061375/personal-website/vampire_nelmbo.mp4',
+              title: 'ⓘ VAMPIRE FARMS',
+              cardTitle: 'VAMPIRE FARMS',
+              description: (
+                <div>
+                  # Designed user experience of the application
+                  <br /># Developed the frontend
+                </div>
+              )
             },
             {
               type: 'video',
               source:
-                'https://res.cloudinary.com/mirana/video/upload/v1601138124/personal-website/SampleVideo_1280x720_30mb_ecblgp.mp4',
-              title: 'ⓘ Lorem ipsum',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
-              cardTitle: 'Lorem ipsum'
+                'https://res.cloudinary.com/mirana/video/upload/v1648059846/personal-website/jurassic-farm_bfnvqk.mp4',
+              title: 'ⓘ JURASSIC FARMS',
+              cardTitle: 'JURASSIC FARMS',
+              description: (
+                <div>
+                  # Designed user experience of the application
+                  <br /># Developed the frontend
+                </div>
+              )
+            },
+            {
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648065620/personal-website/timewarp_rqksiw.mp4',
+              title: 'ⓘ TIMEWRAP',
+              cardTitle: 'TIMEWRAP',
+              description: (
+                <div>
+                  # FARM / P2E / NFT MARKETPLACE
+                  <br />
+                  # Developed the frontend
+                  <br />
+                  # Connected the DAPP to multiple providers
+                  <br /># Developed smart contracts
+                </div>
+              )
             }
           ]}
         />
@@ -225,8 +283,11 @@ function Page({ startZ, distance }) {
           content={[
             {
               type: 'text',
-              title: 'Lorem ipsum',
-              description: 'Lorem ipsum:\n • Dolor sit amet\n • Consectetur adipisicing elit\n',
+              title:
+                'APPLICATION OF DEEP LEARNING IN GENERATING STRUCTURED RADIOLOGY REPORTS: A TRANSFORMER-BASED TECHNIQUE | 11/2021 | UNDER REVIEW',
+              description:
+                'Author list:\n• Seyed Alireza Moezzi\n• Abdolrahman Ghaedi\n• Mojdeh Rahmanian\n• Seyedeh Zahra Mousavi\n• Ashkan Sami',
+              // description: 'Author list: Seyed Alireza Moezzi; Abdolrahman Ghaedi; Mojdeh Rahmanian; Seyedeh Zahra Mousavi; Ashkan Sami',
               descriptionY: '-0.8'
             }
           ]}
