@@ -218,18 +218,18 @@ function Page({ startZ, distance }) {
                 </div>
               )
             },
-            {
-              type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
-              title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
-              cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
-              description: (
-                <div>
-                  # AUTOMATIC VPN CONNECTION
-                  <br /># Developed the frontend
-                </div>
-              )
-            },
+            // {
+            //   type: 'video',
+            //   source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
+            //   title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
+            //   cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
+            //   description: (
+            //     <div>
+            //       # AUTOMATIC VPN CONNECTION
+            //       <br /># Developed the frontend
+            //     </div>
+            //   )
+            // },
             {
               type: 'photo-text',
               photoY: 0,
@@ -284,18 +284,18 @@ function Page({ startZ, distance }) {
         />
         <Title
           name='.Paper'
+          reverse
           size={[vpWidth, vpHeight, 0]}
-          position={[-vpWidth / 2, vpHeight / 2, 56]}
+          position={[-vpWidth / 2, vpHeight / 2, 64]}
           content={['PAPERS']}
         />
         <Stack
           dom={tooltip}
           width={height >= width ? 3 : 6}
           height={height >= width ? 3 : 4}
-          startZ={48}
+          startZ={56}
           distance={distance}
           reverse
-          startReverse
           content={[
             {
               type: 'text',
