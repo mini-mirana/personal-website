@@ -75,26 +75,11 @@ function Page({ startZ, distance }) {
           <TextMesh position={[0, 1, 0]} hAlign='right'>
             HELLO
           </TextMesh>
-          {/* <TextMesh
-            position={[2.1, 1, 0]}
-            fontUrl={FontAwesome}
-            fontConfig={{
-              size: 65,
-              height: 0.1,
-              curveSegments: 32,
-              bevelEnabled: true,
-              bevelThickness: 0.15,
-              bevelSize: 0.15,
-              bevelOffset: 0,
-              bevelSegments: 1
-            }}>
-            ✋
-          </TextMesh> */}
           <TextMesh position={[0, 0, 0]} hAlign='right'>
-            I'M A
+            IM
           </TextMesh>
           <TextMesh position={[0, -1, 0]} hAlign='right'>
-            DEV
+            ME
           </TextMesh>
         </group>
         <Title
@@ -236,8 +221,7 @@ function Page({ startZ, distance }) {
               source:
                 'https://res.cloudinary.com/mirana/image/upload/v1648110481/personal-website/vi-room.ir__Pixel_5_vmulhi.png',
               title: 'WEB CONFERENCING SOLUTION',
-              description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`,
-              descriptionY: '-0.8'
+              description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`
             },
             {
               type: 'video',
@@ -313,7 +297,7 @@ function Page({ startZ, distance }) {
         <TextMesh
           size={30}
           fontConfig={{
-            size: 46,
+            size: 70,
             height: 0.1,
             curveSegments: 32,
             bevelEnabled: true,
@@ -322,25 +306,8 @@ function Page({ startZ, distance }) {
             bevelOffset: 0,
             bevelSegments: 10
           }}
-          position={[0, 0, 0]}
           hAlign='right'>
-          ABDOLRAHMAN
-        </TextMesh>
-        <TextMesh
-          size={30}
-          fontConfig={{
-            size: 60,
-            height: 0.1,
-            curveSegments: 32,
-            bevelEnabled: true,
-            bevelThickness: 150,
-            bevelSize: 10,
-            bevelOffset: 0,
-            bevelSegments: 10
-          }}
-          position={[0, -30, 0]}
-          hAlign='right'>
-          GHAEDI
+          THREE
         </TextMesh>
       </Overlay>
     </>
@@ -443,20 +410,21 @@ export default function Home() {
         <Cursor
           speed={0.2}
           icons={[
-            { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/mini-mirana' },
-            { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:mini_mirana@yahoo.com' },
+            { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/' },
+            { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:info@example.com' },
             {
               icon: download,
               description: 'Download Resume pdf version',
               fontSize: 40,
-              link: 'https://res.cloudinary.com/mirana/image/upload/v1649516076/personal-website/Abdolrahman_Ghaedi_Resume_ppye82.pdf'
+              link: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
             }
           ]}
           sections={[
             { section: 'Intro', objName: '.Title' },
             { section: 'Skills', objName: '.Grid' },
             { section: 'Experience', objName: '.Stack' },
-            { section: 'Papers', objName: '.Paper' }
+            { section: 'Papers', objName: '.Paper' },
+            { section: 'Hobbys', objName: '' }
           ]}
           dom={dom}
           handleScroll={handleScroll}>
