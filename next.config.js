@@ -11,8 +11,8 @@ module.exports = withPWA({
     fallbacks: {
       document: '/index'
     },
-    cacheOnFrontEndNav: true
-    // disable: process.env.NODE_ENV === 'development',
+    cacheOnFrontEndNav: true,
+    disable: process.env.NODE_ENV === 'development'
   },
   reactStrictMode: true,
   experimental: {
