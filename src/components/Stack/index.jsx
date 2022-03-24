@@ -60,7 +60,6 @@ export function Stack({
       return { opacity: 0 }
     })
   }
-  console.log(hovered)
 
   return (
     <>
@@ -81,6 +80,7 @@ export function Stack({
                   <meshBasicMaterial color='#161a1d' />
                 </mesh>
                 <AnimatedText
+                  maxWidth={width - 0.6}
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
                   letterSpacing={0.1}
@@ -99,15 +99,18 @@ export function Stack({
                   <meshStandardMaterial color='white' />
                 </AnimatedText>
                 <Text
-                  font='https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff'
-                  fontSize={0.12}
+                  font={
+                    c?.descriptionFont ||
+                    'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff'
+                  }
+                  fontSize={c?.descriptionFontSize || 0.12}
                   maxWidth={width - 0.6}
                   letterSpacing={0.1}
                   textAlign='left'
                   anchorX='left'
                   position-x={0.3}
                   anchorY='top'
-                  position-y={-0.5}>
+                  position-y={c?.descriptionY || -0.5}>
                   {c.description}
                   <meshStandardMaterial color='white' />
                 </Text>
@@ -121,6 +124,7 @@ export function Stack({
                     <meshBasicMaterial color='#161a1d' />
                   </mesh>
                   <AnimatedText
+                    maxWidth={width - 0.6}
                     font={c.titleFont}
                     fontSize={c.titleFontSize}
                     letterSpacing={0.1}
@@ -139,7 +143,7 @@ export function Stack({
                     <meshStandardMaterial color='white' />
                   </AnimatedText>
                   <mesh
-                    position={[0.5 * width, -0.5 * height - 0.15, 0]}
+                    position={[0.5 * width, -0.5 * height + (c?.photoY || -0.15), 0]}
                     onUpdate={(mesh) => {
                       const imageWidth = mesh.material.map.image.width
                       const imageHeight = mesh.material.map.image.height
@@ -203,6 +207,7 @@ export function Stack({
                   <meshBasicMaterial color='#161a1d' />
                 </mesh>
                 <AnimatedText
+                  maxWidth={width - 0.6}
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
                   letterSpacing={0.1}
@@ -221,7 +226,7 @@ export function Stack({
                   <meshStandardMaterial color='white' />
                 </AnimatedText>
                 <mesh
-                  position={[0.25 * width, -0.5 * height, 0]}
+                  position={[0.25 * width, -0.5 * height + (c?.photoY || 0), 0]}
                   onUpdate={(mesh) => {
                     const imageWidth = mesh.material.map.image.width
                     const imageHeight = mesh.material.map.image.height
@@ -238,8 +243,11 @@ export function Stack({
                   <meshBasicMaterial attach='material' map={c.source} toneMapped={false} />
                 </mesh>
                 <Text
-                  font='https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff'
-                  fontSize={0.12}
+                  font={
+                    c?.descriptionFont ||
+                    'https://fonts.gstatic.com/s/raleway/v17/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvao7CIPrcVIT9d0c8.woff'
+                  }
+                  fontSize={c?.descriptionFontSize || 0.12}
                   maxWidth={0.5 * width - 0.5}
                   letterSpacing={0.1}
                   textAlign='left'
@@ -260,11 +268,23 @@ export function Stack({
                     setClicked(clicked.map((click, j) => (i === j ? !click : false)))
                   }
                 }}>
-                <mesh position={[0.5 * width, -0.5 * height, 0]}>
+                <mesh
+                  position={[0.5 * width, -0.5 * height + (c?.videoY || 0), 0]}
+                  // onUpdate={(mesh) => {
+                  //   const imageWidth = mesh.material.map.image.width
+                  //   const imageHeight = mesh.material.map.image.height
+                  //   const w = 0.5 * width
+                  //   const h = 0.5 * height
+                  //   const ratio = w / h
+                  //   const adaptedWidth = imageWidth * (ratio < imageWidth / imageHeight ? w / imageWidth : h / imageHeight)
+                  //   const adaptedHeight = imageHeight * (ratio < imageWidth / imageHeight ? w / imageWidth : h / imageHeight)
+                  //   mesh.scale.set(adaptedWidth, adaptedHeight, 1)
+                  // }}
+                >
                   <planeBufferGeometry args={[width, height]} />
                   {!clicked[i] && <meshBasicMaterial color='#161a1d' />}
                   {clicked[i] && (
-                    <meshBasicMaterial>
+                    <meshBasicMaterial attach='material'>
                       <videoTexture attach='map' args={[videos[i]]} />
                     </meshBasicMaterial>
                   )}
@@ -307,6 +327,7 @@ export function Stack({
                       api.start(() => ({ opacity: 0 }))
                     }
                   }}
+                  maxWidth={width - 0.6}
                   font={c.titleFont}
                   fontSize={c.titleFontSize}
                   letterSpacing={0.1}
@@ -351,7 +372,7 @@ export function Stack({
                             <Card
                               animator={{ animate: true }}
                               title={c.cardTitle}
-                              className='absolute sm:right-[10%] top-[30%] max-w-[300px] sm:max-w-[400px] max-h-[200px] overflow-y-auto font-["Titillium_Web"]'>
+                              className='absolute sm:right-[10%] top-[30%] max-w-[300px] sm:max-w-[400px] max-h-[200px] overflow-y-auto font-["Titillium_Web"] text-base'>
                               <div
                                 className='absolute top-[3%] right-[4%]'
                                 role='presentation'
