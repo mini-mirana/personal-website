@@ -3,6 +3,7 @@ import { Vector3 } from 'three'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry'
 import { extend } from '@react-three/fiber'
+import defaultFont from '../../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 
 extend({ TextGeometry })
 
@@ -24,7 +25,7 @@ export function TextMesh({
   size = 0.7,
   ...props
 }) {
-  const font = new FontLoader().parse(fontUrl)
+  const font = new FontLoader().parse(fontUrl || defaultFont)
 
   // const meshGroup = useRef()
   const mesh = useRef()
