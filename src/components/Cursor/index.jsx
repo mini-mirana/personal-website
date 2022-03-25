@@ -258,7 +258,7 @@ export function Cursor({
                       </svg>
                     </div>
                     <ArwesText>
-                      Designed & Developed:
+                      Design & Develop:
                       <br />
                       &nbsp;&nbsp;
                       <a target='_blank' rel='noopener noreferrer' href='https://github.com/mini-mirana'>
