@@ -17,8 +17,8 @@
     "commit-msg": "npx --no-install commitlint --edit $1 --verbose",
     "test": "jest --selectProjects unit",
     "test:u": "jest --selectProjects unit --updateSnapshot",
-    "test:e2e": "yarn playwright test",
-    "test:ue2e": "yarn playwright test --update-snapshots"
+    "test:e2e": "APP_ENV=development xvfb-run yarn playwright test",
+    "test:ue2e": "APP_ENV=development xvfb-run yarn playwright test --update-snapshots"
   },
   "dependencies": {
     "@arwes/animation": "^1.0.0-alpha.19",

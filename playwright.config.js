@@ -23,12 +23,13 @@ const config = {
      */
     timeout: 5000
   },
+
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
   retries: process.env.CI ? 3 : 2,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
@@ -36,18 +37,31 @@ const config = {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry'
+    trace: 'on-first-retry',
+    headless: false
   },
-
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: {
-        ...devices['Desktop Chrome']
+        ...devices['Desktop Chrome'],
+        launchOptions: {
+          args: [
+            '--disable-dev-shm-usage',
+            '--disable-setuid-sandbox',
+            '--no-sandbox',
+            '--enable-usermedia-screen-capturing',
+            '--allow-running-insecure-content',
+            '--disable-web-security',
+            '--ignore-certificate-errors',
+            '--allow-http-screen-capture',
+            '--disable-infobars'
+          ]
+        }
       }
     },
 
@@ -64,14 +78,26 @@ const config = {
         ...devices['Desktop Safari']
       }
     }
-
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',
     //   use: {
     //     ...devices['Pixel 5'],
-    //   },
-    // },
+    //     launchOptions: {
+    //       args: [
+    //         '--disable-dev-shm-usage',
+    //         '--disable-setuid-sandbox',
+    //         '--no-sandbox',
+    //         '--enable-usermedia-screen-capturing',
+    //         '--allow-running-insecure-content',
+    //         '--disable-web-security',
+    //         '--ignore-certificate-errors',
+    //         '--allow-http-screen-capture',
+    //         '--disable-infobars'
+    //       ]
+    //     }
+    //   }
+    // }
     // {
     //   name: 'Mobile Safari',
     //   use: {
@@ -99,7 +125,7 @@ const config = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn dev',
+    command: 'yarn build && yarn start',
     port: '3000',
     reuseExistingServer: true
   }
