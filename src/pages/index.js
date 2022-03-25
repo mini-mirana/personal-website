@@ -12,6 +12,7 @@ import { animated, useSpring, config } from '@react-spring/three'
 import { useWindowDimensions } from '../utils/useWindowDimensions'
 // import fontUrl from '../assets/NoirPro-Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 import { Loader } from '../components/Loader'
+import FontAwesome from '../assets/Font Awesome 6 Free Solid_Solid.json'
 
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
 // const Dots = dynamic(() => import('../components/Dots'), { suspense: true })
@@ -74,6 +75,21 @@ function Page({ startZ, distance }) {
         <group name='.Title' position={[0, 0, startZ - distance / 2 - 1]}>
           <TextMesh position={[0, 1, 0]} hAlign='right'>
             HELLO
+          </TextMesh>
+          <TextMesh
+            position={[2.1, 1, 0]}
+            fontUrl={FontAwesome}
+            fontConfig={{
+              size: 65,
+              height: 0.1,
+              curveSegments: 32,
+              bevelEnabled: true,
+              bevelThickness: 0.15,
+              bevelSize: 0.15,
+              bevelOffset: 0,
+              bevelSegments: 1
+            }}>
+            ✋
           </TextMesh>
           <TextMesh position={[0, 0, 0]} hAlign='right'>
             IM
@@ -203,18 +219,18 @@ function Page({ startZ, distance }) {
                 </div>
               )
             },
-            // {
-            //   type: 'video',
-            //   source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
-            //   title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
-            //   cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
-            //   description: (
-            //     <div>
-            //       # AUTOMATIC VPN CONNECTION
-            //       <br /># Developed the frontend
-            //     </div>
-            //   )
-            // },
+            {
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
+              title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
+              cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
+              description: (
+                <div>
+                  # AUTOMATIC VPN CONNECTION
+                  <br /># Developed the frontend
+                </div>
+              )
+            },
             {
               type: 'photo-text',
               photoY: 0,
