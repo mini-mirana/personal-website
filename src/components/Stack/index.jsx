@@ -293,9 +293,9 @@ export function Stack({
                   <planeBufferGeometry args={[width, height]} />
                   {!clicked[i] && <meshBasicMaterial color='#161a1d' />}
                   {clicked[i] && (
-                    <meshBasicMaterial attach='material'>
+                    <meshStandardMaterial attach='material'>
                       <videoTexture attach='map' args={[videos[i]]} />
-                    </meshBasicMaterial>
+                    </meshStandardMaterial>
                   )}
                 </mesh>
                 {!clicked[i] && (
