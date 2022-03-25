@@ -277,26 +277,43 @@ export function Stack({
                     setClicked(clicked.map((click, j) => (i === j ? !click : false)))
                   }
                 }}>
+                <mesh position={[0.5 * width, -0.5 * height + (c?.videoY || 0), 0]}>
+                  <planeBufferGeometry args={[width, height]} />
+                  <meshBasicMaterial color='#000' />
+                </mesh>
                 <mesh
                   position={[0.5 * width, -0.5 * height + (c?.videoY || 0), 0]}
-                  // onUpdate={(mesh) => {
-                  //   const imageWidth = mesh.material.map.image.width
-                  //   const imageHeight = mesh.material.map.image.height
-                  //   const w = 0.5 * width
-                  //   const h = 0.5 * height
-                  //   const ratio = w / h
-                  //   const adaptedWidth = imageWidth * (ratio < imageWidth / imageHeight ? w / imageWidth : h / imageHeight)
-                  //   const adaptedHeight = imageHeight * (ratio < imageWidth / imageHeight ? w / imageWidth : h / imageHeight)
-                  //   mesh.scale.set(adaptedWidth, adaptedHeight, 1)
-                  // }}
-                >
-                  <planeBufferGeometry args={[width, height]} />
-                  {!clicked[i] && <meshBasicMaterial color='#161a1d' />}
-                  {clicked[i] && (
-                    <meshStandardMaterial attach='material'>
-                      <videoTexture attach='map' args={[videos[i]]} />
-                    </meshStandardMaterial>
-                  )}
+                  onUpdate={(mesh) => {
+                    if (mesh.material.map) {
+                      const { videoWidth } = mesh.material.map.image
+                      const { videoHeight } = mesh.material.map.image
+                      const w = width
+                      const h = height - 2 * (0.1 + (c?.titleFontSize || 0.1) + 0.1)
+                      const ratio = w / h
+                      const adaptedWidth =
+                        videoWidth * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                      const adaptedHeight =
+                        videoHeight * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                      // console.log(adaptedWidth)
+                      // console.log(adaptedHeight)
+                      // console.log(adaptedWidth / adaptedHeight)
+                      // console.log(ratio)
+                      // console.log(videoWidth / videoHeight)
+                      // if(adaptedHeight < height) {
+                      //   console.log('HI')
+                      //   w = width
+                      //   h = 0.8 * height
+                      //   ratio = w / h
+                      //   adaptedWidth = videoWidth * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                      //   adaptedHeight = videoHeight * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                      // }
+                      mesh.scale.set(adaptedWidth, adaptedHeight, 1)
+                    }
+                  }}>
+                  <planeBufferGeometry />
+                  <meshStandardMaterial attach='material'>
+                    <videoTexture attach='map' args={[videos[i]]} />
+                  </meshStandardMaterial>
                 </mesh>
                 {!clicked[i] && (
                   <Text
@@ -346,12 +363,12 @@ export function Stack({
                   textAlign='center'
                   anchorX='center'
                   position-x={0.5 * width}
-                  anchorY='middle'
+                  anchorY='top'
                   outlineColor='gold'
                   outlineWidth={0.05}
                   outlineBlur={0.4}
                   outlineOpacity={springs[i].opacity}
-                  position-y={-0.2}>
+                  position-y={-0.1}>
                   {c.title}
                   <meshStandardMaterial color='white' />
                 </AnimatedText>
