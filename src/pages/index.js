@@ -249,7 +249,7 @@ export default function Home() {
     config: config.slow
   }))
 
-  const [startApp, setStartApp] = useState(false)
+  const [startApp, setStartApp] = useState(process.env.APP_ENV !== 'production' || false)
 
   const scrollOutSound = useRef()
   const scrollInSound = useRef()
