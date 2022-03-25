@@ -17,5 +17,13 @@ module.exports = withPWA({
   reactStrictMode: true,
   experimental: {
     outputStandalone: true
+  },
+  rewrites: async () => {
+    return [
+      {
+        source: '/live',
+        destination: '/api/hello'
+      }
+    ]
   }
 })
