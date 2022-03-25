@@ -7,7 +7,7 @@ export function Title({ reverse = false, content = [], ...props }) {
       <Flex {...props}>
         <Box flexDirection='column' alignItems='center' justifyContent='center' width='100%' height='100%'>
           {content.map((c) => (
-            <Box margin={0.05}>
+            <Box margin={0.05} key={c}>
               <Text fontSize={0.5} letterSpacing={0.1} textAlign='center'>
                 {c}
                 <meshStandardMaterial />
