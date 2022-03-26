@@ -4,7 +4,6 @@ import React, { Suspense, useRef, useEffect, useState } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import dynamic from 'next/dynamic'
 import { useAspect, Html, PerspectiveCamera } from '@react-three/drei'
-import { EffectComposer } from '@react-three/postprocessing'
 import tunnel from 'tunnel-rat'
 import mail from 'react-useanimations/lib/mail'
 import github from 'react-useanimations/lib/github'
@@ -17,12 +16,12 @@ import { Loader } from '../components/Loader'
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
 // const Dots = dynamic(() => import('../components/Dots'), { suspense: true })
 const BackGrid = dynamic(() => import('../components/BackGrid'), { suspense: true })
-const CameraShake = dynamic(() => import('../components/CameraShake'), { suspense: true })
 const Title = dynamic(() => import('../components/Title'), { suspense: true })
 const Grid = dynamic(() => import('../components/Grid'), { suspense: true })
 const Stack = dynamic(() => import('../components/Stack'), { suspense: true })
 const Cursor = dynamic(() => import('../components/Cursor'), { suspense: true })
 const TextMesh = dynamic(() => import('../components/TextMesh'), { suspense: true })
+const Overlay = dynamic(() => import('../components/Overlay'), { suspense: true })
 // import UseAnimations from 'react-useanimations';
 // import github from 'react-useanimations/lib/github'
 // const Reflower = dynamic(() => import('../components/Reflower'),{suspense: true,})
@@ -233,6 +232,23 @@ function Page({ startZ, distance }) {
           ]}
         />
       </group>
+      <Overlay position={[-size.width / 2 + 90, size.height / 2 - 40, 0]}>
+        <TextMesh
+          size={30}
+          fontConfig={{
+            size: 70,
+            height: 0.1,
+            curveSegments: 32,
+            bevelEnabled: true,
+            bevelThickness: 150,
+            bevelSize: 10,
+            bevelOffset: 0,
+            bevelSegments: 10
+          }}
+          hAlign='right'>
+          THREE
+        </TextMesh>
+      </Overlay>
     </>
   )
 }
@@ -266,7 +282,7 @@ export default function Home() {
       scrollInSound.current.play()
       set.start(() => ({
         pos: [0, 0, from - 2],
-        rotation: [0, 0, r]
+        rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     } else {
       if (!('ontouchstart' in window)) {
@@ -276,7 +292,7 @@ export default function Home() {
       }
       set.start(() => ({
         pos: [0, 0, from + 2],
-        rotation: [0, 0, r]
+        rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     }
   }
@@ -379,12 +395,10 @@ export default function Home() {
                 </audio>
               )}
             </Html>
-            {startApp && <CameraShake />}
             {/* <Cube /> */}
           </Suspense>
         </Cursor>
 
-        <EffectComposer />
         {/**/}
 
         {/* <TrackballControls onStart={(e)=>{console.log("start"); console.log(e.target)}} onEnd={(e)=>{console.log("END"); console.log(e.target)}} target={[0,0,140]} noPan noRotate ref={controllerRef} zoomSpeed={0.05} onChange={(e) => {
