@@ -12,7 +12,6 @@ import { animated, useSpring, config } from '@react-spring/three'
 import { useWindowDimensions } from '../utils/useWindowDimensions'
 // import fontUrl from '../assets/NoirPro-Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 import { Loader } from '../components/Loader'
-import FontAwesome from '../assets/Font Awesome 6 Free Solid_Solid.json'
 
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
 // const Dots = dynamic(() => import('../components/Dots'), { suspense: true })
@@ -76,7 +75,7 @@ function Page({ startZ, distance }) {
           <TextMesh position={[0, 1, 0]} hAlign='right'>
             HELLO
           </TextMesh>
-          <TextMesh
+          {/* <TextMesh
             position={[2.1, 1, 0]}
             fontUrl={FontAwesome}
             fontConfig={{
@@ -90,12 +89,12 @@ function Page({ startZ, distance }) {
               bevelSegments: 1
             }}>
             ✋
-          </TextMesh>
+          </TextMesh> */}
           <TextMesh position={[0, 0, 0]} hAlign='right'>
-            IM
+            I'M A
           </TextMesh>
           <TextMesh position={[0, -1, 0]} hAlign='right'>
-            ME
+            DEV
           </TextMesh>
         </group>
         <Title
@@ -216,6 +215,18 @@ function Page({ startZ, distance }) {
                   <br />
                   # Developed the frontend
                   <br /># Participated in voice assistant development team (for reporting procedure)
+                </div>
+              )
+            },
+            {
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
+              title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
+              cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
+              description: (
+                <div>
+                  # AUTOMATIC VPN CONNECTION
+                  <br /># Developed the frontend
                 </div>
               )
             },
@@ -421,8 +432,7 @@ export default function Home() {
             { section: 'Intro', objName: '.Title' },
             { section: 'Skills', objName: '.Grid' },
             { section: 'Experience', objName: '.Stack' },
-            { section: 'Papers', objName: '.Paper' },
-            { section: 'Hobbys', objName: '' }
+            { section: 'Papers', objName: '.Paper' }
           ]}
           dom={dom}
           handleScroll={handleScroll}>
