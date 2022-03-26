@@ -60,7 +60,7 @@ export function Grid({ startZ = undefined, distance = 8, reverse = false, startR
                 0.06
               }>
               {c.title.content}
-              <meshStandardMaterial color={c.title?.color || '0xffffff'} />
+              <meshStandardMaterial color={c.title?.color || '#fff'} />
             </Text>
             <Box>
               <Box
@@ -123,7 +123,7 @@ export function Grid({ startZ = undefined, distance = 8, reverse = false, startR
                           anchorY='middle'
                           position-y={-(c.config?.boxHeight || 0.5) / 2}>
                           {c.text[j].content}
-                          <meshStandardMaterial color={c.text[j]?.color || '0xffffff'} />
+                          <meshStandardMaterial color={c.text[j]?.color || '#fff'} />
                         </Text>
                       )}
                       {c.text[j].type === 'textMesh' && (
