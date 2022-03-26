@@ -213,7 +213,7 @@ export function Stack({
                   <meshBasicMaterial color='#161a1d' />
                 </mesh>
                 <AnimatedText
-                  maxWidth={width - 0.6}
+                  maxWidth={width / 2}
                   font={
                     c?.titleFont ||
                     'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
@@ -263,7 +263,7 @@ export function Stack({
                   anchorX='left'
                   position-x={0.5 * width + 0.3}
                   anchorY='top'
-                  position-y={-0.5}>
+                  position-y={c?.descriptionY || -0.5}>
                   {c.description}
                   <meshStandardMaterial color='white' />
                 </Text>
