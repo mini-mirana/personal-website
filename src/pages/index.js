@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import * as THREE from 'three'
-import React, { Suspense, useRef, useEffect, useState } from 'react'
+import React, { Suspense, useRef, useEffect } from 'react'
 import { Canvas, useThree, useFrame } from '@react-three/fiber'
 import dynamic from 'next/dynamic'
-import { useAspect, Html, PerspectiveCamera } from '@react-three/drei'
+import { useAspect, PerspectiveCamera } from '@react-three/drei'
 import tunnel from 'tunnel-rat'
 import mail from 'react-useanimations/lib/mail'
 import github from 'react-useanimations/lib/github'
@@ -264,9 +264,6 @@ export default function Home() {
     rotation: [0, 0, 0],
     config: config.slow
   }))
-
-  const [startApp, setStartApp] = useState(process.env.APP_ENV || false)
-
   const scrollOutSound = useRef()
   const scrollInSound = useRef()
 
@@ -370,36 +367,11 @@ export default function Home() {
           ]}
           dom={dom}
           handleScroll={handleScroll}>
-          <Suspense
-            fallback={
-              <Html center wrapperClass='z-50'>
-                <Loader />
-              </Html>
-            }>
+          <Suspense fallback={null}>
             <Page startZ={startZ} distance={distance} />
-            {!startApp && (
-              <Html center wrapperClass='z-50'>
-                <Loader
-                  startText
-                  onClick={() => {
-                    setStartApp(true)
-                  }}
-                />
-              </Html>
-            )}
-            <Html>
-              {startApp && (
-                /* eslint-disable-next-line jsx-a11y/media-has-caption */
-                <audio autoPlay>
-                  <source src='/sound/sweetchoff.wav' type='audio/wav' />
-                </audio>
-              )}
-            </Html>
             {/* <Cube /> */}
           </Suspense>
         </Cursor>
-
-        {/**/}
 
         {/* <TrackballControls onStart={(e)=>{console.log("start"); console.log(e.target)}} onEnd={(e)=>{console.log("END"); console.log(e.target)}} target={[0,0,140]} noPan noRotate ref={controllerRef} zoomSpeed={0.05} onChange={(e) => {
           console.log("UPDATE")
@@ -417,6 +389,7 @@ export default function Home() {
           // e.camera.position.z = 
           }} /> */}
       </Canvas>
+      <Loader />
       {/* This is the tunnels "Out", contents will appear here (we're in react-dom, not r3f) */}
       <dom.Out />
       <tooltip.Out />
