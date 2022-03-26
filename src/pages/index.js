@@ -408,13 +408,13 @@ export default function Home() {
         <Cursor
           speed={0.2}
           icons={[
-            { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/' },
-            { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:info@example.com' },
+            { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/mini-mirana' },
+            { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:mini_mirana@yahoo.com' },
             {
               icon: download,
               description: 'Resume pdf',
               fontSize: 40,
-              link: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+              link: 'https://res.cloudinary.com/mirana/image/upload/v1648231087/personal-website/Abdolrahman_Ghaedi_Resume_ikv8tw.pdf'
             }
           ]}
           sections={[
