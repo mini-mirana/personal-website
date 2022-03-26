@@ -73,14 +73,16 @@ export function Grid({ startZ = undefined, distance = 8, reverse = false, startR
                 flexGrow={1}>
                 {springs[i].map(({ scale, opacity }, j) => (
                   <group
-                    onPointerOver={() =>
-                      apis[i].start((index) => {
-                        if (index === j) {
-                          return { scale: [1.1, 1.1, 1], opacity: 0.5 }
-                        }
-                        return { scale: [1, 1, 1], opacity: 0.2 }
-                      })
-                    }
+                    onPointerOver={() => {
+                      if (!('ontouchstart' in window)) {
+                        apis[i].start((index) => {
+                          if (index === j) {
+                            return { scale: [1.1, 1.1, 1], opacity: 0.5 }
+                          }
+                          return { scale: [1, 1, 1], opacity: 0.2 }
+                        })
+                      }
+                    }}
                     onClick={() => {
                       apis[i].start((index) => {
                         if (index === j) {
@@ -91,7 +93,11 @@ export function Grid({ startZ = undefined, distance = 8, reverse = false, startR
                         return { scale: [1, 1, 1], opacity: 0.2 }
                       })
                     }}
-                    onPointerLeave={() => apis[i].start(() => ({ scale: [1, 1, 1], opacity: 0.2 }))}>
+                    onPointerLeave={() => {
+                      if (!('ontouchstart' in window)) {
+                        apis[i].start(() => ({ scale: [1, 1, 1], opacity: 0.2 }))
+                      }
+                    }}>
                     <Box width={c.config?.boxWidth || 0.5} margin={c.config?.boxMargin || 0.05}>
                       <animated.mesh
                         scale={scale}
