@@ -236,7 +236,8 @@ function Page({ startZ, distance }) {
               source:
                 'https://res.cloudinary.com/mirana/image/upload/v1648110481/personal-website/vi-room.ir__Pixel_5_vmulhi.png',
               title: 'WEB CONFERENCING SOLUTION',
-              description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`
+              description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`,
+              descriptionY: '-0.8'
             },
             {
               type: 'video',
@@ -312,7 +313,7 @@ function Page({ startZ, distance }) {
         <TextMesh
           size={30}
           fontConfig={{
-            size: 70,
+            size: 46,
             height: 0.1,
             curveSegments: 32,
             bevelEnabled: true,
@@ -321,8 +322,25 @@ function Page({ startZ, distance }) {
             bevelOffset: 0,
             bevelSegments: 10
           }}
+          position={[0, 0, 0]}
           hAlign='right'>
-          THREE
+          ABDOLRAHMAN
+        </TextMesh>
+        <TextMesh
+          size={30}
+          fontConfig={{
+            size: 60,
+            height: 0.1,
+            curveSegments: 32,
+            bevelEnabled: true,
+            bevelThickness: 150,
+            bevelSize: 10,
+            bevelOffset: 0,
+            bevelSegments: 10
+          }}
+          position={[0, -30, 0]}
+          hAlign='right'>
+          GHAEDI
         </TextMesh>
       </Overlay>
     </>
