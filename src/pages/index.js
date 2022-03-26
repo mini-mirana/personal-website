@@ -11,7 +11,7 @@ import github from 'react-useanimations/lib/github'
 import download from 'react-useanimations/lib/download'
 import { animated, useSpring, config } from '@react-spring/three'
 import { useWindowDimensions } from '../utils/useWindowDimensions'
-// import fontUrl from '../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+// import fontUrl from '../assets/NoirPro-Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 import { Loader } from '../components/Loader'
 
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })

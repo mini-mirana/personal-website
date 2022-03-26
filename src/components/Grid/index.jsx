@@ -4,7 +4,7 @@ import { Flex, Box } from '@react-three/flex'
 import { animated, useSprings } from '@react-spring/three'
 import { Text } from '../Text'
 import { TextMesh } from '../TextMesh'
-import defaultFont from '../../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+import defaultFont from '../../assets/NoirPro-Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 
 export function Grid({ startZ = undefined, distance = 8, reverse = false, startReverse = false, content = [] }) {
   const { size } = useThree()

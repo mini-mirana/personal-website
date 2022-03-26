@@ -2,7 +2,7 @@ import { useLayoutEffect, useRef } from 'react'
 import { Vector3 } from 'three'
 import { FontLoader, TextGeometry } from 'three-stdlib'
 import { extend } from '@react-three/fiber'
-import defaultFont from '../../assets/font.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+import defaultFont from '../../assets/NoirPro-Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 
 extend({ TextGeometry })
 
