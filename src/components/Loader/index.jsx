@@ -94,7 +94,9 @@ export function Loader({
             {keepActive && (
               <AnimatorGeneralProvider animator={{ duration: { enter: 2500, exit: 100 } }}>
                 <Animator animator={{ animation: true, manager: 'stagger' }}>
-                  <ArwesText className='ml-[1%]'>Tap anywhere to start</ArwesText>
+                  <ArwesText className='ml-[1%] text-center'>
+                    Tap anywhere to start <br /> Pro tip: pinch to move through channel
+                  </ArwesText>
                 </Animator>
               </AnimatorGeneralProvider>
             )}
