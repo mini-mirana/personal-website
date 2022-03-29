@@ -8,6 +8,7 @@ import { BleepsProvider } from '@arwes/sounds'
 import { AnimatorGeneralProvider } from '@arwes/animation'
 import { animated, useSprings } from '@react-spring/three'
 import { Text } from '../Text'
+import { loadVideo } from '../../utils/loadVideo'
 
 const AnimatedText = animated(Text)
 
@@ -38,18 +39,16 @@ export function Stack({
     config: { mass: 5, tension: 350, friction: 40 }
   }))
 
+  const [videos, setVideos] = useState(null)
+  useEffect(async () => {
+    const videoUrls = content.map((c) => (c.type.includes('video') ? c.source : ''))
+    setVideos(await Promise.all(videoUrls.map(loadVideo)))
+  }, [])
   const [clicked, setClicked] = useState(Array(content.length).fill(false))
-  const [videos] = useState(() => {
-    return content.reduce((p, c) => {
-      const vid = document.createElement('video')
-      vid.src = c.source
-      vid.crossOrigin = 'Anonymous'
-      vid.loop = true
-      return p.concat(vid)
-    }, [])
-  })
   useEffect(() => {
-    clicked.map((c, i) => (c && videos[i].play()) || videos[i].pause())
+    if (videos) {
+      clicked.map((c, i) => videos[i] !== '' && ((c && videos[i].play()) || videos[i].pause()))
+    }
   }, [videos, clicked])
 
   const addGlow = (index) => {
@@ -269,7 +268,7 @@ export function Stack({
                 </Text>
               </Box>
             )}
-            {c.type === 'video' && (
+            {c.type === 'video' && videos && (
               <Box
                 width={width}
                 onClick={(e) => {
@@ -283,32 +282,31 @@ export function Stack({
                 </mesh>
                 <mesh
                   position={[0.5 * width, -0.5 * height + (c?.videoY || 0), 0]}
+                  ref={c.ref}
                   onUpdate={(mesh) => {
-                    if (mesh.material.map) {
-                      const { videoWidth } = mesh.material.map.image
-                      const { videoHeight } = mesh.material.map.image
-                      const w = width
-                      const h = height - 2 * (0.1 + (c?.titleFontSize || 0.1) + 0.1)
-                      const ratio = w / h
-                      const adaptedWidth =
-                        videoWidth * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
-                      const adaptedHeight =
-                        videoHeight * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
-                      // console.log(adaptedWidth)
-                      // console.log(adaptedHeight)
-                      // console.log(adaptedWidth / adaptedHeight)
-                      // console.log(ratio)
-                      // console.log(videoWidth / videoHeight)
-                      // if(adaptedHeight < height) {
-                      //   console.log('HI')
-                      //   w = width
-                      //   h = 0.8 * height
-                      //   ratio = w / h
-                      //   adaptedWidth = videoWidth * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
-                      //   adaptedHeight = videoHeight * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
-                      // }
-                      mesh.scale.set(adaptedWidth, adaptedHeight, 1)
-                    }
+                    const { videoWidth } = mesh.material.map.image
+                    const { videoHeight } = mesh.material.map.image
+                    const w = width
+                    const h = height - 2 * (0.1 + (c?.titleFontSize || 0.1) + 0.1)
+                    const ratio = w / h
+                    const adaptedWidth =
+                      videoWidth * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                    const adaptedHeight =
+                      videoHeight * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                    // console.log(adaptedWidth)
+                    // console.log(adaptedHeight)
+                    // console.log(adaptedWidth / adaptedHeight)
+                    // console.log(ratio)
+                    // console.log(videoWidth / videoHeight)
+                    // if(adaptedHeight < height) {
+                    //   console.log('HI')
+                    //   w = width
+                    //   h = 0.8 * height
+                    //   ratio = w / h
+                    //   adaptedWidth = videoWidth * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                    //   adaptedHeight = videoHeight * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
+                    // }
+                    mesh.scale.set(adaptedWidth, adaptedHeight, 1)
                   }}>
                   <planeBufferGeometry />
                   <meshStandardMaterial attach='material'>
