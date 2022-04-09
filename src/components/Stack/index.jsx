@@ -284,7 +284,9 @@ export function Stack({
                 <mesh
                   position={[0.5 * width, -0.5 * height + (c?.videoY || 0), 0]}
                   onUpdate={(mesh) => {
-                    if (mesh.material.map) {
+                    if (mesh.material.map.image.readyState === 0) {
+                      mesh.scale.set(width, height, 1)
+                    } else {
                       const { videoWidth } = mesh.material.map.image
                       const { videoHeight } = mesh.material.map.image
                       const w = width
@@ -307,9 +309,7 @@ export function Stack({
                       //   adaptedWidth = videoWidth * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
                       //   adaptedHeight = videoHeight * (ratio < videoWidth / videoHeight ? w / videoWidth : h / videoHeight)
                       // }
-                      if (adaptedWidth !== 0) {
-                        mesh.scale.set(adaptedWidth, adaptedHeight, 1)
-                      }
+                      mesh.scale.set(adaptedWidth, adaptedHeight, 1)
                     }
                   }}>
                   <planeBufferGeometry />
