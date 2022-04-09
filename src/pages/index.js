@@ -443,7 +443,7 @@ export default function Home() {
               icon: download,
               description: 'Resume pdf',
               fontSize: 40,
-              link: 'https://res.cloudinary.com/mirana/image/upload/v1648323536/personal-website/Abdolrahman_Ghaedi_Resume_ijbejy.pdf'
+              link: 'https://res.cloudinary.com/mirana/image/upload/v1649516076/personal-website/Abdolrahman_Ghaedi_Resume_ppye82.pdf'
             }
           ]}
           sections={[
