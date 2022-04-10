@@ -1,3 +1,10 @@
+# [1.0.0-alpha.6](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2022-04-10)
+
+
+### Bug Fixes
+
+*  Fix pipeline build step ([c0e1b98](https://github.com/mini-mirana/personal-website/commit/c0e1b98d34f3a6f29e98610006a21b09caf20d17))
+
 # [1.0.0-alpha.5](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2022-04-10)
 
 # [1.0.0-alpha.4](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2022-04-10)
