@@ -21,9 +21,7 @@ pipeline:
       event: tag
   publish:
     image: plugins/docker
-    environment:
-      REGISTERY:
-        from_secret: docker_registery
+    secrets: [ docker_registery ]
     settings:
       username:
         from_secret: docker_username
@@ -38,4 +36,4 @@ pipeline:
     when:
       event: tag
       tag: v.mirana*
-branches: [ "*alpha*" ]
+branches: [ alpha* ]
