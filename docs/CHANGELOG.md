@@ -1,3 +1,34 @@
+# [2.0.0](https://github.com/mini-mirana/personal-website/compare/1.0.2...2.0.0) (2022-04-10)
+
+### Bug Fixes
+
+- **components:** :bug: Add new resume ([16c73ba](https://github.com/mini-mirana/personal-website/commit/16c73bae9068d50cdde4ec0e74afd78d1e7fc9f5))
+- **components:** :bug: Add NoirProBold font dependency ([056c3e0](https://github.com/mini-mirana/personal-website/commit/056c3e09eb1e6aa7366140aa234a1edf661d7f5a))
+- **components:** :bug: Add NoirProBold font dependency ([c304803](https://github.com/mini-mirana/personal-website/commit/c304803997719ce81db931f257dff092ea887c4e))
+- **components:** :bug: Rebase to Master ([691ec8d](https://github.com/mini-mirana/personal-website/commit/691ec8d7c1fd7d48e50716194c404ded29703b82))
+- **components:** :bug: Rebase to Master ([68c6f52](https://github.com/mini-mirana/personal-website/commit/68c6f52a0c41527f59e5ae8df50e1a6686dab545))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([8f23892](https://github.com/mini-mirana/personal-website/commit/8f23892bb363ad07ff2f919c07192ac6619e0dd4))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([3cb669c](https://github.com/mini-mirana/personal-website/commit/3cb669cd16fb1deba1c004c3b0d126c591b26a3b))
+
+### Features
+
+- **components:** :sparkles: Add Handshake ([fff70c4](https://github.com/mini-mirana/personal-website/commit/fff70c4cf5aa5c7de655495918f235cb27656247))
+- **components:** :sparkles: Add Handshake ([f4ef77a](https://github.com/mini-mirana/personal-website/commit/f4ef77afb69c97144cec1972fe00511fcfdb208d))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([892f569](https://github.com/mini-mirana/personal-website/commit/892f5696dc78307f5c6af58e74386c48274e209d))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([27ff010](https://github.com/mini-mirana/personal-website/commit/27ff0107ebe840789c2131b23c8b9be6260a674e))
+- **components:** :sparkles: Change resume ([8d84dfb](https://github.com/mini-mirana/personal-website/commit/8d84dfb262eba75f1a796bc831210300433040df))
+- **components:** :sparkles: Change resume ([e851c53](https://github.com/mini-mirana/personal-website/commit/e851c539e79b52d06d47c3956ad3ad7cf85a6b2b))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([61e2039](https://github.com/mini-mirana/personal-website/commit/61e20395522988defe4bec40d489b8d4e445b213))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([e5f8c88](https://github.com/mini-mirana/personal-website/commit/e5f8c88a427175a3cf62f033a68272790e3fcef6))
+- **components:** :sparkles: Comment Android App ([7b997be](https://github.com/mini-mirana/personal-website/commit/7b997be3eded0a8c89bb64af0b408074f5315377))
+- **components:** :sparkles: Comment Android App ([0d46b39](https://github.com/mini-mirana/personal-website/commit/0d46b39e53487a75dccb36f9dab0e1f0b124fe2a))
+- **components:** :sparkles: Comment Android App ([dcdb5e5](https://github.com/mini-mirana/personal-website/commit/dcdb5e58bc87e9dcae32f8305cfd1a3778afad98))
+- **components:** :sparkles: Comment Android App ([181e86d](https://github.com/mini-mirana/personal-website/commit/181e86dae18d0493b2259e488b474e35da7de795))
+- **components:** :sparkles: Update social links ([c389a8c](https://github.com/mini-mirana/personal-website/commit/c389a8cd64b752e8a9736c9445ed33cc2ef47f02))
+- **components:** :sparkles: Update social links ([54f5add](https://github.com/mini-mirana/personal-website/commit/54f5add2fd500afc812f67e57feda24580552681))
+- **Website:** :sparkles: Specialize based on my needs ([3d24736](https://github.com/mini-mirana/personal-website/commit/3d24736b320e86284fd995c297e1d43eb091c774))
+- **Website:** :sparkles: Specialize based on my needs ([4f02d52](https://github.com/mini-mirana/personal-website/commit/4f02d52c2df371e1a9d0fd2739004bc857f43455))
+
 ## [1.0.2](https://github.com/mini-mirana/personal-website/compare/1.0.1...1.0.2) (2022-04-10)
 
 ## [1.0.2-alpha.1](https://github.com/mini-mirana/personal-website/compare/1.0.1...1.0.2-alpha.1) (2022-04-10)
