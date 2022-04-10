@@ -134,8 +134,15 @@
         "channel": "Mirana",
         "prerelease": true
       },
-      {"name": "alpha-mirana", "prerelease": true},
-      {"name": "alpha", "prerelease": true}
+      {
+        "name": "alpha-mirana",
+        "channel": "alpha-mirana",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
     ],
     "plugins": [
       [
