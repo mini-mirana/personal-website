@@ -60,6 +60,8 @@
     "@next/eslint-plugin-next": "^12.1.0",
     "@playwright/test": "^1.19.2",
     "@react-three/test-renderer": "^8.0.0-beta.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.0.0-alpha.6",
     "autoprefixer": "^10.4.2",
@@ -83,7 +85,8 @@
     "playwright": "^1.19.2",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
-    "react-test-renderer": "^18.0.0-rc.2"
+    "react-test-renderer": "^18.0.0-rc.2",
+    "semantic-release": "^19.0.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,html}": [
@@ -120,6 +123,66 @@
   "jest": {
     "projects": [
       "tests/unit/jest.config.js"
+    ]
+  },
+  "release": {
+    "tagFormat": "${version}",
+    "branches": [
+      "master",
+      {
+        "name": "Mirana",
+        "channel": "Mirana"
+      },
+      {"name": "alpha-mirana", "prerelease": true}
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "releaseRules": [
+            {
+              "type": "fix",
+              "release": "minor"
+            },
+            {
+              "type": "chore",
+              "release": "patch"
+            },
+            {
+              "type": "refactor",
+              "release": "patch"
+            },
+            {
+              "type": "feat",
+              "release": "major"
+            },
+            {
+              "type": "test",
+              "release": "patch"
+            },
+            {
+              "type": "build",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "docs/CHANGELOG.md"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "docs/CHANGELOG.md"
+          ]
+        }
+      ]
     ]
   },
   "description": "Personal portfolio website",
