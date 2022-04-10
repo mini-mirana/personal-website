@@ -128,7 +128,7 @@
     ]
   },
   "release": {
-    "tagFormat": "${channel}v${version}",
+    "tagFormat": "${name}v${version}",
     "branches": [
       "master",
       {
