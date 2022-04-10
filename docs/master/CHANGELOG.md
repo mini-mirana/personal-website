@@ -1,4 +1,4 @@
-# 1.0.0 (2022-04-10)
+# 1.0.0-Mirana.1 (2022-04-10)
 
 ### Bug Fixes
 
@@ -6,6 +6,9 @@
 - :bug: Change linter ([b7daba7](https://github.com/mini-mirana/personal-website/commit/b7daba7d9502345d106356818117067ff098c39f))
 - **components:** :bug: Add if to ref existance ([8139f1d](https://github.com/mini-mirana/personal-website/commit/8139f1d35df053eafb19d992c06b682f08e0524a))
 - **components:** :bug: Add loader file dependency ([39ee1fc](https://github.com/mini-mirana/personal-website/commit/39ee1fcaee28bd78b47ac03eafd38f0a30abf4f8))
+- **components:** :bug: Add new resume ([16c73ba](https://github.com/mini-mirana/personal-website/commit/16c73bae9068d50cdde4ec0e74afd78d1e7fc9f5))
+- **components:** :bug: Add NoirProBold font dependency ([056c3e0](https://github.com/mini-mirana/personal-website/commit/056c3e09eb1e6aa7366140aa234a1edf661d7f5a))
+- **components:** :bug: Add NoirProBold font dependency ([c304803](https://github.com/mini-mirana/personal-website/commit/c304803997719ce81db931f257dff092ea887c4e))
 - **components:** :bug: Add NoirProBold font dependency ([09cbdf4](https://github.com/mini-mirana/personal-website/commit/09cbdf4dd2619639d08940dc14fbf7b57845c0fc))
 - **components:** :bug: Add positionY for photo-text Stack ([a4721ba](https://github.com/mini-mirana/personal-website/commit/a4721ba2a145bf614571322852cfab9a1676c91f))
 - **components:** :bug: Arwes modal bug ([223ef01](https://github.com/mini-mirana/personal-website/commit/223ef01127cac05d7f56b75d779d3a99466327c4))
@@ -14,8 +17,12 @@
 - **components:** :bug: Get content as input ([de647d0](https://github.com/mini-mirana/personal-website/commit/de647d04ea8377bf4414204e819fc275601e06f2))
 - **components:** :bug: Get content as input ([4f29ad3](https://github.com/mini-mirana/personal-website/commit/4f29ad34fc8da350ae552bbb89eda6bcdcd9ac13))
 - **components:** :bug: Make the Grid component center ([723756f](https://github.com/mini-mirana/personal-website/commit/723756f2f4601950452c7bfc6e9fd9802472d9ba))
+- **components:** :bug: Rebase to Master ([691ec8d](https://github.com/mini-mirana/personal-website/commit/691ec8d7c1fd7d48e50716194c404ded29703b82))
+- **components:** :bug: Rebase to Master ([68c6f52](https://github.com/mini-mirana/personal-website/commit/68c6f52a0c41527f59e5ae8df50e1a6686dab545))
 - **components:** :bug: Remove on promise for video ([db25f16](https://github.com/mini-mirana/personal-website/commit/db25f16e530f7bc3e4fce4249a411dd119cb55ec))
 - **components:** :bug: Remove onPointer handlers ([4246cec](https://github.com/mini-mirana/personal-website/commit/4246cec80875784f58b16e67aa7f10d8eb7d2193))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([8f23892](https://github.com/mini-mirana/personal-website/commit/8f23892bb363ad07ff2f919c07192ac6619e0dd4))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([3cb669c](https://github.com/mini-mirana/personal-website/commit/3cb669cd16fb1deba1c004c3b0d126c591b26a3b))
 - **components:** :bug: Try to fix Stack position in 'video format' ([124fb9d](https://github.com/mini-mirana/personal-website/commit/124fb9dc00d818729f2389a63342c383ff5843f0))
 - **components:** :bug: Use Promise and await for video loading ([012407d](https://github.com/mini-mirana/personal-website/commit/012407d7a87f03dcc645d34317c93098c8b94596))
 - **components:** Fix credits text ([bdc3d65](https://github.com/mini-mirana/personal-website/commit/bdc3d650b49c10dd1a06bcf3350e2476dcb920e7))
@@ -37,8 +44,12 @@
 - **components:** :sparkles: Add description for copyright ([f8225bd](https://github.com/mini-mirana/personal-website/commit/f8225bdee38fe691a734d12a67e4b0e7fef4baa2))
 - **components:** :sparkles: Add description to Stack component ([9cbdc34](https://github.com/mini-mirana/personal-website/commit/9cbdc345b417c297fcaea469ff01cc384dac0838))
 - **components:** :sparkles: Add hamburger menu ([3336d7c](https://github.com/mini-mirana/personal-website/commit/3336d7ce0a657fd610befa7209aba4db77c2a28f))
+- **components:** :sparkles: Add Handshake ([fff70c4](https://github.com/mini-mirana/personal-website/commit/fff70c4cf5aa5c7de655495918f235cb27656247))
+- **components:** :sparkles: Add Handshake ([f4ef77a](https://github.com/mini-mirana/personal-website/commit/f4ef77afb69c97144cec1972fe00511fcfdb208d))
 - **components:** :sparkles: Add iframe to Grid ([4e7399c](https://github.com/mini-mirana/personal-website/commit/4e7399c4cef5471ee446aa113f73c9109f6a44f6))
 - **components:** :sparkles: Add Loader ([a21655a](https://github.com/mini-mirana/personal-website/commit/a21655a89a6fe4a075cd1fdbaa84af77ebf12119))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([892f569](https://github.com/mini-mirana/personal-website/commit/892f5696dc78307f5c6af58e74386c48274e209d))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([27ff010](https://github.com/mini-mirana/personal-website/commit/27ff0107ebe840789c2131b23c8b9be6260a674e))
 - **components:** :sparkles: Add next-pwi & three-stlib dependency ([4256bbc](https://github.com/mini-mirana/personal-website/commit/4256bbcd0919fa4c6a385dd22a80e8bb440d6de7))
 - **components:** :sparkles: Add prefix NEXT_PUBLIC_APP_ENV to app env ([d1e23ba](https://github.com/mini-mirana/personal-website/commit/d1e23bafea9e45555d039fa9c72236e6ee13a75b))
 - **components:** :sparkles: Add ratio recalculation for video (all ratio recalculations needs some changes) ([6c008d0](https://github.com/mini-mirana/personal-website/commit/6c008d036a4de11f023807b388d4ece3a7bf1d4e))
@@ -51,15 +62,25 @@
 - **components:** :sparkles: Change Arwes lib to new version ([364a9cf](https://github.com/mini-mirana/personal-website/commit/364a9cfda3e49064959c691964ce189ade86d5f8))
 - **components:** :sparkles: Change Arwes lib to new version ([fa01324](https://github.com/mini-mirana/personal-website/commit/fa01324dfc3886bc844f18821474d6a3459f9806))
 - **components:** :sparkles: Change NoirProBold to complete version ([4849f0b](https://github.com/mini-mirana/personal-website/commit/4849f0b4996a5f923df1a9d7a3de1490e24c3538))
+- **components:** :sparkles: Change resume ([8d84dfb](https://github.com/mini-mirana/personal-website/commit/8d84dfb262eba75f1a796bc831210300433040df))
+- **components:** :sparkles: Change resume ([e851c53](https://github.com/mini-mirana/personal-website/commit/e851c539e79b52d06d47c3956ad3ad7cf85a6b2b))
 - **components:** :sparkles: Change Stacksize based on window height & window width ([9505309](https://github.com/mini-mirana/personal-website/commit/9505309b6b0e3ade19c2abe4a2483b36a4b721b2))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([61e2039](https://github.com/mini-mirana/personal-website/commit/61e20395522988defe4bec40d489b8d4e445b213))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([e5f8c88](https://github.com/mini-mirana/personal-website/commit/e5f8c88a427175a3cf62f033a68272790e3fcef6))
 - **components:** :sparkles: Change Texts to sampleText ([b773b05](https://github.com/mini-mirana/personal-website/commit/b773b0543fa2a0ce680f4e3319d5e267c1675646))
 - **components:** :sparkles: Change VideoPlayer to Stack ([93f24ab](https://github.com/mini-mirana/personal-website/commit/93f24abafc29a2d6929264b85960fb9467cb1515))
+- **components:** :sparkles: Comment Android App ([7b997be](https://github.com/mini-mirana/personal-website/commit/7b997be3eded0a8c89bb64af0b408074f5315377))
+- **components:** :sparkles: Comment Android App ([0d46b39](https://github.com/mini-mirana/personal-website/commit/0d46b39e53487a75dccb36f9dab0e1f0b124fe2a))
+- **components:** :sparkles: Comment Android App ([dcdb5e5](https://github.com/mini-mirana/personal-website/commit/dcdb5e58bc87e9dcae32f8305cfd1a3778afad98))
+- **components:** :sparkles: Comment Android App ([181e86d](https://github.com/mini-mirana/personal-website/commit/181e86dae18d0493b2259e488b474e35da7de795))
 - **components:** :sparkles: Create a new Loader component ([e85fe93](https://github.com/mini-mirana/personal-website/commit/e85fe9379644e7543d1ceec56f6170bf3cde12df))
 - **components:** :sparkles: Create Dot component & Effect as a replacement for Backgrid ([b99fd3a](https://github.com/mini-mirana/personal-website/commit/b99fd3a02499da80db4cb2374599e1b9dc226a23))
 - **components:** :sparkles: Remove unnecessary parts of the code, Add font as an argument for Text component ([134d4ef](https://github.com/mini-mirana/personal-website/commit/134d4efea90ea6bcfb0ba42726b34eca979a72e6))
 - **components:** :sparkles: Return Overlay from previous versions ([83148f0](https://github.com/mini-mirana/personal-website/commit/83148f0080b82b69b7bdbd7319d172e64dba97cb))
 - **components:** :sparkles: Revert direction of the components every other ([7403387](https://github.com/mini-mirana/personal-website/commit/7403387fcc97bf2daf9a0462a1c7f11f9c641a26))
 - **components:** :sparkles: Support new kind of Stack content ([cc82bf1](https://github.com/mini-mirana/personal-website/commit/cc82bf126ca04b5370c3118640f637758bc20325))
+- **components:** :sparkles: Update social links ([c389a8c](https://github.com/mini-mirana/personal-website/commit/c389a8cd64b752e8a9736c9445ed33cc2ef47f02))
+- **components:** :sparkles: Update social links ([54f5add](https://github.com/mini-mirana/personal-website/commit/54f5add2fd500afc812f67e57feda24580552681))
 - **components:** :sparkles: UseWindowDimensions ([53272ea](https://github.com/mini-mirana/personal-website/commit/53272ea6912c896aa957bf53e5733658f13eaee5))
 - **components:** Add cameraShake to index.js ([d4ea0ae](https://github.com/mini-mirana/personal-website/commit/d4ea0aec3811612b02c6993eca2dd54f0ebedf7e))
 - **components:** Add react-spring ([f935103](https://github.com/mini-mirana/personal-website/commit/f935103eb8221dae1117f078c5c82248e90e7b03))
@@ -82,6 +103,8 @@
 - **Website:** :sparkles: Add Video ([a366533](https://github.com/mini-mirana/personal-website/commit/a366533618884cd56d975c743a0854d7c6724722))
 - **Website:** :sparkles: Change Controller ([61e579e](https://github.com/mini-mirana/personal-website/commit/61e579eaa026cd6593e691b243b42c54738d1064))
 - **Website:** :sparkles: Mouse cursor ([b1b35ae](https://github.com/mini-mirana/personal-website/commit/b1b35aed3a2e9377c477c6c2c8983c063984b0e6))
+- **Website:** :sparkles: Specialize based on my needs ([3d24736](https://github.com/mini-mirana/personal-website/commit/3d24736b320e86284fd995c297e1d43eb091c774))
+- **Website:** :sparkles: Specialize based on my needs ([4f02d52](https://github.com/mini-mirana/personal-website/commit/4f02d52c2df371e1a9d0fd2739004bc857f43455))
 - **website:** Add css smooth scroll ([1effcb9](https://github.com/mini-mirana/personal-website/commit/1effcb94cd38c0fe915e7d57cc751502886b4b66))
 - **website:** Add cursor and overlay component ([87d6051](https://github.com/mini-mirana/personal-website/commit/87d60516b4079b35747c9f7efdb0fe1f0ab8a8a3))
 - **website:** Add cursor component ([6025fab](https://github.com/mini-mirana/personal-website/commit/6025fababe1ce83fa89d9b954273270d26daac06))
@@ -96,7 +119,44 @@
 - **website:** Use far parameter ([a49e4f6](https://github.com/mini-mirana/personal-website/commit/a49e4f699f892c03d3929602cbc2ba8ef28e6de9))
 - **website:** Use next.js dyanmic load ([5ad97e0](https://github.com/mini-mirana/personal-website/commit/5ad97e0737ec9adc6ef4988d30fca1b239736530))
 
-# 1.0.0-alpha.1 (2022-04-10)
+# [2.0.0](https://github.com/mini-mirana/personal-website/compare/1.0.2...2.0.0) (2022-04-10)
+
+### Bug Fixes
+
+- **components:** :bug: Add new resume ([16c73ba](https://github.com/mini-mirana/personal-website/commit/16c73bae9068d50cdde4ec0e74afd78d1e7fc9f5))
+- **components:** :bug: Add NoirProBold font dependency ([056c3e0](https://github.com/mini-mirana/personal-website/commit/056c3e09eb1e6aa7366140aa234a1edf661d7f5a))
+- **components:** :bug: Add NoirProBold font dependency ([c304803](https://github.com/mini-mirana/personal-website/commit/c304803997719ce81db931f257dff092ea887c4e))
+- **components:** :bug: Rebase to Master ([691ec8d](https://github.com/mini-mirana/personal-website/commit/691ec8d7c1fd7d48e50716194c404ded29703b82))
+- **components:** :bug: Rebase to Master ([68c6f52](https://github.com/mini-mirana/personal-website/commit/68c6f52a0c41527f59e5ae8df50e1a6686dab545))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([8f23892](https://github.com/mini-mirana/personal-website/commit/8f23892bb363ad07ff2f919c07192ac6619e0dd4))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([3cb669c](https://github.com/mini-mirana/personal-website/commit/3cb669cd16fb1deba1c004c3b0d126c591b26a3b))
+
+### Features
+
+- **components:** :sparkles: Add Handshake ([fff70c4](https://github.com/mini-mirana/personal-website/commit/fff70c4cf5aa5c7de655495918f235cb27656247))
+- **components:** :sparkles: Add Handshake ([f4ef77a](https://github.com/mini-mirana/personal-website/commit/f4ef77afb69c97144cec1972fe00511fcfdb208d))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([892f569](https://github.com/mini-mirana/personal-website/commit/892f5696dc78307f5c6af58e74386c48274e209d))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([27ff010](https://github.com/mini-mirana/personal-website/commit/27ff0107ebe840789c2131b23c8b9be6260a674e))
+- **components:** :sparkles: Change resume ([8d84dfb](https://github.com/mini-mirana/personal-website/commit/8d84dfb262eba75f1a796bc831210300433040df))
+- **components:** :sparkles: Change resume ([e851c53](https://github.com/mini-mirana/personal-website/commit/e851c539e79b52d06d47c3956ad3ad7cf85a6b2b))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([61e2039](https://github.com/mini-mirana/personal-website/commit/61e20395522988defe4bec40d489b8d4e445b213))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([e5f8c88](https://github.com/mini-mirana/personal-website/commit/e5f8c88a427175a3cf62f033a68272790e3fcef6))
+- **components:** :sparkles: Comment Android App ([7b997be](https://github.com/mini-mirana/personal-website/commit/7b997be3eded0a8c89bb64af0b408074f5315377))
+- **components:** :sparkles: Comment Android App ([0d46b39](https://github.com/mini-mirana/personal-website/commit/0d46b39e53487a75dccb36f9dab0e1f0b124fe2a))
+- **components:** :sparkles: Comment Android App ([dcdb5e5](https://github.com/mini-mirana/personal-website/commit/dcdb5e58bc87e9dcae32f8305cfd1a3778afad98))
+- **components:** :sparkles: Comment Android App ([181e86d](https://github.com/mini-mirana/personal-website/commit/181e86dae18d0493b2259e488b474e35da7de795))
+- **components:** :sparkles: Update social links ([c389a8c](https://github.com/mini-mirana/personal-website/commit/c389a8cd64b752e8a9736c9445ed33cc2ef47f02))
+- **components:** :sparkles: Update social links ([54f5add](https://github.com/mini-mirana/personal-website/commit/54f5add2fd500afc812f67e57feda24580552681))
+- **Website:** :sparkles: Specialize based on my needs ([3d24736](https://github.com/mini-mirana/personal-website/commit/3d24736b320e86284fd995c297e1d43eb091c774))
+- **Website:** :sparkles: Specialize based on my needs ([4f02d52](https://github.com/mini-mirana/personal-website/commit/4f02d52c2df371e1a9d0fd2739004bc857f43455))
+
+## [1.0.2](https://github.com/mini-mirana/personal-website/compare/1.0.1...1.0.2) (2022-04-10)
+
+## [1.0.2-alpha.1](https://github.com/mini-mirana/personal-website/compare/1.0.1...1.0.2-alpha.1) (2022-04-10)
+
+## [1.0.1](https://github.com/mini-mirana/personal-website/compare/1.0.0...1.0.1) (2022-04-10)
+
+# 1.0.0 (2022-04-10)
 
 ### Bug Fixes
 
