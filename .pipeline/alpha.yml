@@ -1,0 +1,38 @@
+pipeline:
+  build:
+    image: node:16-alpine
+    commands:
+      - yarn install --frozen-lockfile --ignore-scripts
+      - yarn build
+  test:
+    image: node:16-alpine
+    commands:
+      - yarn test
+  release:
+    image: node:16-alpine
+    commands:
+      - apk add git
+      - git checkout $CI_COMMIT_BRANCH
+      - yarn ci
+    secrets: [ GH_TOKEN ]
+  publish:
+    image: plugins/docker
+    secrets:
+      - source: docker_registery
+        target: REGISTERY
+    settings:
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+      repo:
+        from_secret: docker_mirana_uri
+      registry:
+        from_secret: registry
+      dockerfile: dockerfile/Dockerfile
+      build_args_from_env:
+        - REGISTERY
+    when:
+      branch:
+        exclude: alpha
+branches: [ alpha* ]
