@@ -128,7 +128,6 @@
     ]
   },
   "release": {
-    "tagFormat": "${name}v${version}",
     "branches": [
       "master",
       {
