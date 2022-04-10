@@ -128,11 +128,12 @@
     ]
   },
   "release": {
+    "tagFormat": "v.mirana${version}",
     "branches": [
       "master",
       {
         "name": "Mirana",
-        "channel": "Mirana"
+        "channel": "mirana"
       },
       {
         "name": "alpha-mirana",
@@ -181,14 +182,14 @@
       [
         "@semantic-release/changelog",
         {
-          "changelogFile": "docs/CHANGELOG.md"
+          "changelogFile": "docs/mirana/CHANGELOG.md"
         }
       ],
       [
         "@semantic-release/git",
         {
           "assets": [
-            "docs/CHANGELOG.md"
+            "docs/mirana/CHANGELOG.md"
           ]
         }
       ]
