@@ -34,5 +34,5 @@ pipeline:
         - REGISTERY
     when:
       branch:
-        exclude: alpha$
+        exclude: alpha
 branches: [ alpha* ]
