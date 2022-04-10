@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/mini-mirana/personal-website/compare/v1.0.3...v1.1.0) (2022-04-10)
+
+
+### Bug Fixes
+
+*  Fix pipeline build step ([c0e1b98](https://github.com/mini-mirana/personal-website/commit/c0e1b98d34f3a6f29e98610006a21b09caf20d17))
+
 ## [1.0.3](https://github.com/mini-mirana/personal-website/compare/v1.0.2...v1.0.3) (2022-04-10)
 
 ## [1.0.2](https://github.com/mini-mirana/personal-website/compare/v1.0.1...v1.0.2) (2022-04-10)
