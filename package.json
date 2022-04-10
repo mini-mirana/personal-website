@@ -12,6 +12,7 @@
     "formatmd": "prettier --write",
     "success-message": "echo '🚀 You are ready to go  🚀️'",
     "prepare": "husky install",
+    "release": "npx semantic-release --no-ci",
     "pre-commit": "lint-staged",
     "post-commit": "yarn run success-message",
     "commit-msg": "npx --no-install commitlint --edit $1 --verbose",
@@ -126,15 +127,22 @@
     ]
   },
   "release": {
-    "tagFormat": "${version}",
     "branches": [
       "master",
       {
         "name": "Mirana",
-        "channel": "Mirana"
+        "channel": "Mirana",
+        "prerelease": true
       },
-      {"name": "alpha-mirana", "prerelease": true},
-      {"name": "alpha", "prerelease": true}
+      {
+        "name": "alpha-mirana",
+        "channel": "alpha-mirana",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
     ],
     "plugins": [
       [
