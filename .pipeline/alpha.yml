@@ -28,7 +28,7 @@ pipeline:
       repo:
         from_secret: docker_mirana_uri
       registry:
-        from_secret: docker_registery
+        from_secret: registry
       dockerfile: dockerfile/Dockerfile
       build_args_from_env:
         - REGISTERY
