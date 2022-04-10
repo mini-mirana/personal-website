@@ -1,3 +1,5 @@
+# [1.0.0-alpha.2](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2022-04-10)
+
 # 1.0.0-alpha.1 (2022-04-10)
 
 ### Bug Fixes
