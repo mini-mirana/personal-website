@@ -1,3 +1,5 @@
+## [1.0.1](https://github.com/mini-mirana/personal-website/compare/1.0.0...1.0.1) (2022-04-10)
+
 # 1.0.0 (2022-04-10)
 
 ### Bug Fixes
