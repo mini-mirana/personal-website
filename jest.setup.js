@@ -18,3 +18,5 @@ window.HTMLMediaElement.prototype.pause = () => {
 window.HTMLMediaElement.prototype.addTextTrack = () => {
   /* do nothing */
 }
+
+jest.setTimeout(30000)
