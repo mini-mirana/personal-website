@@ -13,6 +13,7 @@
     "success-message": "echo '🚀 You are ready to go  🚀️'",
     "prepare": "husky install",
     "release": "npx semantic-release --no-ci",
+    "ci": "npx semantic-release",
     "pre-commit": "lint-staged",
     "post-commit": "yarn run success-message",
     "commit-msg": "npx --no-install commitlint --edit $1 --verbose",
@@ -131,8 +132,7 @@
       "master",
       {
         "name": "Mirana",
-        "channel": "Mirana",
-        "prerelease": true
+        "channel": "Mirana"
       },
       {
         "name": "alpha-mirana",
