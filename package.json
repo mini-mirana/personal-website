@@ -12,8 +12,8 @@
     "formatmd": "prettier --write",
     "success-message": "echo '🚀 You are ready to go  🚀️'",
     "prepare": "husky install",
-    "release": "npx semantic-release --no-ci",
-    "ci": "npx semantic-release",
+    "release": "npx semantic-release --no-ci -t v$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)\\$\\{version\\}",
+    "ci": "npx semantic-release -t v$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)\\$\\{version\\}",
     "pre-commit": "lint-staged",
     "post-commit": "yarn run success-message",
     "commit-msg": "npx --no-install commitlint --edit $1 --verbose",
@@ -132,7 +132,7 @@
       "master",
       {
         "name": "Mirana",
-        "channel": "Mirana"
+        "channel": "mirana"
       },
       {
         "name": "alpha-mirana",
