@@ -128,12 +128,12 @@
     ]
   },
   "release": {
+    "tagFormat": "${channel}v${version}",
     "branches": [
       "master",
       {
         "name": "Mirana",
-        "channel": "Mirana",
-        "prerelease": true
+        "channel": "Mirana"
       },
       {
         "name": "alpha-mirana",
