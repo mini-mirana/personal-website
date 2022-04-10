@@ -1,3 +1,34 @@
+# [2.0.0-alpha-mirana.1](https://github.com/mini-mirana/personal-website/compare/v1.0.2...v2.0.0-alpha-mirana.1) (2022-04-10)
+
+### Bug Fixes
+
+- **components:** :bug: Add new resume ([68e0c5d](https://github.com/mini-mirana/personal-website/commit/68e0c5dfc4991cfdcb465628a6a3bc5650811723))
+- **components:** :bug: Add NoirProBold font dependency ([3270ed1](https://github.com/mini-mirana/personal-website/commit/3270ed169a7db48f90a291f7135e175dfc711186))
+- **components:** :bug: Add NoirProBold font dependency ([b2d41d7](https://github.com/mini-mirana/personal-website/commit/b2d41d7fe7881adcfe252772bc6d2eb0df5a41f6))
+- **components:** :bug: Rebase to Master ([91bfdd1](https://github.com/mini-mirana/personal-website/commit/91bfdd17a34db0470e843719c11f374b11ab8ef7))
+- **components:** :bug: Rebase to Master ([035e291](https://github.com/mini-mirana/personal-website/commit/035e2919672ae7b081e2814e50626748f7114803))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([f884c4b](https://github.com/mini-mirana/personal-website/commit/f884c4b61463ccd87196937580ba88eee1fbe15b))
+- **components:** :bug: Resolve z-index and rotation bugs for papers part ([af8f27b](https://github.com/mini-mirana/personal-website/commit/af8f27bd0957b4f899f735a50158b82dc91b776f))
+
+### Features
+
+- **components:** :sparkles: Add Handshake ([2c5c55c](https://github.com/mini-mirana/personal-website/commit/2c5c55c00f6b159ff27d386c00db16983960fadc))
+- **components:** :sparkles: Add Handshake ([441fbf6](https://github.com/mini-mirana/personal-website/commit/441fbf6c28e8672396cc76dbe942344a8b2b93b7))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([c5f64fb](https://github.com/mini-mirana/personal-website/commit/c5f64fb3d6a48b68fdbf044ae5ad77398a54b104))
+- **components:** :sparkles: Add my name to top left & give position y to photo-text stack for mobile ([ca2a7f4](https://github.com/mini-mirana/personal-website/commit/ca2a7f4f9d5bfbb8c9dfde51b1cde80ea3d2e946))
+- **components:** :sparkles: Change resume ([63d4d9d](https://github.com/mini-mirana/personal-website/commit/63d4d9d042d687be08d204c3ae9eb886becadd39))
+- **components:** :sparkles: Change resume ([858bd51](https://github.com/mini-mirana/personal-website/commit/858bd5159e5a3add374eb59013e7a32c3ca193ac))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([115f735](https://github.com/mini-mirana/personal-website/commit/115f735d36e911eff33ea47067c9204af76ac92f))
+- **components:** :sparkles: Change TextMesh fonts to NoirProBold complete ([7ae1aa6](https://github.com/mini-mirana/personal-website/commit/7ae1aa63dd83e052f6e053765d1a3b8a80af8498))
+- **components:** :sparkles: Comment Android App ([f893af1](https://github.com/mini-mirana/personal-website/commit/f893af1efc913640dd6a7906fd8d577222a7f015))
+- **components:** :sparkles: Comment Android App ([2ddbbf2](https://github.com/mini-mirana/personal-website/commit/2ddbbf241ba69e55e2c930c3db8f2f2b27fef00b))
+- **components:** :sparkles: Comment Android App ([e58d8b1](https://github.com/mini-mirana/personal-website/commit/e58d8b18babc4ef7c5e17289fcb1edf9d2684934))
+- **components:** :sparkles: Comment Android App ([26eebc7](https://github.com/mini-mirana/personal-website/commit/26eebc7437ebb96cda8bd6624d1e1f1e1a1ce581))
+- **components:** :sparkles: Update social links ([70c107f](https://github.com/mini-mirana/personal-website/commit/70c107f3eda0b56d8aeb0c80fdd3e51c0faf4376))
+- **components:** :sparkles: Update social links ([259de57](https://github.com/mini-mirana/personal-website/commit/259de576e31515823fe855046e363cabde9179dd))
+- **Website:** :sparkles: Specialize based on my needs ([6cf48cf](https://github.com/mini-mirana/personal-website/commit/6cf48cf823607fd5da6340bb5f6f715dcd7c1a8a))
+- **Website:** :sparkles: Specialize based on my needs ([3dad9f1](https://github.com/mini-mirana/personal-website/commit/3dad9f17245ec2266a2644772decebcdca2621ff))
+
 # 1.0.0-Mirana.1 (2022-04-10)
 
 ### Bug Fixes
