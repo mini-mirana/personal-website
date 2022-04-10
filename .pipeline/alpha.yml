@@ -36,4 +36,4 @@ pipeline:
     when:
       event: tag
       tag: v.mirana*
-branches: [ "*alpha*" ]
+branches: [ alpha* ]
