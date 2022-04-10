@@ -12,8 +12,8 @@
     "formatmd": "prettier --write",
     "success-message": "echo '🚀 You are ready to go  🚀️'",
     "prepare": "husky install",
-    "release": "npx semantic-release --no-ci -t v$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)\\$\\{version\\}",
-    "ci": "npx semantic-release -t v$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)\\$\\{version\\}",
+    "release": "npx semantic-release --no-ci",
+    "ci": "npx semantic-release",
     "pre-commit": "lint-staged",
     "post-commit": "yarn run success-message",
     "commit-msg": "npx --no-install commitlint --edit $1 --verbose",
@@ -128,6 +128,7 @@
     ]
   },
   "release": {
+    "tagFormat": "v${version}",
     "branches": [
       "master",
       {
@@ -181,14 +182,14 @@
       [
         "@semantic-release/changelog",
         {
-          "changelogFile": "docs/CHANGELOG.md"
+          "changelogFile": "docs/master/CHANGELOG.md"
         }
       ],
       [
         "@semantic-release/git",
         {
           "assets": [
-            "docs/CHANGELOG.md"
+            "docs/master/CHANGELOG.md"
           ]
         }
       ]
