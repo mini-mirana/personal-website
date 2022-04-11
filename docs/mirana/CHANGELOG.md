@@ -1,3 +1,10 @@
+# [1.0.0-alpha-mirana.2](https://github.com/mini-mirana/personal-website/compare/v.mirana1.0.0-alpha-mirana.1...v.mirana1.0.0-alpha-mirana.2) (2022-04-11)
+
+
+### Bug Fixes
+
+* **website:** Capitalize skills ([536204d](https://github.com/mini-mirana/personal-website/commit/536204d925cffec1431f1c657fe98ff36093032b))
+
 # 1.0.0-alpha-mirana.1 (2022-04-11)
 
 
