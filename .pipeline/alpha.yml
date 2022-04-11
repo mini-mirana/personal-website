@@ -35,4 +35,4 @@ pipeline:
     when:
       branch:
         exclude: alpha
-branches: [ alpha* ]
+branches: [ alpha, alpha-* ]
