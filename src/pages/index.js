@@ -454,7 +454,7 @@ export default function Home() {
           ]}
           sections={[
             { section: 'Intro', objName: '.Title' },
-            { section: 'skills', objName: '.Grid' },
+            { section: 'Skills', objName: '.Grid' },
             { section: 'Experience', objName: '.Stack' },
             { section: 'Papers', objName: '.Paper' }
           ]}
