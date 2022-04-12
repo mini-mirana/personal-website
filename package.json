@@ -197,7 +197,7 @@
       [
         "@semantic-release/exec",
         {
-          "successCmd": "echo -n ${nextRelease.version} > .tags"
+          "successCmd": "echo -n ${nextRelease.gitTag} > .tags"
         }
       ]
     ]
