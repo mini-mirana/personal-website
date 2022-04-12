@@ -1,3 +1,10 @@
+# [1.0.0-alpha.14](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2022-04-12)
+
+
+### Bug Fixes
+
+* Fix tags where not fetch during ci ([6f468ed](https://github.com/mini-mirana/personal-website/commit/6f468ed5c12127352687ee4ebf246b9e4361fb49))
+
 # [1.0.0-alpha.13](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.12...v1.0.0-alpha.13) (2022-04-11)
 
 # [1.0.0-alpha.12](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.11...v1.0.0-alpha.12) (2022-04-11)
