@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/mini-mirana/personal-website/compare/v1.1.3...v1.2.0) (2022-04-12)
+
+
+### Bug Fixes
+
+* Fix tags where not fetch during ci ([6f468ed](https://github.com/mini-mirana/personal-website/commit/6f468ed5c12127352687ee4ebf246b9e4361fb49))
+
 ## [1.1.3](https://github.com/mini-mirana/personal-website/compare/v1.1.2...v1.1.3) (2022-04-11)
 
 ## [1.1.2](https://github.com/mini-mirana/personal-website/compare/v1.1.1...v1.1.2) (2022-04-11)
