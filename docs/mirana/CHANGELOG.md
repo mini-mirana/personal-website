@@ -1,3 +1,10 @@
+# [1.0.0-alpha-mirana.4](https://github.com/mini-mirana/personal-website/compare/v.mirana1.0.0-alpha-mirana.3...v.mirana1.0.0-alpha-mirana.4) (2022-04-12)
+
+
+### Bug Fixes
+
+* Update pdf link description ([2c11145](https://github.com/mini-mirana/personal-website/commit/2c11145486c740cc7326cf46ee00daa346fc24ba))
+
 # [1.0.0-alpha-mirana.3](https://github.com/mini-mirana/personal-website/compare/v.mirana1.0.0-alpha-mirana.2...v.mirana1.0.0-alpha-mirana.3) (2022-04-12)
 
 
