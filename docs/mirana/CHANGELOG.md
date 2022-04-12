@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/mini-mirana/personal-website/compare/v.mirana2.0.0...v.mirana2.1.0) (2022-04-12)
+
+
+### Bug Fixes
+
+* Update pdf link description ([2c11145](https://github.com/mini-mirana/personal-website/commit/2c11145486c740cc7326cf46ee00daa346fc24ba))
+
 # [2.0.0](https://github.com/mini-mirana/personal-website/compare/v.mirana1.0.0...v.mirana2.0.0) (2022-04-12)
 
 
