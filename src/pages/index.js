@@ -441,7 +441,7 @@ export default function Home() {
             { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:mini_mirana@yahoo.com' },
             {
               icon: download,
-              description: 'Download Resume pdf',
+              description: 'Download Resume pdf version',
               fontSize: 40,
               link: 'https://res.cloudinary.com/mirana/image/upload/v1648323536/personal-website/Abdolrahman_Ghaedi_Resume_ijbejy.pdf'
             }
