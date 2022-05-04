@@ -10,7 +10,7 @@ import github from 'react-useanimations/lib/github'
 import download from 'react-useanimations/lib/download'
 import { animated, useSpring, config } from '@react-spring/three'
 import { useWindowDimensions } from '../utils/useWindowDimensions'
-// import fontUrl from '../assets/NoirPro-Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+import fontUrl from '../assets/Hack Nerd Font_Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
 import { Loader } from '../components/Loader'
 
 // const Effects = dynamic(() => import('../components/Effects'), { suspense: true })
@@ -71,26 +71,49 @@ function Page({ startZ, distance }) {
       {/* <Dots position={[0, -4, startZ]} rotation={[Math.PI / 2, 0, 0]} /> */}
       <BackGrid position={[0, 0, startZ]} rotation={[Math.PI / 2, 0, 0]} /* position={[0, -1, startZ]} */ />
       <group>
-        <group name='.Title' position={[0, 0, startZ - distance / 2 - 1]}>
-          <TextMesh position={[0, 1, 0]} hAlign='right'>
-            HELLO
+        <group name='.Title' position={[0, 0, startZ - 0 * distance - 2]}>
+          <TextMesh fontUrl={fontUrl} position={[0, 0, 0]} hAlign='right'>
+            HELLO 
           </TextMesh>
-          <TextMesh position={[0, 0, 0]} hAlign='right'>
-            IM
+        </group>
+        <group name='.Title' position={[0, 0, startZ - 1 * distance - 2]}>
+          <TextMesh reverse fontUrl={fontUrl} position={[0, 0, 0]} hAlign='right'>
+            I'M A
           </TextMesh>
-          <TextMesh position={[0, -1, 0]} hAlign='right'>
-            ME
+        </group>
+        <group name='.Title' position={[0, 0, startZ - 2 * distance - 2]}>
+          <TextMesh fontUrl={fontUrl} position={[0, 0, 0]} hAlign='right'>
+            {'Software \uf47f'}
+          </TextMesh>
+          <TextMesh fontUrl={fontUrl} position={[0, -1, 0]} hAlign='right'>
+            Engineer
+          </TextMesh>
+        </group>
+        <group name='.Title' position={[0, 0, startZ - 3 * distance - 2]}>
+          <TextMesh reverse fontUrl={fontUrl} position={[0, 0, 0]} hAlign='right'>
+            {'Always \ue28c'}
+          </TextMesh>
+          <TextMesh reverse fontUrl={fontUrl} position={[0, -1, 0]} hAlign='right'>
+            Thinking
+          </TextMesh>
+        </group>
+        <group name='.Title' position={[0, 0, startZ - 4 * distance - 2]}>
+          <TextMesh fontUrl={fontUrl} position={[0, 0, 0]} hAlign='right'>
+            Always 
+          </TextMesh>
+          <TextMesh fontUrl={fontUrl} position={[0, -1, 0]} hAlign='right'>
+            Coding
           </TextMesh>
         </group>
         <Title
-          name='.Grid'
           reverse
+          name='.Grid'
           size={[vpWidth, vpHeight, 0]}
-          position={[-vpWidth / 2, vpHeight / 2, startZ - distance - 2]}
+          position={[-vpWidth / 2, vpHeight / 2, startZ - 5 * distance - 2]}
           content={['SKILLS']}
         />
         <Grid
-          startZ={startZ - 2 * distance - 2}
+          startZ={startZ - 6 * distance - 2}
           distance={distance}
           reverse
           content={[
@@ -98,135 +121,459 @@ function Page({ startZ, distance }) {
               config: { columnNumber: 3, rowNumber: 3 },
               title: { content: 'PROGRAMMING LANGUAGES' },
               text: [
-                { type: 'textMesh', content: 'PYTHON' },
-                { type: 'textMesh', content: 'JAVASCRIPT' },
-                { type: 'textMesh', content: 'C' },
-                { type: 'textMesh', content: 'CPP' },
-                { type: 'textMesh', content: 'JAVA' },
-                { type: 'textMesh', content: 'GO' },
-                { type: 'textMesh', content: 'PHP' },
-                { type: 'textMesh', content: 'ASSEMBLY' },
-                { type: 'textMesh', content: 'ELIXIR' }
+                {
+                  type: 'text',
+                  content: '',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3
+                },
+                {
+                  type: 'text',
+                  content: '/ﯤ',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.15
+                },
+                {
+                  type: 'text',
+                  content: 'SOLIDITY',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07
+                },
+                {
+                  type: 'text',
+                  content: 'ﭱ/ﭰ',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.15
+                },
+                {
+                  type: 'text',
+                  content: '',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.15
+                },
+                {
+                  type: 'text',
+                  content: 'ﳑ',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.15
+                },
+                {
+                  type: 'text',
+                  content: ' ',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.15
+                },
+                {
+                  type: 'text',
+                  content: 'x86 ASSEMBLY',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.05
+                },
+                {
+                  type: 'text',
+                  content: 'ELIXIR',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07
+                }
               ]
             },
             {
-              config: { columnNumber: 4, rowNumber: 3 },
+              config: { columnNumber: 4, rowNumber: 2 },
               title: { content: 'WEB DEVELOPMENT' },
               text: [
-                { type: 'textMesh', content: 'HTML' },
-                { type: 'textMesh', content: 'CSS' },
-                { type: 'textMesh', content: 'JAVASCRIPT' },
-                { type: 'textMesh', content: 'JQUERY' },
-                { type: 'textMesh', content: 'REACT' },
-                { type: 'textMesh', content: 'NEXTJS' },
-                { type: 'textMesh', content: 'REDUX' },
-                { type: 'textMesh', content: 'TYPESCRIPT' },
-                { type: 'textMesh', content: 'NODEJS' },
-                { type: 'textMesh', content: 'EXPRESSJS' },
-                { type: 'textMesh', content: 'FLASK' },
-                { type: 'textMesh', content: 'DJANGO' }
+                {
+                  type: 'text',
+                  content: 'ﰆ',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3
+                },
+                {
+                  type: 'text',
+                  content: 'Flask',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12
+                },
+                {
+                  content: 'Django',
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12,
+                  content: 'Jest'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12,
+                  content: 'Nextjs'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12,
+                  content: 'Redux'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3,
+                  content: ''
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'Expressjs'
+                }
+              ]
+            },
+            {
+              config: { columnNumber: 4, rowNumber: 2 },
+              title: { content: 'Machine learning' },
+              text: [
+                {
+                  type: 'text',
+                  content: 'ﰆ',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3
+                },
+                {
+                  type: 'text',
+                  content: 'tensorflow',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.05
+                },
+                {
+                  content: 'Pytorch',
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.05,
+                  content: 'Matplotlib'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'Panda'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'Numpy'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.05,
+                  content: 'Hugging Face'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'Mlflow'
+                }
               ]
             },
             {
               config: { columnNumber: 3, rowNumber: 3 },
               title: { content: 'DEVOPS & COLLABORATION' },
               text: [
-                { type: 'textMesh', content: 'DOCKER' },
-                { type: 'textMesh', content: 'KUBERNETES' },
-                { type: 'textMesh', content: 'ANSIBLE' },
-                { type: 'textMesh', content: 'HELM' },
-                { type: 'textMesh', content: 'TRRAFORM' },
-                { type: 'textMesh', content: 'ARGOCD' },
-                { type: 'textMesh', content: 'GIT' },
-                { type: 'textMesh', content: 'GITHUB' },
-                { type: 'textMesh', content: 'GITLAB' }
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3,
+                  content: ' '
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12,
+                  content: 'k8s'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'ANSIBLE'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'HELM'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'TERRAFORM'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'ARGOCD'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3,
+                  content: ' '
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3,
+                  content: ''
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: ' AWS'
+                }
               ]
             },
             {
               config: { columnNumber: 4, rowNumber: 3 },
               title: { content: 'OTHERS' },
               text: [
-                { type: 'textMesh', content: 'ANDROID' },
-                { type: 'textMesh', content: 'FLUTTER' },
-                { type: 'textMesh', content: 'REACTNATIVE' },
-                { type: 'textMesh', content: 'SOLIDITY' },
-                { type: 'textMesh', content: 'WEB3JS' },
-                { type: 'textMesh', content: 'ETHERJS' },
-                { type: 'textMesh', content: 'ADOBEXD' },
-                { type: 'textMesh', content: 'FIGMA' },
-                { type: 'textMesh', content: 'SQL' },
-                { type: 'textMesh', content: 'MYSQL' },
-                { type: 'textMesh', content: 'PQSL' },
-                { type: 'textMesh', content: 'MONGODB' }
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12,
+                  content: ' '
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'FLUTTER'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'REACTNATIVE'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3,
+                  content: ''
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'WEB3JS'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'ETHERJS'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'ADOBEXD'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'FIGMA'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'SQL'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.3,
+                  content: ''
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.12,
+                  content: 'PQSL'
+                },
+                {
+                  type: 'text',
+                  font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+                  fontSize: 0.07,
+                  content: 'MONGODB'
+                }
               ]
             }
           ]}
         />
         <Title
+          reverse
           name='.Stack'
           size={[vpWidth, vpHeight, 0]}
-          position={[-vpWidth / 2, vpHeight / 2, 120]}
+          position={[-vpWidth / 2, vpHeight / 2, startZ - 11 * distance - 2]}
           content={['EXPERIENCE']}
         />
         <Stack
           dom={tooltip}
           width={height >= width ? 3 : 6}
           height={height >= width ? 3 : 4}
-          startZ={112}
+          startZ={startZ - 12 * distance - 2}
           distance={distance}
           reverse
-          startReverse
           content={[
             {
-              type: 'text',
-              title: 'Lorem ipsum',
-              description:
-                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n\n*sed do eiusmod tempor incididunt ut labore.'
+              type: 'photo-text',
+              photoY: 0,
+              source: 'https://res.cloudinary.com/du37hrqiv/image/upload/v1651507612/logo-default-slim-dark_qrxlcz.png',
+              title: 'Network Developer SYNEGY.ir | Shiraz, Iran',
+              description: ` 2017 \n\n﫟 Deep packet inspection for industrial network
+              \n\n﫟 Internal VPN mobile app for Shiraz University of medical Science
+              \n\n﫟 Unidirectional network gateway hardware design for industrial network using RPi
+              \n\n﫟 Linux server administration`,
+              descriptionFont:
+                'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+              descriptionY: '-0.8',
+              descriptionFontSize: 0.07
             },
             {
-              type: 'photo',
-              source:
-                'https://res.cloudinary.com/mirana/image/upload/v1648136791/personal-website/photo-manipulation-gfff20f04a_1920_q8suzr.jpg',
-              title: 'Lorem ipsum'
+              type: 'video',
+              source: 'https://cdn1.sarme.cyou/cdn/school.mp4',
+              title: 'ⓘ School Organization Web App',
+              cardTitle: 'Full-Stack Dev. Danial Sch. | Shiraz, Iran | 2019',
+              description: (
+                <div>
+                  <br /># Developed an educational SPA web application
+                  <br /># Linux server administration
+                  <br /># Developed CI/CD pipeline for dev, stage and production environment
+                </div>
+              )
             },
             {
               type: 'photo-text',
-              source:
-                'https://res.cloudinary.com/mirana/image/upload/v1648137447/personal-website/boards-g92417fa21_1920_zaksq6.jpg',
-              title: 'Lorem ipsum',
-              description:
-                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n\n*sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              photoY: 0,
+              source: 'https://cdn1.sarme.cyou/cdn/smart-reporting-single.png',
+              title: 'Lead Fullstack Developer Ahmadi Roshan \nShiraz, Iran',
+              description: ` 2019 \n\n﫟 Deep packet inspection for industrial network
+              \n\n﫟 SaaS structured reporting web application
+              \n\n﫟 Continuous deployment using Gitlab CI/CD
+              \n\n﫟 Linux server administration`,
+              descriptionFont:
+                'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+              descriptionY: '-0.8',
+              descriptionFontSize: 0.07
+            },
+            {
+              type: 'video',
+              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061375/personal-website/vampire_nelmbo.mp4',
+              title: 'ⓘ VAMPIRE FARMS',
+              cardTitle: 'ETHTARI STUDIOS | Full Stack Solidity Developer | Remote, 2019',
+              description: <div># Vampire DeFi Web Application</div>
+            },
+            {
+              type: 'photo-text',
+              photoY: 0,
+              source: 'https://cdn1.sarme.cyou/cdn/manta-logo2.png',
+              title: 'Site Reliability Engineer\nManta Trading LLC\nUS, Remote',
+              description: ` 2020 \n\n﫟 Optimize web socket response time
+              \n\n﫟 CI/CD pipeline development
+              \n\n﫟 GKE admin engineer
+              \n\n﫟 Payment integration through stripe`,
+              descriptionFont:
+                'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+              descriptionY: '-0.8',
+              descriptionFontSize: 0.07
             },
             {
               type: 'video',
               source:
-                'https://res.cloudinary.com/mirana/video/upload/v1601138124/personal-website/SampleVideo_1280x720_30mb_ecblgp.mp4',
-              title: 'ⓘ Lorem ipsum',
-              description:
-                'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',
-              cardTitle: 'Lorem ipsum'
+                'https://res.cloudinary.com/mirana/video/upload/v1648059846/personal-website/jurassic-farm_bfnvqk.mp4',
+              title: 'ⓘ JURASSIC FARMS',
+              cardTitle: 'JURASSIC FARMS | Remote, 2021',
+              description: <div># Jurassic DeFi Web Application</div>
+            },
+            {
+              type: 'photo-text',
+              photoY: 0,
+              source: 'https://cdn1.sarme.cyou/cdn/livedocs-logo.png',
+              title: 'Site Reliability Engineer\nLivedocs Inc.\nUS, Remote',
+              description: ` 2021
+              \n\n﫟 GKE admin engineer
+              \n\n﫟 Building CI/CD pipeline with focus on GitOps`,
+              descriptionFont:
+                'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+              descriptionY: '-0.8',
+              descriptionFontSize: 0.07
+            },
+            {
+              type: 'photo-text',
+              photoY: 0,
+              source: 'https://cdn1.sarme.cyou/cdn/cloudkite-logo.png',
+              title: 'Site Reliability Engineer\nLivedocs Inc.\nUS, Remote',
+              description: ` 2021
+              \n\n﫟 Maintain Kubernetes clusters, Cloud Infrastructure, and application stacks
+              \n\n﫟 Build cloud native infrastructure for machine learning application`,
+              descriptionFont:
+                'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+              descriptionY: '-0.8',
+              descriptionFontSize: 0.07
+            },
+            {
+              type: 'photo-text',
+              photoY: 0,
+              source: 'https://cdn1.sarme.cyou/cdn/DS_logo.png',
+              title: 'Machine learning Eng.\nDeep Safety GmbH\nGermany',
+              description: ` 2022-Current
+              \n\n﫟 Designing and developing machine learning and deep learning systems specialized for autonomous systems
+              \n\n﫟 Build and maintain various pipeline required for model deployment and continuous operations around models
+              \n\n﫟 Ensure algorithms generate trusted and accurate output`,
+              descriptionFont:
+                'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
+              descriptionY: '-0.8',
+              descriptionFontSize: 0.07
             }
           ]}
         />
         <Title
+          reverse
           name='.Paper'
           size={[vpWidth, vpHeight, 0]}
-          position={[-vpWidth / 2, vpHeight / 2, 56]}
+          position={[-vpWidth / 2, vpHeight / 2, startZ - 21 * distance - 2]}
           content={['PAPERS']}
         />
         <Stack
           dom={tooltip}
           width={height >= width ? 3 : 6}
           height={height >= width ? 3 : 4}
-          startZ={48}
+          startZ={startZ - 22 * distance - 2}
           distance={distance}
           reverse
-          startReverse
           content={[
             {
               type: 'text',
-              title: 'Lorem ipsum',
-              description: 'Lorem ipsum:\n • Dolor sit amet\n • Consectetur adipisicing elit\n',
+              title:
+                'APPLICATION OF DEEP LEARNING IN GENERATING STRUCTURED RADIOLOGY REPORTS: A TRANSFORMER-BASED TECHNIQUE | 11/2021 | UNDER REVIEW',
+              description:
+                'Author list:\n• Seyed Alireza Moezzi\n• Abdolrahman Ghaedi\n• Mojdeh Rahmanian\n• Seyedeh Zahra Mousavi\n• Ashkan Sami',
+              // description: 'Author list: Seyed Alireza Moezzi; Abdolrahman Ghaedi; Mojdeh Rahmanian; Seyedeh Zahra Mousavi; Ashkan Sami',
               descriptionY: '-0.8'
             }
           ]}
@@ -236,7 +583,7 @@ function Page({ startZ, distance }) {
         <TextMesh
           size={30}
           fontConfig={{
-            size: 70,
+            size: 50,
             height: 0.1,
             curveSegments: 32,
             bevelEnabled: true,
@@ -245,8 +592,25 @@ function Page({ startZ, distance }) {
             bevelOffset: 0,
             bevelSegments: 10
           }}
+          position={[0, 0, 0]}
           hAlign='right'>
-          THREE
+          Ali
+        </TextMesh>
+        <TextMesh
+          size={30}
+          fontConfig={{
+            size: 60,
+            height: 0.1,
+            curveSegments: 32,
+            bevelEnabled: true,
+            bevelThickness: 150,
+            bevelSize: 10,
+            bevelOffset: 0,
+            bevelSegments: 10
+          }}
+          position={[0, -30, 0]}
+          hAlign='right'>
+          Moezzi
         </TextMesh>
       </Overlay>
     </>
@@ -349,21 +713,20 @@ export default function Home() {
         <Cursor
           speed={0.2}
           icons={[
-            { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/' },
-            { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:info@example.com' },
+            { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/realsarm' },
+            { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:info@sarme.cyou' },
             {
               icon: download,
-              description: 'Resume pdf',
+              description: 'Download Resume pdf version',
               fontSize: 40,
-              link: 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
+              link: 'https://res.cloudinary.com/mirana/image/upload/v1648323536/personal-website/Abdolrahman_Ghaedi_Resume_ijbejy.pdf'
             }
           ]}
           sections={[
             { section: 'Intro', objName: '.Title' },
-            { section: 'skills', objName: '.Grid' },
+            { section: 'Skills', objName: '.Grid' },
             { section: 'Experience', objName: '.Stack' },
-            { section: 'Papers', objName: '.Paper' },
-            { section: 'Hobbys', objName: '' }
+            { section: 'Papers', objName: '.Paper' }
           ]}
           dom={dom}
           handleScroll={handleScroll}>
