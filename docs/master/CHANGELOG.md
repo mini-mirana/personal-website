@@ -1,24 +1,14 @@
-## [3.1.1](https://github.com/mini-mirana/personal-website/compare/v3.1.0...v3.1.1) (2022-05-08)
-
-# [3.1.0](https://github.com/mini-mirana/personal-website/compare/v3.0.0...v3.1.0) (2022-05-08)
+# [3.0.0-alpha-sarme.1](https://github.com/mini-mirana/personal-website/compare/v2.0.2...v3.0.0-alpha-sarme.1) (2022-05-04)
 
 
 ### Bug Fixes
 
-* Fix lag while navigation ([de1c3ba](https://github.com/mini-mirana/personal-website/commit/de1c3bab19924287c21544427dee7103b44d94dc))
-
-# [3.0.0](https://github.com/mini-mirana/personal-website/compare/v2.0.2...v3.0.0) (2022-05-08)
-
-
-### Bug Fixes
-
-* **components:** Fix credits mouse hover ([43191e4](https://github.com/mini-mirana/personal-website/commit/43191e4a55a3704337cc5c1cbc46dc025c31e7e0))
-* Improve camera fov and lighting ([fc102bc](https://github.com/mini-mirana/personal-website/commit/fc102bc91adfb817d9f602762cc4102300437999))
+* Capitalize only initials ([5e6ff72](https://github.com/mini-mirana/personal-website/commit/5e6ff725a69863bab71f9ac9a5e2a42b97a26815))
 
 
 ### Features
 
-* **website:** Override default cursor ([1d956bb](https://github.com/mini-mirana/personal-website/commit/1d956bb47e54053a396a66b92fee6036b115e147))
+*  Initial sarme content ([d4eccac](https://github.com/mini-mirana/personal-website/commit/d4eccac749b59dbf51040681f7245e96576cc395))
 
 ## [2.0.2](https://github.com/mini-mirana/personal-website/compare/v2.0.1...v2.0.2) (2022-05-04)
 
