@@ -1,3 +1,15 @@
+# [3.0.0-alpha-sarme.1](https://github.com/mini-mirana/personal-website/compare/v2.0.2...v3.0.0-alpha-sarme.1) (2022-05-04)
+
+
+### Bug Fixes
+
+* Capitalize only initials ([5e6ff72](https://github.com/mini-mirana/personal-website/commit/5e6ff725a69863bab71f9ac9a5e2a42b97a26815))
+
+
+### Features
+
+*  Initial sarme content ([d4eccac](https://github.com/mini-mirana/personal-website/commit/d4eccac749b59dbf51040681f7245e96576cc395))
+
 ## [2.0.2](https://github.com/mini-mirana/personal-website/compare/v2.0.1...v2.0.2) (2022-05-04)
 
 ## [2.0.1](https://github.com/mini-mirana/personal-website/compare/v2.0.0...v2.0.1) (2022-05-04)
