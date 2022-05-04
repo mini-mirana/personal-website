@@ -106,8 +106,8 @@ function Page({ startZ, distance }) {
           </TextMesh>
         </group>
         <Title
-          reverse
           name='.Grid'
+          reverse
           size={[vpWidth, vpHeight, 0]}
           position={[-vpWidth / 2, vpHeight / 2, startZ - 5 * distance - 2]}
           content={['SKILLS']}
@@ -135,7 +135,7 @@ function Page({ startZ, distance }) {
                 },
                 {
                   type: 'text',
-                  content: 'Solidity',
+                  content: 'SOLIDITY',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07
                 },
@@ -165,13 +165,13 @@ function Page({ startZ, distance }) {
                 },
                 {
                   type: 'text',
-                  content: 'x86 Assembly',
+                  content: 'x86 ASSEMBLY',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.05
                 },
                 {
                   type: 'text',
-                  content: 'Elixir',
+                  content: 'ELIXIR',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07
                 }
@@ -237,13 +237,13 @@ function Page({ startZ, distance }) {
               text: [
                 {
                   type: 'text',
-                  content: 'Scikit-Learn',
+                  content: 'ﰆ',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
-                  fontSize: 0.05
+                  fontSize: 0.3
                 },
                 {
                   type: 'text',
-                  content: 'Tensorflow',
+                  content: 'tensorflow',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.05
                 },
@@ -263,7 +263,7 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Pandas'
+                  content: 'Panda'
                 },
                 {
                   type: 'text',
@@ -305,25 +305,25 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Ansible'
+                  content: 'ANSIBLE'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Helm'
+                  content: 'HELM'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Terraform'
+                  content: 'TERRAFORM'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'ArgoCD'
+                  content: 'ARGOCD'
                 },
                 {
                   type: 'text',
@@ -359,13 +359,13 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Flutter'
+                  content: 'FLUTTER'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
-                  fontSize: 0.05,
-                  content: 'React native'
+                  fontSize: 0.07,
+                  content: 'REACTNATIVE'
                 },
                 {
                   type: 'text',
@@ -383,19 +383,19 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'EtherJS'
+                  content: 'ETHERJS'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Adobe XD'
+                  content: 'ADOBEXD'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Figma'
+                  content: 'FIGMA'
                 },
                 {
                   type: 'text',
@@ -439,6 +439,7 @@ function Page({ startZ, distance }) {
           startZ={startZ - 12 * distance - 2}
           distance={distance}
           reverse
+          startReverse
           content={[
             {
               type: 'photo-text',
@@ -566,6 +567,7 @@ function Page({ startZ, distance }) {
           startZ={startZ - 22 * distance - 2}
           distance={distance}
           reverse
+          startReverse
           content={[
             {
               type: 'text',
