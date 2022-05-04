@@ -1,3 +1,10 @@
+# [1.0.0-alpha.15](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.14...v1.0.0-alpha.15) (2022-05-04)
+
+
+### Features
+
+* **components:** Add reverse functionality to TextMesh ([ea7b27c](https://github.com/mini-mirana/personal-website/commit/ea7b27c05c175790437d12a0a955d0c8030e5dc9))
+
 # [1.0.0-alpha.14](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.13...v1.0.0-alpha.14) (2022-04-12)
 
 
