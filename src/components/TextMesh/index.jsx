@@ -9,6 +9,7 @@ extend({ TextGeometry })
 export function TextMesh({
   children,
   fontUrl,
+  reverse = false,
   fontConfig = {
     size: 100,
     height: 0.1,
@@ -44,7 +45,7 @@ export function TextMesh({
   }, [children])
 
   return (
-    <group scale={[0.01 * size, 0.01 * size, 0.1]} {...props}>
+    <group scale={[0.01 * size, 0.01 * size, 0.1]} {...props} rotation={reverse ? [0, 0, Math.PI] : [0, 0, 0]}>
       <mesh ref={mesh}>
         <textGeometry
           args={[children, { font, ...fontConfig }]}
