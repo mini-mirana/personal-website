@@ -135,7 +135,7 @@ function Page({ startZ, distance }) {
                 },
                 {
                   type: 'text',
-                  content: 'SOLIDITY',
+                  content: 'Solidity',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07
                 },
@@ -165,13 +165,13 @@ function Page({ startZ, distance }) {
                 },
                 {
                   type: 'text',
-                  content: 'x86 ASSEMBLY',
+                  content: 'x86 Assembly',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.05
                 },
                 {
                   type: 'text',
-                  content: 'ELIXIR',
+                  content: 'Elixir',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07
                 }
@@ -243,7 +243,7 @@ function Page({ startZ, distance }) {
                 },
                 {
                   type: 'text',
-                  content: 'tensorflow',
+                  content: 'Tensorflow',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.05
                 },
@@ -305,25 +305,25 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'ANSIBLE'
+                  content: 'Ansible'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'HELM'
+                  content: 'Helm'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'TERRAFORM'
+                  content: 'Terraform'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'ARGOCD'
+                  content: 'ArgoCD'
                 },
                 {
                   type: 'text',
@@ -359,13 +359,13 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'FLUTTER'
+                  content: 'Flutter'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'REACTNATIVE'
+                  content: 'React native'
                 },
                 {
                   type: 'text',
@@ -383,13 +383,13 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'ETHERJS'
+                  content: 'EtherJS'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'ADOBEXD'
+                  content: 'Adobe XD'
                 },
                 {
                   type: 'text',
