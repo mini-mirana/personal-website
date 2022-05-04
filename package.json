@@ -137,8 +137,17 @@
         "channel": "mirana"
       },
       {
+        "name": "sarme",
+        "channel": "sarme"
+      },
+      {
         "name": "alpha-mirana",
         "channel": "alpha-mirana",
+        "prerelease": true
+      },
+      {
+        "name": "alpha-sarme",
+        "channel": "alpha-sarme",
         "prerelease": true
       },
       {
