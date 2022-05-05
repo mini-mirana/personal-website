@@ -237,7 +237,7 @@ function Page({ startZ, distance }) {
               text: [
                 {
                   type: 'text',
-                  content: 'ﰆ',
+                  content: 'Scikit-Learn',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.3
                 },
@@ -263,7 +263,7 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Panda'
+                  content: 'Pandas'
                 },
                 {
                   type: 'text',
@@ -364,7 +364,7 @@ function Page({ startZ, distance }) {
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
-                  fontSize: 0.07,
+                  fontSize: 0.05,
                   content: 'React native'
                 },
                 {
