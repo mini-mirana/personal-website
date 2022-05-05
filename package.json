@@ -129,7 +129,7 @@
     ]
   },
   "release": {
-    "tagFormat": "v${version}",
+    "tagFormat": "v.sarme${version}",
     "branches": [
       "master",
       {
