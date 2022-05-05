@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0...v.sarme1.1.0) (2022-05-05)
+
+
+### Bug Fixes
+
+* Fix machine learning section ([3ba464d](https://github.com/mini-mirana/personal-website/commit/3ba464d349e8ce187a0fe0b8f7613ecc8f9e645a))
+* Make fontsize of Scikit-learn in ml section smaller ([b4299e0](https://github.com/mini-mirana/personal-website/commit/b4299e03319254a2f822790482dba521bf119258))
+* Update resume ([30974c7](https://github.com/mini-mirana/personal-website/commit/30974c751ac7ffd4b4254d7a86b65d3518a1bb0e))
+
 # 1.0.0 (2022-05-05)
 
 
