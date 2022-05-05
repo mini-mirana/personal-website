@@ -1,3 +1,10 @@
+# [3.0.0-alpha-sarme.2](https://github.com/mini-mirana/personal-website/compare/v3.0.0-alpha-sarme.1...v3.0.0-alpha-sarme.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* Fix figma case ([5236c88](https://github.com/mini-mirana/personal-website/commit/5236c88c2276af29e7836238cf67bc879dd505dd))
+
 # [3.0.0-alpha-sarme.1](https://github.com/mini-mirana/personal-website/compare/v2.0.2...v3.0.0-alpha-sarme.1) (2022-05-05)
 
 
