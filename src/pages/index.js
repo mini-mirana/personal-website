@@ -239,7 +239,7 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   content: 'Scikit-Learn',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
-                  fontSize: 0.3
+                  fontSize: 0.05
                 },
                 {
                   type: 'text',
