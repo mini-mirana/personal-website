@@ -713,7 +713,7 @@ export default function Home() {
               icon: download,
               description: 'Download Resume pdf version',
               fontSize: 40,
-              link: 'https://res.cloudinary.com/mirana/image/upload/v1648323536/personal-website/Abdolrahman_Ghaedi_Resume_ijbejy.pdf'
+              link: 'https://cdn1.sarme.cyou/cdn/resume-alimoezzi.pdf'
             }
           ]}
           sections={[
