@@ -1,3 +1,10 @@
+# [1.0.0-alpha-sarme.2](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.1...v.sarme1.0.0-alpha-sarme.2) (2022-05-05)
+
+
+### Bug Fixes
+
+* Fix machine learning section ([3ba464d](https://github.com/mini-mirana/personal-website/commit/3ba464d349e8ce187a0fe0b8f7613ecc8f9e645a))
+
 # 1.0.0-alpha-sarme.1 (2022-05-05)
 
 
