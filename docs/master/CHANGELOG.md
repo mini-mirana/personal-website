@@ -1,3 +1,10 @@
+# [1.0.0-alpha-sarme.3](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.2...v.sarme1.0.0-alpha-sarme.3) (2022-05-05)
+
+
+### Bug Fixes
+
+* Update resume ([30974c7](https://github.com/mini-mirana/personal-website/commit/30974c751ac7ffd4b4254d7a86b65d3518a1bb0e))
+
 # [1.0.0-alpha-sarme.2](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.1...v.sarme1.0.0-alpha-sarme.2) (2022-05-05)
 
 
