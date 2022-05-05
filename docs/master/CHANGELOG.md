@@ -1,3 +1,10 @@
+# [1.0.0-alpha-sarme.4](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.3...v.sarme1.0.0-alpha-sarme.4) (2022-05-05)
+
+
+### Bug Fixes
+
+* Make fontsize of Scikit-learn in ml section smaller ([b4299e0](https://github.com/mini-mirana/personal-website/commit/b4299e03319254a2f822790482dba521bf119258))
+
 # [1.0.0-alpha-sarme.3](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.2...v.sarme1.0.0-alpha-sarme.3) (2022-05-05)
 
 
