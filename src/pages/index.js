@@ -395,7 +395,7 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'FIGMA'
+                  content: 'Figma'
                 },
                 {
                   type: 'text',
