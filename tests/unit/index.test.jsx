@@ -142,22 +142,19 @@ describe('Stack', () => {
           },
           {
             type: 'photo',
-            source:
-              'https://res.cloudinary.com/mirana/image/upload/v1648136791/personal-website/photo-manipulation-gfff20f04a_1920_q8suzr.jpg',
+            source: './images/photo-manipulation-gfff20f04a_1920.jpg',
             title: 'Lorem ipsum'
           },
           {
             type: 'photo-text',
-            source:
-              'https://res.cloudinary.com/mirana/image/upload/v1648137447/personal-website/boards-g92417fa21_1920_zaksq6.jpg',
+            source: './images/boards-g92417fa21_1920.jpg',
             title: 'Lorem ipsum',
             description:
               '*Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n\n*sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
           },
           {
             type: 'video',
-            source:
-              'https://res.cloudinary.com/mirana/video/upload/v1601138124/personal-website/SampleVideo_1280x720_30mb_ecblgp.mp4',
+            source: './videos/SampleVideo_1280x720_30mb.mp4',
             title: 'ⓘ Lorem ipsum',
             description:
               'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis laboris nisi ut aliquip ex. Duis aute irure. Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.',

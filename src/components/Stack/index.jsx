@@ -81,10 +81,7 @@ export function Stack({
                 </mesh>
                 <AnimatedText
                   maxWidth={width - 0.6}
-                  font={
-                    c?.titleFont ||
-                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
-                  }
+                  font={c?.titleFont || './fonts/NotoSansMerged-Regular.ttf'}
                   fontSize={c?.titleFontSize || 0.1}
                   letterSpacing={0.1}
                   textAlign='center'
@@ -102,10 +99,7 @@ export function Stack({
                   <meshStandardMaterial color='white' />
                 </AnimatedText>
                 <Text
-                  font={
-                    c?.descriptionFont ||
-                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
-                  }
+                  font={c?.descriptionFont || './fonts/NotoSansMerged-Regular.ttf'}
                   fontSize={c?.descriptionFontSize || 0.09}
                   maxWidth={width - 0.6}
                   letterSpacing={0.1}
@@ -128,10 +122,7 @@ export function Stack({
                   </mesh>
                   <AnimatedText
                     maxWidth={width - 0.6}
-                    font={
-                      c?.titleFont ||
-                      'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
-                    }
+                    font={c?.titleFont || './fonts/NotoSansMerged-Regular.ttf'}
                     fontSize={c?.titleFontSize || 0.1}
                     letterSpacing={0.1}
                     textAlign='center'
@@ -214,10 +205,7 @@ export function Stack({
                 </mesh>
                 <AnimatedText
                   maxWidth={width / 2}
-                  font={
-                    c?.titleFont ||
-                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
-                  }
+                  font={c?.titleFont || './fonts/NotoSansMerged-Regular.ttf'}
                   fontSize={c?.titleFontSize || 0.1}
                   letterSpacing={0.1}
                   textAlign='center'
@@ -252,10 +240,7 @@ export function Stack({
                   <meshBasicMaterial attach='material' map={c.source} toneMapped={false} />
                 </mesh>
                 <Text
-                  font={
-                    c?.descriptionFont ||
-                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
-                  }
+                  font={c?.descriptionFont || './fonts/NotoSansMerged-Regular.ttf'}
                   fontSize={c?.descriptionFontSize || 0.09}
                   maxWidth={0.5 * width - 0.5}
                   letterSpacing={0.1}
@@ -356,10 +341,7 @@ export function Stack({
                     }
                   }}
                   maxWidth={width - 0.6}
-                  font={
-                    c?.titleFont ||
-                    'https://res.cloudinary.com/mirana/raw/upload/v1648124858/personal-website/NotoSansMerged-Regular_my0irf.ttf'
-                  }
+                  font={c?.titleFont || './fonts/NotoSansMerged-Regular.ttf'}
                   fontSize={c?.titleFontSize || 0.1}
                   letterSpacing={0.1}
                   textAlign='center'
