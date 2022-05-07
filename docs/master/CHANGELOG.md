@@ -26,17 +26,15 @@
 
 # [2.0.0](https://github.com/mini-mirana/personal-website/compare/v1.2.0...v2.0.0) (2022-05-04)
 
-
 ### Features
 
-* **components:** Add reverse functionality to TextMesh ([ea7b27c](https://github.com/mini-mirana/personal-website/commit/ea7b27c05c175790437d12a0a955d0c8030e5dc9))
+- **components:** Add reverse functionality to TextMesh ([ea7b27c](https://github.com/mini-mirana/personal-website/commit/ea7b27c05c175790437d12a0a955d0c8030e5dc9))
 
 # [1.2.0](https://github.com/mini-mirana/personal-website/compare/v1.1.3...v1.2.0) (2022-04-12)
 
-
 ### Bug Fixes
 
-* Fix tags where not fetch during ci ([6f468ed](https://github.com/mini-mirana/personal-website/commit/6f468ed5c12127352687ee4ebf246b9e4361fb49))
+- Fix tags where not fetch during ci ([6f468ed](https://github.com/mini-mirana/personal-website/commit/6f468ed5c12127352687ee4ebf246b9e4361fb49))
 
 ## [1.1.3](https://github.com/mini-mirana/personal-website/compare/v1.1.2...v1.1.3) (2022-04-11)
 
@@ -46,10 +44,9 @@
 
 # [1.1.0](https://github.com/mini-mirana/personal-website/compare/v1.0.3...v1.1.0) (2022-04-10)
 
-
 ### Bug Fixes
 
-*  Fix pipeline build step ([c0e1b98](https://github.com/mini-mirana/personal-website/commit/c0e1b98d34f3a6f29e98610006a21b09caf20d17))
+- Fix pipeline build step ([c0e1b98](https://github.com/mini-mirana/personal-website/commit/c0e1b98d34f3a6f29e98610006a21b09caf20d17))
 
 ## [1.0.3](https://github.com/mini-mirana/personal-website/compare/v1.0.2...v1.0.3) (2022-04-10)
 
