@@ -194,7 +194,7 @@ function Page({ startZ, distance }) {
           content={[
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061381/personal-website/school_lokxlb.mp4',
+              source: './videos/school.mp4',
               title: 'ⓘ SCHOOL MANAGEMENT APPLICATION',
               cardTitle: 'SCHOOL MANAGEMENT APPLICATION',
               description: (
@@ -206,7 +206,7 @@ function Page({ startZ, distance }) {
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648062096/personal-website/medical_aalklq.mp4',
+              source: './videos/medical.mp4',
               title: 'ⓘ MEDICAL STRUCTURED REPORTING SYSTEM',
               cardTitle: 'MEDICAL STRUCTURED REPORTING SYSTEM',
               description: (
@@ -220,7 +220,7 @@ function Page({ startZ, distance }) {
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
+              source: './videos/vpn.mp4',
               title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
               cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
               description: (
@@ -233,15 +233,14 @@ function Page({ startZ, distance }) {
             {
               type: 'photo-text',
               photoY: 0,
-              source:
-                'https://res.cloudinary.com/mirana/image/upload/v1648110481/personal-website/vi-room.ir__Pixel_5_vmulhi.png',
+              source: './images/vi-room.ir__Pixel_5.png',
               title: 'WEB CONFERENCING SOLUTION',
               description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`,
               descriptionY: '-0.8'
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061375/personal-website/vampire_nelmbo.mp4',
+              source: './videos/vampire.mp4',
               title: 'ⓘ VAMPIRE FARMS',
               cardTitle: 'VAMPIRE FARMS',
               description: (
@@ -253,8 +252,7 @@ function Page({ startZ, distance }) {
             },
             {
               type: 'video',
-              source:
-                'https://res.cloudinary.com/mirana/video/upload/v1648059846/personal-website/jurassic-farm_bfnvqk.mp4',
+              source: './videos/jurassic-farm.mp4',
               title: 'ⓘ JURASSIC FARMS',
               cardTitle: 'JURASSIC FARMS',
               description: (
@@ -266,7 +264,7 @@ function Page({ startZ, distance }) {
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648065620/personal-website/timewarp_rqksiw.mp4',
+              source: './videos/timewarp.mp4',
               title: 'ⓘ TIMEWRAP',
               cardTitle: 'TIMEWRAP',
               description: (
@@ -443,7 +441,7 @@ export default function Home() {
               icon: download,
               description: 'Download Resume pdf version',
               fontSize: 40,
-              link: 'https://res.cloudinary.com/mirana/image/upload/v1648323536/personal-website/Abdolrahman_Ghaedi_Resume_ijbejy.pdf'
+              link: './pdfs/Abdolrahman_Ghaedi_Resume.pdf'
             }
           ]}
           sections={[
