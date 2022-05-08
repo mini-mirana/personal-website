@@ -340,11 +340,12 @@ export default function Home() {
           makeDefault
           position={pos}
           rotation={rotation}
-          zoom={1}
+          zoom={4}
           far={8}
-          fov={120}
+          fov={150}
         />
-        <ambientLight intensity={0.1} />
+        <ambientLight intensity={1} />
+        <pointLight intensity={1} />
 
         <Cursor
           speed={0.2}
