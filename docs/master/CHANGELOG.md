@@ -1,3 +1,10 @@
+# [1.0.0-alpha-sarme.6](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.5...v.sarme1.0.0-alpha-sarme.6) (2022-05-08)
+
+
+### Bug Fixes
+
+*  Fix skill item cases ([3a1bcdb](https://github.com/mini-mirana/personal-website/commit/3a1bcdb93894a9cf5df8c6cc5591dc4dea680fd9))
+
 # [1.0.0-alpha-sarme.5](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.4...v.sarme1.0.0-alpha-sarme.5) (2022-05-08)
 
 
