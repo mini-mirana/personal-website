@@ -439,7 +439,6 @@ function Page({ startZ, distance }) {
           startZ={startZ - 12 * distance - 2}
           distance={distance}
           reverse
-          startReverse
           content={[
             {
               type: 'photo-text',
@@ -566,7 +565,6 @@ function Page({ startZ, distance }) {
           startZ={startZ - 22 * distance - 2}
           distance={distance}
           reverse
-          startReverse
           content={[
             {
               type: 'text',
