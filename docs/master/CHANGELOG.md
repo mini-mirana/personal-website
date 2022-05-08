@@ -1,3 +1,26 @@
+# [2.0.0](https://github.com/mini-mirana/personal-website/compare/v.sarme1.1.0...v.sarme2.0.0) (2022-05-08)
+
+
+### Bug Fixes
+
+*  Change CDN of videos ([20f6b88](https://github.com/mini-mirana/personal-website/commit/20f6b88e3de3175e15d6421e3f9fd4a2c20294c7))
+*  Fix skill item cases ([3a1bcdb](https://github.com/mini-mirana/personal-website/commit/3a1bcdb93894a9cf5df8c6cc5591dc4dea680fd9))
+* Add sarme prefix to tag format ([1afba6a](https://github.com/mini-mirana/personal-website/commit/1afba6ac8f1a8bbe71fa9badc4bd5aef23f19b49))
+* Capitalize only initials ([00ea83b](https://github.com/mini-mirana/personal-website/commit/00ea83bb82d61f8554995b31ecfad1b9f77159ab))
+* **components:** Fix credits mouse hover ([43191e4](https://github.com/mini-mirana/personal-website/commit/43191e4a55a3704337cc5c1cbc46dc025c31e7e0))
+* Fix figma case ([57950b0](https://github.com/mini-mirana/personal-website/commit/57950b0f5e3a99e29e6d9eca6d8f414070a82ba3))
+* Fix machine learning section ([e701845](https://github.com/mini-mirana/personal-website/commit/e701845aec63e96c11b4a02bfd6f097c26414899))
+* Improve camera fov and lighting ([fc102bc](https://github.com/mini-mirana/personal-website/commit/fc102bc91adfb817d9f602762cc4102300437999))
+* Make fontsize of Scikit-learn in ml section smaller ([3a12a34](https://github.com/mini-mirana/personal-website/commit/3a12a347037ec688b449b5242652e86d5297b962))
+* Update resume ([a530c54](https://github.com/mini-mirana/personal-website/commit/a530c5496d99b944882eec8427b682259abb8709))
+
+
+### Features
+
+*  Initial sarme content ([ad97f35](https://github.com/mini-mirana/personal-website/commit/ad97f35fd0992439b2c5ae35e59a1d74904491ca))
+* **website:** Modify channel color and lowers wireframe density ([2204ca7](https://github.com/mini-mirana/personal-website/commit/2204ca77b85aad300f36288e0c67441e43a06a04))
+* **website:** Override default cursor ([1d956bb](https://github.com/mini-mirana/personal-website/commit/1d956bb47e54053a396a66b92fee6036b115e147))
+
 # [1.1.0](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0...v.sarme1.1.0) (2022-05-05)
 
 
