@@ -1,3 +1,29 @@
+# [1.0.0-alpha-sarme.8](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.7...v.sarme1.0.0-alpha-sarme.8) (2022-05-08)
+
+
+### Bug Fixes
+
+*  Change CDN of videos ([0c8ccdf](https://github.com/mini-mirana/personal-website/commit/0c8ccdfe1f06350dda9f85dfc23a98f4d8217340))
+*  Fix skill item cases ([ec97f44](https://github.com/mini-mirana/personal-website/commit/ec97f445e328b60af059a244f69193fbcdb4aae2))
+* Add sarme prefix to tag format ([26240a4](https://github.com/mini-mirana/personal-website/commit/26240a417e347fcbe5fc09586189286f8d3478cd))
+* Capitalize only initials ([061082b](https://github.com/mini-mirana/personal-website/commit/061082b09ed58f660705a0fbe9a3fe6cc841fe87))
+* Capitalize only initials ([23a5c3a](https://github.com/mini-mirana/personal-website/commit/23a5c3ac5a98b667bbdbceaab15c60793599fd49))
+* Fix figma case ([c4c0d14](https://github.com/mini-mirana/personal-website/commit/c4c0d1423abc8d810047f1d1553c11315760db1b))
+* Fix figma case ([d4d01ba](https://github.com/mini-mirana/personal-website/commit/d4d01ba714b004b43386fd2920e0a2a5d9e270e2))
+* Fix lag while navigation ([de1c3ba](https://github.com/mini-mirana/personal-website/commit/de1c3bab19924287c21544427dee7103b44d94dc))
+* Fix machine learning section ([595739c](https://github.com/mini-mirana/personal-website/commit/595739c79efcc71a91948aaad1fe569d9e031e90))
+* Fix machine learning section ([26e0d54](https://github.com/mini-mirana/personal-website/commit/26e0d54ca4c21dd8704d36238f9a14adc1bbb906))
+* Make fontsize of Scikit-learn in ml section smaller ([ebb55a5](https://github.com/mini-mirana/personal-website/commit/ebb55a5a8fcadaa379bf51a6e1b21616e2d07d51))
+* Make fontsize of Scikit-learn in ml section smaller ([7c610ee](https://github.com/mini-mirana/personal-website/commit/7c610eeb437bef98d1896bf39c71911d24c6a46f))
+* Update resume ([b49a5f3](https://github.com/mini-mirana/personal-website/commit/b49a5f3740635f8a52d5fd278ece373e33fc8f1a))
+
+
+### Features
+
+*  Initial sarme content ([79fd9ed](https://github.com/mini-mirana/personal-website/commit/79fd9ed8b2c7cb8cd05d1a8e1ffa25893b0c6132))
+*  Initial sarme content ([0593838](https://github.com/mini-mirana/personal-website/commit/0593838cdb22dd3b6614eecb1ba51d14ef015cff))
+* **website:** Modify channel color and lowers wireframe density ([560bbee](https://github.com/mini-mirana/personal-website/commit/560bbee4df706a93c31fd87639d6863476e62427))
+
 # [1.0.0-alpha-sarme.7](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.6...v.sarme1.0.0-alpha-sarme.7) (2022-05-08)
 
 
