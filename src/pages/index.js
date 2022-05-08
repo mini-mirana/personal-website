@@ -197,7 +197,7 @@ function Page({ startZ, distance }) {
                   content: 'Django',
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
-                  fontSize: 0.12
+                  fontSize: 0.07
                 },
                 {
                   type: 'text',
@@ -208,8 +208,8 @@ function Page({ startZ, distance }) {
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
-                  fontSize: 0.12,
-                  content: 'Nextjs'
+                  fontSize: 0.07,
+                  content: 'Next.js'
                 },
                 {
                   type: 'text',
@@ -227,7 +227,7 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'Expressjs'
+                  content: 'Express.js'
                 }
               ]
             },
@@ -237,18 +237,18 @@ function Page({ startZ, distance }) {
               text: [
                 {
                   type: 'text',
-                  content: 'Scikit-Learn',
+                  content: 'scikit-Learn',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.05
                 },
                 {
                   type: 'text',
-                  content: 'Tensorflow',
+                  content: 'TensorFlow',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.05
                 },
                 {
-                  content: 'Pytorch',
+                  content: 'PyTorch',
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07
@@ -323,7 +323,7 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'ArgoCD'
+                  content: 'Argo CD'
                 },
                 {
                   type: 'text',
@@ -365,7 +365,7 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.05,
-                  content: 'React native'
+                  content: 'React Native'
                 },
                 {
                   type: 'text',
@@ -377,13 +377,13 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'WEB3JS'
+                  content: 'Web3.js'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'EtherJS'
+                  content: 'Ethers.js'
                 },
                 {
                   type: 'text',
@@ -413,13 +413,13 @@ function Page({ startZ, distance }) {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.12,
-                  content: 'PQSL'
+                  content: 'PSQL'
                 },
                 {
                   type: 'text',
                   font: 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
                   fontSize: 0.07,
-                  content: 'MONGODB'
+                  content: 'MongoDB'
                 }
               ]
             }
