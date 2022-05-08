@@ -1,3 +1,5 @@
+# [1.0.0-alpha.20](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.19...v1.0.0-alpha.20) (2022-05-08)
+
 # [1.0.0-alpha.19](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2022-05-08)
 
 
