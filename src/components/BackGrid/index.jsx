@@ -14,10 +14,10 @@ export function BackGrid({ ...props }) {
     // <Plane args={[80, 80, 128, 128]} {...props}>
     //   <meshStandardMaterial color='#ea5455' wireframe side={THREE.DoubleSide} />
     // </Plane>
-    <Float scale={0.75} rotationIntensity={0.01} floatIntensity={1} speed={1.5}>
+    <Float scale={0.75} rotationIntensity={0.01} floatIntensity={1} speed={3}>
       <mesh {...props}>
-        <cylinderGeometry args={[5, 5, 500, 256, 256, true, 0, 6.283185307179586]} />
-        <meshStandardMaterial color='#ea5455' wireframe side={THREE.DoubleSide} />
+        <cylinderGeometry args={[5, 5, 500, 54, 64, true, 0, 6.283185307179586]} />
+        <meshStandardMaterial color='#2ec4b6' wireframe side={THREE.DoubleSide} />
       </mesh>
     </Float>
   )
