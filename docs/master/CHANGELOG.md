@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/mini-mirana/personal-website/compare/v3.0.0...v3.1.0) (2022-05-08)
+
+
+### Bug Fixes
+
+* Fix lag while navigation ([de1c3ba](https://github.com/mini-mirana/personal-website/commit/de1c3bab19924287c21544427dee7103b44d94dc))
+
 # [3.0.0](https://github.com/mini-mirana/personal-website/compare/v2.0.2...v3.0.0) (2022-05-08)
 
 
