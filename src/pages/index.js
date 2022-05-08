@@ -483,7 +483,7 @@ function Page({ startZ, distance }) {
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061375/personal-website/vampire_nelmbo.mp4',
+              source: 'https://cdn1.sarme.cyou/cdn/vampire_farm.mp4',
               title: 'ⓘ VAMPIRE FARMS',
               cardTitle: 'ETHTARI STUDIOS | Full Stack Solidity Developer | Remote, 2019',
               description: <div># Vampire DeFi Web Application</div>
@@ -504,8 +504,7 @@ function Page({ startZ, distance }) {
             },
             {
               type: 'video',
-              source:
-                'https://res.cloudinary.com/mirana/video/upload/v1648059846/personal-website/jurassic-farm_bfnvqk.mp4',
+              source: 'https://cdn1.sarme.cyou/cdn/jurassic_farm.mp4',
               title: 'ⓘ JURASSIC FARMS',
               cardTitle: 'JURASSIC FARMS | Remote, 2021',
               description: <div># Jurassic DeFi Web Application</div>
