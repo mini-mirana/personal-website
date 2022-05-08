@@ -623,7 +623,7 @@ export default function Home() {
   const cam = useRef()
   const canvasRef = useRef()
   const [{ pos, rotation }, set] = useSpring(() => ({
-    pos: [0, 0, startZ],
+    pos: [0, 0, startZ + 4],
     rotation: [0, 0, 0],
     config: config.slow
   }))
@@ -641,13 +641,13 @@ export default function Home() {
     if (measure < thr) {
       scrollInSound.current.play()
       set.start(() => ({
-        pos: [0, 0, from - 2],
+        pos: [0, 0, from - 1],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     } else {
       scrollOutSound.current.play()
       set.start(() => ({
-        pos: [0, 0, from + 2],
+        pos: [0, 0, from + 1],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     }
