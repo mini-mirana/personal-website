@@ -1,3 +1,10 @@
+# [1.0.0-alpha.19](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.18...v1.0.0-alpha.19) (2022-05-08)
+
+
+### Bug Fixes
+
+* Fix lag while navigation ([de1c3ba](https://github.com/mini-mirana/personal-website/commit/de1c3bab19924287c21544427dee7103b44d94dc))
+
 # [1.0.0-alpha.18](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2022-05-08)
 
 
