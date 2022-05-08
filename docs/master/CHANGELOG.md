@@ -1,3 +1,10 @@
+# [1.0.0-alpha-sarme.7](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.6...v.sarme1.0.0-alpha-sarme.7) (2022-05-08)
+
+
+### Bug Fixes
+
+*  Change CDN of videos ([20f6b88](https://github.com/mini-mirana/personal-website/commit/20f6b88e3de3175e15d6421e3f9fd4a2c20294c7))
+
 # [1.0.0-alpha-sarme.6](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.5...v.sarme1.0.0-alpha-sarme.6) (2022-05-08)
 
 
