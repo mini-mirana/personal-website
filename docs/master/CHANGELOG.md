@@ -1,3 +1,11 @@
+# [3.1.0](https://github.com/mini-mirana/personal-website/compare/v.sarme3.0.0...v.sarme3.1.0) (2022-05-08)
+
+
+### Bug Fixes
+
+* Lower scroll speed ([d965cb6](https://github.com/mini-mirana/personal-website/commit/d965cb6dde6b7b3d4e09a8ad8205070ed007114a))
+* Move camera initial position backward ([e6a4c01](https://github.com/mini-mirana/personal-website/commit/e6a4c019d8772cc6082253902d2a4e4314059272))
+
 # [3.0.0](https://github.com/mini-mirana/personal-website/compare/v.sarme2.0.0...v.sarme3.0.0) (2022-05-08)
 
 
