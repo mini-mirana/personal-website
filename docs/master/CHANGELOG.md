@@ -1,3 +1,16 @@
+# [1.0.0-alpha.18](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.17...v1.0.0-alpha.18) (2022-05-08)
+
+
+### Bug Fixes
+
+* **components:** Fix credits mouse hover ([43191e4](https://github.com/mini-mirana/personal-website/commit/43191e4a55a3704337cc5c1cbc46dc025c31e7e0))
+* Improve camera fov and lighting ([fc102bc](https://github.com/mini-mirana/personal-website/commit/fc102bc91adfb817d9f602762cc4102300437999))
+
+
+### Features
+
+* **website:** Override default cursor ([1d956bb](https://github.com/mini-mirana/personal-website/commit/1d956bb47e54053a396a66b92fee6036b115e147))
+
 # [1.0.0-alpha.17](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.16...v1.0.0-alpha.17) (2022-05-04)
 
 # [1.0.0-alpha.16](https://github.com/mini-mirana/personal-website/compare/v1.0.0-alpha.15...v1.0.0-alpha.16) (2022-05-04)
