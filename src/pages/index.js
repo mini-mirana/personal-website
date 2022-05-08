@@ -623,7 +623,7 @@ export default function Home() {
   const cam = useRef()
   const canvasRef = useRef()
   const [{ pos, rotation }, set] = useSpring(() => ({
-    pos: [0, 0, startZ],
+    pos: [0, 0, startZ + 4],
     rotation: [0, 0, 0],
     config: config.slow
   }))
