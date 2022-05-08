@@ -1,3 +1,10 @@
+# [1.0.0-alpha-sarme.10](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.9...v.sarme1.0.0-alpha-sarme.10) (2022-05-08)
+
+
+### Bug Fixes
+
+* Lower scroll speed ([d965cb6](https://github.com/mini-mirana/personal-website/commit/d965cb6dde6b7b3d4e09a8ad8205070ed007114a))
+
 # [1.0.0-alpha-sarme.9](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.8...v.sarme1.0.0-alpha-sarme.9) (2022-05-08)
 
 
