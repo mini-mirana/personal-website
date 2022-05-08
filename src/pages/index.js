@@ -106,8 +106,8 @@ function Page({ startZ, distance }) {
           </TextMesh>
         </group>
         <Title
-          name='.Grid'
           reverse
+          name='.Grid'
           size={[vpWidth, vpHeight, 0]}
           position={[-vpWidth / 2, vpHeight / 2, startZ - 5 * distance - 2]}
           content={['SKILLS']}
