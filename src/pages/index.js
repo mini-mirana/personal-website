@@ -282,11 +282,7 @@ export default function Home() {
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     } else {
-      if (!('ontouchstart' in window)) {
-        scrollOutSound.current.play()
-      } else {
-        scrollInSound.current.play()
-      }
+      scrollOutSound.current.play()
       set.start(() => ({
         pos: [0, 0, from + 2],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
@@ -294,8 +290,8 @@ export default function Home() {
     }
   }
   useEffect(() => {
-    scrollInSound.current = new Audio('/sound/spaceship-passing.mp3')
-    scrollOutSound.current = new Audio('/sound/sfx.wav')
+    scrollInSound.current = new Audio('/sound/object.mp3')
+    scrollOutSound.current = new Audio('/sound/toggle.mp3')
 
     // Your code here
     if (!('ontouchstart' in window)) {
@@ -305,19 +301,16 @@ export default function Home() {
     }
 
     if ('ontouchstart' in window) {
-      window.addEventListener(
-        'touchmove',
-        async (ev) => {
-          ev.preventDefault()
-          const Hammer = (await import('hammerjs')).default
-          const hammertime = new Hammer(canvasRef.current)
-          hammertime.get('pinch').set({ enable: true })
-          hammertime.on('pinch', (e) => {
-            handleScroll(e.scale, 1)
-          })
-        },
-        false
-      )
+      // eslint-disable-next-line no-undef
+      const hammertime = new Hammer(canvasRef.current)
+      hammertime.get('pinch').set({ enable: true })
+      hammertime.get('pan').set({ threshold: 8 })
+      hammertime.on('pinchin panup doubletap', () => {
+        handleScroll(2, 1)
+      })
+      hammertime.on('pinchout pandown', () => {
+        handleScroll(1, 2)
+      })
     }
   }, [])
 
