@@ -1,3 +1,10 @@
+# [1.0.0-alpha-sarme.9](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.8...v.sarme1.0.0-alpha-sarme.9) (2022-05-08)
+
+
+### Bug Fixes
+
+* Move camera initial position backward ([e6a4c01](https://github.com/mini-mirana/personal-website/commit/e6a4c019d8772cc6082253902d2a4e4314059272))
+
 # [1.0.0-alpha-sarme.8](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.7...v.sarme1.0.0-alpha-sarme.8) (2022-05-08)
 
 
