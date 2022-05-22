@@ -199,8 +199,17 @@ function Page({ startZ, distance }) {
               cardTitle: 'SCHOOL MANAGEMENT APPLICATION',
               description: (
                 <div>
-                  # Designed user experience of the application
-                  <br /># Developed the frontend
+                  # A role-based school management system to handle different functions, including course creation,
+                  scheduling, enrollment, and reporting as well as many other work-flow automation tasks
+                  <br />
+                  <br />
+                  # Wireframed and prototyped the UX using Adobe XD
+                  <br />
+                  <br />
+                  # Turned the prototype into reusable components by customizing Material UI components to increase
+                  efficiency and integrated those components using ReactJS
+                  <br />
+                  <br /># Architected database and RESTful API via PSQL and Flask
                 </div>
               )
             },
@@ -211,10 +220,20 @@ function Page({ startZ, distance }) {
               cardTitle: 'MEDICAL STRUCTURED REPORTING SYSTEM',
               description: (
                 <div>
-                  # Designed user experience of the application
+                  # A medical structured reporting system to help radiologists to generate machine-readable data,
+                  increase their report consistency, and accelerate the acquisition of actionable data using intuitive
+                  reporting by dictating their findings to the voice assistant
                   <br />
-                  # Developed the frontend
-                  <br /># Participated in voice assistant development team (for reporting procedure)
+                  <br />
+                  # Mocked up and prototyped the UX design using Adobe XD & converted the prototype into ReactJS
+                  <br />
+                  <br />
+                  # Co-built voice assistant giving voice-enabled navigation through our interface
+                  <br />
+                  <br />
+                  # Utilized MVC architecture using Flask and Flask Blueprints
+                  <br />
+                  <br /># Implemented git-based workflow on an agile team
                 </div>
               )
             },
@@ -225,18 +244,26 @@ function Page({ startZ, distance }) {
               cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
               description: (
                 <div>
-                  # AUTOMATIC VPN CONNECTION
-                  <br /># Developed the frontend
+                  # An application to automate the process of configuring and connecting to android’s built-in VPN
+                  client using accessibility service
+                  <br />
+                  <br />
+                  # Fetched users’ data from the dedicated website to help them to monitor their data usage
+                  <br />
+                  <br />
+                  # Designed and Developed the UI based on Material Design
+                  <br />
+                  <br /># Maintained and updated the code for legacy Android devices
                 </div>
               )
             },
             {
               type: 'photo-text',
-              source:
-                'https://res.cloudinary.com/mirana/image/upload/v1648137447/personal-website/boards-g92417fa21_1920_zaksq6.jpg',
-              title: 'Lorem ipsum',
-              description:
-                '*Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n\n*sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+              photoY: 0,
+              source: './images/vi-room.ir__Pixel_5.png',
+              title: 'WEB CONFERENCING SOLUTION',
+              description: `# A solution to auto-scale BBB (An open-source web conferencing system designed for online learning) virtual rooms\n\n# Developed the cloud-native frontend for BBB\n\n# Autoscaled the pool of BBB backends`,
+              descriptionY: '-0.8'
             },
             {
               type: 'video',
@@ -245,8 +272,10 @@ function Page({ startZ, distance }) {
               cardTitle: 'VAMPIRE FARMS',
               description: (
                 <div>
-                  # Designed user experience of the application
-                  <br /># Developed the frontend
+                  # A yield farming DAPP (getting rewards in exchange for liquidity providing) allows anyone to earn
+                  passive income using a decentralized ecosystem of “money legos” built on the Ethereum blockchain
+                  <br />
+                  <br /># Co-designed and Converted PSD mockups into component-based code using ReactJS and Redux
                 </div>
               )
             },
@@ -257,8 +286,17 @@ function Page({ startZ, distance }) {
               cardTitle: 'JURASSIC FARMS',
               description: (
                 <div>
-                  # Designed user experience of the application
-                  <br /># Developed the frontend
+                  # A yield farming DAPP (getting rewards in exchange for liquidity providing) allows anyone to earn
+                  passive income using a decentralized ecosystem of “money legos” built on the Ethereum blockchain
+                  <br />
+                  <br />
+                  # Renovated the UI by refactoring ReactJS and prioritized component modularity
+                  <br />
+                  <br />
+                  # Internationalized the website using React-i18next
+                  <br />
+                  <br /># Integrated Google analytics to track user information when they are visiting the website using
+                  react-ga
                 </div>
               )
             },
@@ -269,12 +307,18 @@ function Page({ startZ, distance }) {
               cardTitle: 'TIMEWRAP',
               description: (
                 <div>
-                  # FARM / P2E / NFT MARKETPLACE
+                  # A Complete DEFI application including yield farming (getting rewards in exchange for liquidity
+                  providing), GameFi (play-to-earn blockchain games that offer economic incentives to players), and NFT
+                  marketplace (a platform to mint and trade NFTs)
                   <br />
-                  # Developed the frontend
+                  <br />
+                  # Involved in the development of smart contracts
+                  <br />
                   <br />
                   # Connected the DAPP to multiple providers
-                  <br /># Developed smart contracts
+                  <br />
+                  <br /># Communicated with the smart contracts using web3.js and improved the performance of the
+                  website by using Next.js on-demand image loading and dynamic rendering
                 </div>
               )
             }
@@ -429,7 +473,7 @@ export default function Home() {
           far={8}
           fov={150}
         />
-        <ambientLight intensity={1} />
+        <ambientLight intensity={0.1} />
         <pointLight intensity={1} />
 
         <Cursor

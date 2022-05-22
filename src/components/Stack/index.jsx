@@ -330,9 +330,9 @@ export function Stack({
                   onPointerOver={() => {
                     if (!('ontouchstart' in window)) {
                       addGlow(i)
-                      const newHovered = Array(content.length).fill(false)
-                      newHovered[i] = true
-                      setHovered(newHovered)
+                      //                       const newHovered = Array(content.length).fill(false)
+                      //                       newHovered[i] = true
+                      //                       setHovered(newHovered)
                     }
                   }}
                   onPointerLeave={() => {
