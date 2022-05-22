@@ -194,89 +194,131 @@ function Page({ startZ, distance }) {
           content={[
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061381/personal-website/school_lokxlb.mp4',
+              source: './videos/school.mp4',
               title: 'ⓘ SCHOOL MANAGEMENT APPLICATION',
               cardTitle: 'SCHOOL MANAGEMENT APPLICATION',
               description: (
                 <div>
-                  # Designed user experience of the application
-                  <br /># Developed the frontend
+                  # A role-based school management system to handle different functions, including course creation,
+                  scheduling, enrollment, and reporting as well as many other work-flow automation tasks
+                  <br />
+                  <br />
+                  # Wireframed and prototyped the UX using Adobe XD
+                  <br />
+                  <br />
+                  # Turned the prototype into reusable components by customizing Material UI components to increase
+                  efficiency and integrated those components using ReactJS
+                  <br />
+                  <br /># Architected database and RESTful API via PSQL and Flask
                 </div>
               )
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648062096/personal-website/medical_aalklq.mp4',
+              source: './videos/medical.mp4',
               title: 'ⓘ MEDICAL STRUCTURED REPORTING SYSTEM',
               cardTitle: 'MEDICAL STRUCTURED REPORTING SYSTEM',
               description: (
                 <div>
-                  # Designed user experience of the application
+                  # A medical structured reporting system to help radiologists to generate machine-readable data,
+                  increase their report consistency, and accelerate the acquisition of actionable data using intuitive
+                  reporting by dictating their findings to the voice assistant
                   <br />
-                  # Developed the frontend
-                  <br /># Participated in voice assistant development team (for reporting procedure)
+                  <br />
+                  # Mocked up and prototyped the UX design using Adobe XD & converted the prototype into ReactJS
+                  <br />
+                  <br />
+                  # Co-built voice assistant giving voice-enabled navigation through our interface
+                  <br />
+                  <br />
+                  # Utilized MVC architecture using Flask and Flask Blueprints
+                  <br />
+                  <br /># Implemented git-based workflow on an agile team
                 </div>
               )
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648059920/personal-website/vpn_ts3lzf.mp4',
+              source: './videos/vpn.mp4',
               title: 'ⓘ ANDROID ACCESSIBILITY APPLICATION',
               cardTitle: 'ANDROID ACCESSIBILITY APPLICATION',
               description: (
                 <div>
-                  # AUTOMATIC VPN CONNECTION
-                  <br /># Developed the frontend
+                  # An application to automate the process of configuring and connecting to android’s built-in VPN
+                  client using accessibility service
+                  <br />
+                  <br />
+                  # Fetched users’ data from the dedicated website to help them to monitor their data usage
+                  <br />
+                  <br />
+                  # Designed and Developed the UI based on Material Design
+                  <br />
+                  <br /># Maintained and updated the code for legacy Android devices
                 </div>
               )
             },
             {
               type: 'photo-text',
               photoY: 0,
-              source:
-                'https://res.cloudinary.com/mirana/image/upload/v1648110481/personal-website/vi-room.ir__Pixel_5_vmulhi.png',
+              source: './images/vi-room.ir__Pixel_5.png',
               title: 'WEB CONFERENCING SOLUTION',
-              description: `# Auto-scaled the pool of BBB backends\n\n# Developed the cloud-native frontend for BBB`,
+              description: `# A solution to auto-scale BBB (An open-source web conferencing system designed for online learning) virtual rooms\n\n# Developed the cloud-native frontend for BBB\n\n# Autoscaled the pool of BBB backends`,
               descriptionY: '-0.8'
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648061375/personal-website/vampire_nelmbo.mp4',
+              source: './videos/vampire.mp4',
               title: 'ⓘ VAMPIRE FARMS',
               cardTitle: 'VAMPIRE FARMS',
               description: (
                 <div>
-                  # Designed user experience of the application
-                  <br /># Developed the frontend
+                  # A yield farming DAPP (getting rewards in exchange for liquidity providing) allows anyone to earn
+                  passive income using a decentralized ecosystem of “money legos” built on the Ethereum blockchain
+                  <br />
+                  <br /># Co-designed and Converted PSD mockups into component-based code using ReactJS and Redux
                 </div>
               )
             },
             {
               type: 'video',
-              source:
-                'https://res.cloudinary.com/mirana/video/upload/v1648059846/personal-website/jurassic-farm_bfnvqk.mp4',
+              source: './videos/jurassic-farm.mp4',
               title: 'ⓘ JURASSIC FARMS',
               cardTitle: 'JURASSIC FARMS',
               description: (
                 <div>
-                  # Designed user experience of the application
-                  <br /># Developed the frontend
+                  # A yield farming DAPP (getting rewards in exchange for liquidity providing) allows anyone to earn
+                  passive income using a decentralized ecosystem of “money legos” built on the Ethereum blockchain
+                  <br />
+                  <br />
+                  # Renovated the UI by refactoring ReactJS and prioritized component modularity
+                  <br />
+                  <br />
+                  # Internationalized the website using React-i18next
+                  <br />
+                  <br /># Integrated Google analytics to track user information when they are visiting the website using
+                  react-ga
                 </div>
               )
             },
             {
               type: 'video',
-              source: 'https://res.cloudinary.com/mirana/video/upload/v1648065620/personal-website/timewarp_rqksiw.mp4',
+              source: './videos/timewarp.mp4',
               title: 'ⓘ TIMEWRAP',
               cardTitle: 'TIMEWRAP',
               description: (
                 <div>
-                  # FARM / P2E / NFT MARKETPLACE
+                  # A Complete DEFI application including yield farming (getting rewards in exchange for liquidity
+                  providing), GameFi (play-to-earn blockchain games that offer economic incentives to players), and NFT
+                  marketplace (a platform to mint and trade NFTs)
                   <br />
-                  # Developed the frontend
+                  <br />
+                  # Involved in the development of smart contracts
+                  <br />
                   <br />
                   # Connected the DAPP to multiple providers
-                  <br /># Developed smart contracts
+                  <br />
+                  <br /># Communicated with the smart contracts using web3.js and improved the performance of the
+                  website by using Next.js on-demand image loading and dynamic rendering
                 </div>
               )
             }
@@ -376,11 +418,7 @@ export default function Home() {
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     } else {
-      if (!('ontouchstart' in window)) {
-        scrollOutSound.current.play()
-      } else {
-        scrollInSound.current.play()
-      }
+      scrollOutSound.current.play()
       set.start(() => ({
         pos: [0, 0, from + 2],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
@@ -388,8 +426,8 @@ export default function Home() {
     }
   }
   useEffect(() => {
-    scrollInSound.current = new Audio('/sound/spaceship-passing.mp3')
-    scrollOutSound.current = new Audio('/sound/sfx.wav')
+    scrollInSound.current = new Audio('/sound/object.mp3')
+    scrollOutSound.current = new Audio('/sound/toggle.mp3')
 
     // Your code here
     if (!('ontouchstart' in window)) {
@@ -399,19 +437,16 @@ export default function Home() {
     }
 
     if ('ontouchstart' in window) {
-      window.addEventListener(
-        'touchmove',
-        async (ev) => {
-          ev.preventDefault()
-          const Hammer = (await import('hammerjs')).default
-          const hammertime = new Hammer(canvasRef.current)
-          hammertime.get('pinch').set({ enable: true })
-          hammertime.on('pinch', (e) => {
-            handleScroll(e.scale, 1)
-          })
-        },
-        false
-      )
+      // eslint-disable-next-line no-undef
+      const hammertime = new Hammer(canvasRef.current)
+      hammertime.get('pinch').set({ enable: true })
+      hammertime.get('pan').set({ threshold: 8 })
+      hammertime.on('pinchin panup doubletap', () => {
+        handleScroll(2, 1)
+      })
+      hammertime.on('pinchout pandown', () => {
+        handleScroll(1, 2)
+      })
     }
   }, [])
 
@@ -434,11 +469,12 @@ export default function Home() {
           makeDefault
           position={pos}
           rotation={rotation}
-          zoom={1}
+          zoom={4}
           far={8}
-          fov={120}
+          fov={150}
         />
         <ambientLight intensity={0.1} />
+        <pointLight intensity={1} />
 
         <Cursor
           speed={0.2}
@@ -447,14 +483,14 @@ export default function Home() {
             { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:mini_mirana@yahoo.com' },
             {
               icon: download,
-              description: 'Resume pdf',
+              description: 'Download Resume pdf version',
               fontSize: 40,
-              link: 'https://res.cloudinary.com/mirana/image/upload/v1648323536/personal-website/Abdolrahman_Ghaedi_Resume_ijbejy.pdf'
+              link: './pdfs/Abdolrahman_Ghaedi_Resume.pdf'
             }
           ]}
           sections={[
             { section: 'Intro', objName: '.Title' },
-            { section: 'skills', objName: '.Grid' },
+            { section: 'Skills', objName: '.Grid' },
             { section: 'Experience', objName: '.Stack' },
             { section: 'Papers', objName: '.Paper' }
           ]}

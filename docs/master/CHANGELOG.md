@@ -1,3 +1,44 @@
+## [3.1.1](https://github.com/mini-mirana/personal-website/compare/v3.1.0...v3.1.1) (2022-05-08)
+
+# [3.1.0](https://github.com/mini-mirana/personal-website/compare/v3.0.0...v3.1.0) (2022-05-08)
+
+### Bug Fixes
+
+- Fix lag while navigation ([de1c3ba](https://github.com/mini-mirana/personal-website/commit/de1c3bab19924287c21544427dee7103b44d94dc))
+
+# [3.0.0](https://github.com/mini-mirana/personal-website/compare/v2.0.2...v3.0.0) (2022-05-08)
+
+### Bug Fixes
+
+- **components:** Fix credits mouse hover ([43191e4](https://github.com/mini-mirana/personal-website/commit/43191e4a55a3704337cc5c1cbc46dc025c31e7e0))
+- Improve camera fov and lighting ([fc102bc](https://github.com/mini-mirana/personal-website/commit/fc102bc91adfb817d9f602762cc4102300437999))
+
+### Features
+
+- **website:** Override default cursor ([1d956bb](https://github.com/mini-mirana/personal-website/commit/1d956bb47e54053a396a66b92fee6036b115e147))
+
+## [2.0.2](https://github.com/mini-mirana/personal-website/compare/v2.0.1...v2.0.2) (2022-05-04)
+
+## [2.0.1](https://github.com/mini-mirana/personal-website/compare/v2.0.0...v2.0.1) (2022-05-04)
+
+# [2.0.0](https://github.com/mini-mirana/personal-website/compare/v1.2.0...v2.0.0) (2022-05-04)
+
+### Features
+
+- **components:** Add reverse functionality to TextMesh ([ea7b27c](https://github.com/mini-mirana/personal-website/commit/ea7b27c05c175790437d12a0a955d0c8030e5dc9))
+
+# [1.2.0](https://github.com/mini-mirana/personal-website/compare/v1.1.3...v1.2.0) (2022-04-12)
+
+### Bug Fixes
+
+- Fix tags where not fetch during ci ([6f468ed](https://github.com/mini-mirana/personal-website/commit/6f468ed5c12127352687ee4ebf246b9e4361fb49))
+
+## [1.1.3](https://github.com/mini-mirana/personal-website/compare/v1.1.2...v1.1.3) (2022-04-11)
+
+## [1.1.2](https://github.com/mini-mirana/personal-website/compare/v1.1.1...v1.1.2) (2022-04-11)
+
+## [1.1.1](https://github.com/mini-mirana/personal-website/compare/v1.1.0...v1.1.1) (2022-04-11)
+
 # [1.1.0](https://github.com/mini-mirana/personal-website/compare/v1.0.3...v1.1.0) (2022-04-10)
 
 ### Bug Fixes

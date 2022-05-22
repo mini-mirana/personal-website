@@ -137,8 +137,17 @@
         "channel": "mirana"
       },
       {
+        "name": "sarme",
+        "channel": "sarme"
+      },
+      {
         "name": "alpha-mirana",
         "channel": "alpha-mirana",
+        "prerelease": true
+      },
+      {
+        "name": "alpha-sarme",
+        "channel": "alpha-sarme",
         "prerelease": true
       },
       {
@@ -197,7 +206,7 @@
       [
         "@semantic-release/exec",
         {
-          "successCmd": "echo -n ${nextRelease.version} > .tags"
+          "successCmd": "echo -n ${nextRelease.gitTag} > .tags"
         }
       ]
     ]

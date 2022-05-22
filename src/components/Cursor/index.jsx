@@ -216,9 +216,11 @@ export function Cursor({
               <button
                 type='button'
                 className='z-20 font-mono text-base text-zinc-500 hover:text-white'
-                onMouseEnter={() => {
-                  hover(true)
+                onClick={() => {
                   setCopyRightHovered(true)
+                }}
+                onPointerOver={() => {
+                  hover(true)
                 }}
                 onMouseLeave={() => {
                   hover(false)
