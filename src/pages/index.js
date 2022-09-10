@@ -641,13 +641,13 @@ export default function Home() {
     if (measure < thr) {
       scrollInSound.current.play()
       set.start(() => ({
-        pos: [0, 0, from - 1],
+        pos: [0, 0, from - 2],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     } else {
       scrollOutSound.current.play()
       set.start(() => ({
-        pos: [0, 0, from + 1],
+        pos: [0, 0, from + 2],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     }
