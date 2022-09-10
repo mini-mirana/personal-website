@@ -97,7 +97,7 @@ export function Loader({
                   <ArwesText className='ml-[1%] text-center'>
                     Tap anywhere to start <br />{' '}
                     <span className='text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-blue-200 uppercase last:mr-0 mr-1'>
-                      PRO TIP
+                      PRO-TIP
                     </span>{' '}
                     Pinch or pan to move through channel
                   </ArwesText>
