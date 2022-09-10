@@ -1,8 +1,9 @@
+import * as THREE from 'three' /* three/examples/fonts/helvetiker_bold.typeface.json */
 import { useLayoutEffect, useRef } from 'react'
 import { Vector3 } from 'three'
 import { FontLoader, TextGeometry } from 'three-stdlib'
 import { extend } from '@react-three/fiber'
-import defaultFont from '../../assets/NoirPro-Bold.json' /* three/examples/fonts/helvetiker_bold.typeface.json */
+import defaultFont from '../../assets/NoirPro-Bold.json'
 
 extend({ TextGeometry })
 
@@ -13,12 +14,12 @@ export function TextMesh({
   fontConfig = {
     size: 100,
     height: 0.1,
-    curveSegments: 32,
+    curveSegments: 1,
     bevelEnabled: true,
-    bevelThickness: 1,
-    bevelSize: 1,
-    bevelOffset: 0,
-    bevelSegments: 2
+    bevelThickness: 2,
+    bevelSize: 10,
+    bevelOffset: -10,
+    bevelSegments: 0.001
   },
   vAlign = 'center',
   hAlign = 'center',
@@ -53,7 +54,7 @@ export function TextMesh({
             e.center()
           }}
         />
-        <meshNormalMaterial />
+        <meshNormalMaterial wireframe side={THREE.DoubleSide} />
       </mesh>
     </group>
   )

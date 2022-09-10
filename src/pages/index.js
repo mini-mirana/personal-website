@@ -471,9 +471,9 @@ function Page({ startZ, distance }) {
               type: 'photo-text',
               photoY: 0,
               source: 'https://cdn1.sarme.cyou/cdn/smart-reporting-single.png',
-              title: 'Lead Fullstack Developer Ahmadi Roshan \nShiraz, Iran',
-              description: ` 2019 \n\n﫟 Deep packet inspection for industrial network
-              \n\n﫟 SaaS structured reporting web application
+              title: 'Head Fullstack Developer Ahmadi Roshan \nIran',
+              description: ` 2019 \n\n﫟 Structured reporting web application and SaaS
+              \n\n﫟 Specialized speech recognition for medical report
               \n\n﫟 Continuous deployment using Gitlab CI/CD
               \n\n﫟 Linux server administration`,
               descriptionFont:
@@ -641,13 +641,13 @@ export default function Home() {
     if (measure < thr) {
       scrollInSound.current.play()
       set.start(() => ({
-        pos: [0, 0, from - 1],
+        pos: [0, 0, from - 2],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     } else {
       scrollOutSound.current.play()
       set.start(() => ({
-        pos: [0, 0, from + 1],
+        pos: [0, 0, from + 2],
         rotation: [cam.current.rotation.x, cam.current.rotation.y, r]
       }))
     }
