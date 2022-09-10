@@ -16,7 +16,8 @@ export function BackGrid({ ...props }) {
     // </Plane>
     <Float scale={0.75} rotationIntensity={0.01} floatIntensity={1} speed={3}>
       <mesh {...props}>
-        <cylinderGeometry args={[5, 5, 500, 54, 64, true, 0, 6.283185307179586]} />
+        {/* <cylinderGeometry args={[5, 5, 500, 54, 64, true, 0, 6.283185307179586]} /> */}
+        <coneGeometry args={[7, 400, 7, 100, false, 0, 6.283185307179586]} />
         <meshStandardMaterial color='#2ec4b6' wireframe side={THREE.DoubleSide} />
       </mesh>
     </Float>
