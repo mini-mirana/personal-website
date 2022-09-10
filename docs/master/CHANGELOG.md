@@ -1,3 +1,18 @@
+# [4.0.0](https://github.com/mini-mirana/personal-website/compare/v.sarme3.1.0...v.sarme4.0.0) (2022-09-10)
+
+
+### Bug Fixes
+
+*  increase scroll speed ([16ef7b3](https://github.com/mini-mirana/personal-website/commit/16ef7b3dd7fe813b96c1e946402ecf48ce1bd2e6))
+*  modify experience section ([ee1abb1](https://github.com/mini-mirana/personal-website/commit/ee1abb163a1ef75e7fb51b9a762886a058d17166))
+* **loader:** Add dash between PRO TIP ([cbe0f77](https://github.com/mini-mirana/personal-website/commit/cbe0f775755e8132a975161d845658fde68426bc))
+
+
+### Features
+
+* **BackGrid:**  Use cone as the main back grid ([63d7bed](https://github.com/mini-mirana/personal-website/commit/63d7bede6416095b59e4b12fe851a8e8bf7136ea))
+* **TextMesh:**  Improve text mesh style ([b1e172e](https://github.com/mini-mirana/personal-website/commit/b1e172ef7dd21add1553eee8676bde2a2a20e079))
+
 # [3.1.0](https://github.com/mini-mirana/personal-website/compare/v.sarme3.0.0...v.sarme3.1.0) (2022-05-08)
 
 
