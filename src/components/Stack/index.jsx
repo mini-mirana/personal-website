@@ -97,6 +97,7 @@ export function Stack({
                   outlineOpacity={springs[i].opacity}
                   onPointerOver={() => addGlow(i)}
                   onPointerLeave={() => api.start(() => ({ opacity: 0 }))}
+                  onClick={() => c.link && window.open(c.link, '_blank', 'noopener,noreferrer')}
                   position-y={-0.2}>
                   {c.title}
                   <meshStandardMaterial color='white' />
@@ -144,6 +145,7 @@ export function Stack({
                     outlineOpacity={springs[i].opacity}
                     onPointerOver={() => addGlow(i)}
                     onPointerLeave={() => api.start(() => ({ opacity: 0 }))}
+                    onClick={() => c.link && window.open(c.link, '_blank', 'noopener,noreferrer')}
                     position-y={-0.1}>
                     {c.title}
                     <meshStandardMaterial color='white' />
@@ -230,6 +232,7 @@ export function Stack({
                   outlineOpacity={springs[i].opacity}
                   onPointerOver={() => addGlow(i)}
                   onPointerLeave={() => api.start(() => ({ opacity: 0 }))}
+                  onClick={() => c.link && window.open(c.link, '_blank', 'noopener,noreferrer')}
                   position-y={-0.2}>
                   {c.title}
                   <meshStandardMaterial color='white' />
@@ -343,7 +346,7 @@ export function Stack({
                     }
                   }}
                   onPointerOver={() => {
-                    if (!('ontouchstart' in window)) {
+                    if (!window.matchMedia('(pointer: coarse)').matches) {
                       addGlow(i)
                       const newHovered = Array(content.length).fill(false)
                       newHovered[i] = true
@@ -351,7 +354,7 @@ export function Stack({
                     }
                   }}
                   onPointerLeave={() => {
-                    if (!('ontouchstart' in window)) {
+                    if (!window.matchMedia('(pointer: coarse)').matches) {
                       api.start(() => ({ opacity: 0 }))
                     }
                   }}
