@@ -444,7 +444,7 @@ function Page({ startZ, distance }) {
               type: 'photo-text',
               photoY: 0,
               source: 'https://res.cloudinary.com/du37hrqiv/image/upload/v1651507612/logo-default-slim-dark_qrxlcz.png',
-              title: 'Network Developer SYNEGY.ir | Shiraz, Iran',
+              title: 'Network Developer SYNEGY.ir | Iran',
               description: ` 2017 \n\n﫟 Deep packet inspection for industrial network
               \n\n﫟 Internal VPN mobile app for Shiraz University of medical Science
               \n\n﫟 Unidirectional network gateway hardware design for industrial network using RPi
@@ -458,7 +458,7 @@ function Page({ startZ, distance }) {
               type: 'video',
               source: 'https://cdn1.sarme.cyou/cdn/school.mp4',
               title: 'ⓘ School Organization Web App',
-              cardTitle: 'Full-Stack Dev. Danial Sch. | Shiraz, Iran | 2019',
+              cardTitle: 'Full-Stack Dev. Danial Sch. | Iran | 2019',
               description: (
                 <div>
                   <br /># Developed an educational SPA web application
@@ -542,7 +542,7 @@ function Page({ startZ, distance }) {
               title: 'Machine learning Eng.\nDeep Safety GmbH\nGermany',
               description: ` 2022-Current
               \n\n﫟 Designing and developing machine learning and deep learning systems specialized for autonomous systems
-              \n\n﫟 Build and maintain various pipeline required for model deployment and continuous operations around models
+              \n\n﫟 Build and maintain various pipelines required for model and dataset continuous operations around models
               \n\n﫟 Ensure algorithms generate trusted and accurate output`,
               descriptionFont:
                 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
@@ -569,9 +569,19 @@ function Page({ startZ, distance }) {
             {
               type: 'text',
               title:
-                'APPLICATION OF DEEP LEARNING IN GENERATING STRUCTURED RADIOLOGY REPORTS: A TRANSFORMER-BASED TECHNIQUE | 11/2021 | UNDER REVIEW',
-              description:
-                'Author list:\n• Seyed Alireza Moezzi\n• Abdolrahman Ghaedi\n• Mojdeh Rahmanian\n• Seyedeh Zahra Mousavi\n• Ashkan Sami',
+                'APPLICATION OF DEEP LEARNING IN GENERATING STRUCTURED RADIOLOGY REPORTS: A TRANSFORMER-BASED TECHNIQUE | [link]',
+              description: ` 
+              Submitted: 16 November 2021
+              Revised: 20 June 2022
+              Published: 27 July 2022
+              
+               Authors:
+                • Seyed Ali Reza Moezzi
+                • Abdolrahman Ghaedi
+                • Mojdeh Rahmanian
+                • Seyedeh Zahra Mousavi
+                • Ashkan Sami`,
+              link: 'http://realsarm.github.io/reportql',
               // description: 'Author list: Seyed Alireza Moezzi; Abdolrahman Ghaedi; Mojdeh Rahmanian; Seyedeh Zahra Mousavi; Ashkan Sami',
               descriptionY: '-0.8'
             }
