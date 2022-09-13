@@ -40,7 +40,7 @@ export function Cursor({
   const color = hovered ? 'rgb(100 116 139)' : '#fff'
 
   useEffect(() => {
-    if (!('ontouchstart' in window)) {
+    if (!window.matchMedia('(pointer: coarse)').matches) {
       window.addEventListener(
         'mousemove',
         (e) => {
@@ -120,7 +120,7 @@ export function Cursor({
           outwards to the tunnels "Out". That means we can write dom nodes
           from within r3f, with full access to canvas state! */}
       <dom.In>
-        {!('ontouchstart' in window) && (
+        {!window.matchMedia('(pointer: coarse)').matches && (
           <div ref={outer} className='pointer-events-none absolute left-0 top-0 z-10'>
             <div
               className='w-[120px] h-[120px] border-2 border-solid border-[orange] rounded-[50%]'
