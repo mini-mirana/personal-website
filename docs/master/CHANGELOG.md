@@ -1,3 +1,20 @@
+# [1.0.0-alpha-sarme.12](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.11...v.sarme1.0.0-alpha-sarme.12) (2022-09-13)
+
+
+### Bug Fixes
+
+* **Home:** Improve meta tag for noscale attribute ([d8b9f62](https://github.com/mini-mirana/personal-website/commit/d8b9f62683bbcc901ef9e85abd257edeec6deee2))
+* **style:** Disable default browser gesture ([59d7197](https://github.com/mini-mirana/personal-website/commit/59d71977808e806d031d7ac1c7aff3450880e6f5))
+
+
+### Features
+
+* **Cursor:** Check touch device by media query ([164815a](https://github.com/mini-mirana/personal-website/commit/164815ac1471c22eed547f1a8663891006a7f6d9))
+* **Grid:** Check touch device by media query ([a770ab9](https://github.com/mini-mirana/personal-website/commit/a770ab9b6b82c5eee30750aa7fb7040d0b0f6ef4))
+* **Home:** Add more info for paper ([bb3b348](https://github.com/mini-mirana/personal-website/commit/bb3b3484ce24a39a111c56f58a3b0089d82d523f))
+* **Home:** Check touch device by media query ([0c171a0](https://github.com/mini-mirana/personal-website/commit/0c171a0e8938a9ca038dd0c108ce3288014b820e))
+* **Stack:** Support for opening links ([26dc0cb](https://github.com/mini-mirana/personal-website/commit/26dc0cb8d1ce782f8d5d470389378015d5b3a56f))
+
 # [1.0.0-alpha-sarme.11](https://github.com/mini-mirana/personal-website/compare/v.sarme1.0.0-alpha-sarme.10...v.sarme1.0.0-alpha-sarme.11) (2022-09-10)
 
 
