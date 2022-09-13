@@ -656,14 +656,13 @@ export default function Home() {
     scrollInSound.current = new Audio('/sound/object.mp3')
     scrollOutSound.current = new Audio('/sound/toggle.mp3')
 
-    // Your code here
-    if (!('ontouchstart' in window)) {
+    if (window.matchMedia('(pointer:fine)').matches) {
       window.addEventListener('wheel', (e) => {
         handleScroll(e.deltaY, 0)
       })
     }
 
-    if ('ontouchstart' in window) {
+    if (window.matchMedia('(pointer: coarse)').matches) {
       // eslint-disable-next-line no-undef
       const hammertime = new Hammer(canvasRef.current)
       hammertime.get('pinch').set({ enable: true })
