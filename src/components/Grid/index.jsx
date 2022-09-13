@@ -74,7 +74,7 @@ export function Grid({ startZ = undefined, distance = 8, reverse = false, startR
                 {springs[i].map(({ scale, opacity }, j) => (
                   <group
                     onPointerOver={() => {
-                      if (!('ontouchstart' in window)) {
+                      if (!window.matchMedia('(pointer: coarse)').matches) {
                         apis[i].start((index) => {
                           if (index === j) {
                             return { scale: [1.1, 1.1, 1], opacity: 0.5 }
@@ -94,7 +94,7 @@ export function Grid({ startZ = undefined, distance = 8, reverse = false, startR
                       })
                     }}
                     onPointerLeave={() => {
-                      if (!('ontouchstart' in window)) {
+                      if (!window.matchMedia('(pointer: coarse)').matches) {
                         apis[i].start(() => ({ scale: [1, 1, 1], opacity: 0.2 }))
                       }
                     }}>
