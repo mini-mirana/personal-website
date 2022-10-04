@@ -1,6 +1,6 @@
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 
-const { APP_NAME } = process.env
+const { APP_NAME } = 'Portfolio | Ali Moezzi'
 const { APP_DESCRIPTION } = process.env
 
 export default class MyDocument extends Document {
@@ -14,6 +14,7 @@ export default class MyDocument extends Document {
           <meta name='apple-mobile-web-app-title' content={APP_NAME} />
           <meta name='description' content={APP_DESCRIPTION} />
           <meta name='format-detection' content='telephone=no' />
+          <meta property='og:image' content='https://cdn1.sarme.cyou/cdn/port.png' />
           <meta name='mobile-web-app-capable' content='yes' />
           <meta name='theme-color' content='#000000' />
           {/* TIP: set viewport head meta tag in _app.js, otherwise it will show a warning */}

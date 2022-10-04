@@ -448,24 +448,12 @@ function Page({ startZ, distance }) {
               description: ` 2017 \n\n﫟 Deep packet inspection for industrial network
               \n\n﫟 Internal VPN mobile app for Shiraz University of medical Science
               \n\n﫟 Unidirectional network gateway hardware design for industrial network using RPi
+              \n\n﫟 School management Web App, capable of curriculum, reporting, scoring and admission
               \n\n﫟 Linux server administration`,
               descriptionFont:
                 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
               descriptionY: '-0.8',
               descriptionFontSize: 0.07
-            },
-            {
-              type: 'video',
-              source: 'https://cdn1.sarme.cyou/cdn/school.mp4',
-              title: 'ⓘ School Organization Web App',
-              cardTitle: 'Full-Stack Dev. Danial Sch. | Iran | 2019',
-              description: (
-                <div>
-                  <br /># Developed an educational SPA web application
-                  <br /># Linux server administration
-                  <br /># Developed CI/CD pipeline for dev, stage and production environment
-                </div>
-              )
             },
             {
               type: 'photo-text',
@@ -516,6 +504,8 @@ function Page({ startZ, distance }) {
               title: 'Site Reliability Engineer\nLivedocs Inc.\nUS, Remote',
               description: ` 2021
               \n\n﫟 GKE admin engineer
+              \n\n﫟 Designed multiple isolated deployment environments
+              \n\n﫟 Composed applications configuration to a monolithic version-controlled system
               \n\n﫟 Building CI/CD pipeline with focus on GitOps`,
               descriptionFont:
                 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
@@ -543,7 +533,7 @@ function Page({ startZ, distance }) {
               description: ` 2022-Current
               \n\n﫟 Designing and developing machine learning and deep learning systems specialized for autonomous systems
               \n\n﫟 Build and maintain various pipelines required for model and dataset continuous operations around models
-              \n\n﫟 Ensure algorithms generate trusted and accurate output`,
+              \n\n﫟 Ensure algorithms generate trustful and accurate prediction`,
               descriptionFont:
                 'https://res.cloudinary.com/du37hrqiv/raw/upload/v1650574011/Hack_Bold_Nerd_Font_Complete_o4hhif.woff',
               descriptionY: '-0.8',
@@ -581,7 +571,7 @@ function Page({ startZ, distance }) {
                 • Mojdeh Rahmanian
                 • Seyedeh Zahra Mousavi
                 • Ashkan Sami`,
-              link: 'http://realsarm.github.io/reportql',
+              link: 'https://realsarm.github.io/ReportQL/',
               // description: 'Author list: Seyed Alireza Moezzi; Abdolrahman Ghaedi; Mojdeh Rahmanian; Seyedeh Zahra Mousavi; Ashkan Sami',
               descriptionY: '-0.8'
             }
