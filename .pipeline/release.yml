@@ -36,4 +36,4 @@ pipeline:
     when:
       branch:
         exclude: master
-branches: [ master, Mirana, sarme ]
+branches: [ master, Mirana, sarme, main ]
