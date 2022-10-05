@@ -7,6 +7,7 @@ import { useAspect, PerspectiveCamera } from '@react-three/drei'
 import tunnel from 'tunnel-rat'
 import mail from 'react-useanimations/lib/mail'
 import github from 'react-useanimations/lib/github'
+import linkedin from 'react-useanimations/lib/linkedin'
 import download from 'react-useanimations/lib/download'
 import { animated, useSpring, config } from '@react-spring/three'
 import { useWindowDimensions } from '../utils/useWindowDimensions'
@@ -706,6 +707,12 @@ export default function Home() {
           speed={0.2}
           icons={[
             { icon: github, description: 'My GitHub', fontSize: 40, link: 'https://github.com/realsarm' },
+            {
+              icon: linkedin,
+              description: 'My Linkedin',
+              fontSize: 40,
+              link: 'https://www.linkedin.com/in/ali--moezzi/'
+            },
             { icon: mail, description: 'My Email', fontSize: 40, link: 'mailto:info@sarme.cyou' },
             {
               icon: download,
