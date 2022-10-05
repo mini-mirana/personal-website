@@ -17,6 +17,7 @@ pipeline:
   release:
     image: node:16-alpine
     commands:
+      - apk add git
       - yarn ci
     secrets: [ GH_TOKEN ]
   publish:
